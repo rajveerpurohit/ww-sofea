@@ -1,0 +1,97 @@
+/* Woolworths core CSS */
+
+// COINFIG
+@import "base/config";
+
+// PLUGINS -- styles/lib
+@import "lib/slick";
+@import "lib/datepicker";
+
+// BASE
+@import "base/helpers";
+@import "base/box-model";
+@import "base/typography";
+@import "base/grid";
+// @import "base/utilities";
+@import "base/layout-helpers";
+@import "base/theme";
+
+// COMPONENTS
+@import "components/img";
+@import "components/icon";
+@import "components/btn";
+@import "components/input";
+@import "components/datepicker";
+@import "components/textarea";
+@import "components/select";
+@import "components/colour-swatch";
+@import "components/badge";
+@import "components/price";
+@import "components/loading";
+@import "components/tooltip";
+@import "components/icon-para";
+@import "components/btn-row";
+@import "components/form-field";
+@import "components/nav-list";
+@import "components/nav-list-x";
+@import "components/list";
+@import "components/fly-out";
+@import "components/accordion";
+@import "components/panel";
+@import "components/panel-row";
+@import "components/horizontal-menu";
+@import "components/mini-cart";
+@import "components/search-bar";
+@import "components/breadcrumb";
+@import "components/list-options";
+@import "components/product-card";
+@import "components/product-recent";
+@import "components/pagination";
+@import "components/modal";
+@import "components/delivery-slots";
+@import "components/counter";
+@import "components/table";
+@import "components/lazyload";
+@import "components/block-brand";
+@import "components/block-seo";
+@import "components/landing__header";
+@import "components/message";
+@import "components/split-text";
+@import "components/size-swatch";
+@import "components/rotating-banner";
+@import "components/video-banner";
+@import "components/meganav";
+
+// PAGE PARTIALS
+@import "../components/sections/Header/site-header";
+@import "page-partials/main-header";
+@import "page-partials/main-header-nav";
+@import "page-partials/site-page";
+@import "../components/sections/Footer/site-footer";
+@import "page-partials/checkout-header";
+@import "page-partials/checkout-footer";
+@import "page-partials/checkout-page";
+
+// SITE PAGES/SECTIONS
+@import "pages/landing";
+@import "pages/product-list";
+@import "pages/product";
+@import "pages/promo-list";
+@import "pages/size-guides";
+@import "pages/wrewards";
+@import "pages/wfs";
+@import "pages/tww";
+@import "pages/login-register";
+@import "pages/account";
+
+// TECHNICAL DEBT - NEEDS TO BE REFACTORED
+@import "base/shame";
+
+// Utilities last for (what should have been) obvious reasons
+@import "base/utilities";
+
+
+//icon
+@import "../images/svgcss/svg.data";
+@import "../images/svgcss-brands/brands-svg.data";
+@import "components/icon-extensions";

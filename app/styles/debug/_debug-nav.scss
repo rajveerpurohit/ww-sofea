@@ -1,0 +1,18 @@
+.debug-nav {
+  .nav-list__link, .nav-list__link--sub {
+    color:#3f83b1;
+    font-size:16px;
+    text-transform:none;
+  }
+}
+
+.debug-pl {
+  .site-header__nav {
+    padding-top:1em;
+    padding-bottom:1em;
+    overflow:scroll;
+  }
+  .site-header__logo, .site-header-foot__icon, .site-header-foot__icon-wrap {
+    display:none !important;
+  }
+}

@@ -1,0 +1,181 @@
+/* ---------- base ----------- */
+
+body {
+  font-family:$font-default;
+  color:$colour-font-default;
+  font-size:$font-size-default;
+  -webkit-text-size-adjust:none;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* ---------- headings ----------- */
+
+h1, h2, h3, h4, .heading {
+  @include font-weight(600);
+  margin:1em 0;
+  &:first-child {
+    margin-top:0;
+  }
+  * + & {
+    margin-top:2em;
+  }
+  & + hr {
+    margin-top:-1em;
+  }
+}
+h1, .heading--1 {
+  font-size:1.5em;
+}
+h2, .heading--2 {
+  font-size:1.4em;
+}
+h3, .heading--3 {
+  font-size:1.2em;
+}
+h4, .heading--4 {
+  font-size:1em;
+}
+.heading--sup {
+  margin-bottom:0;
+}
+.heading--sub {
+  margin-top:0;
+}
+
+.heading--400 {
+  @include font-weight(400);
+}
+
+.heading-group{
+  margin-bottom: 1em;
+  .heading-group__title,
+  .heading-group__subtitle{
+    line-height: 1em;
+    margin: 0;
+  }
+  .heading-group__title + .heading-group__subtitle{
+    margin-top: 0.5em;
+  }
+}
+
+strong, .strong {
+  @include font-weight(700);
+}
+
+a, :visited, .link.link {
+  color:#000;
+  text-decoration:underline;
+  &:hover, &:active {
+    text-decoration:none;
+  }
+  img {
+    border:0;
+    outline:0;
+  }
+}
+
+.link--silent {
+  text-decoration:none;
+  color:$colour-font-default;
+  &:hover {
+    text-decoration:none;
+  }
+}
+
+.link--alt {
+  text-decoration:none;
+  &:hover {
+    text-decoration:underline;
+  }
+}
+
+.font-graphic {
+  font-family:$font-graphic-600;
+  font-weight:normal;
+}
+
+.text-xsmall {
+  font-size:11px;
+  line-height:1.5em;
+}
+
+.text-small {
+  font-size:12px;
+  line-height:1.5em;
+}
+
+.text-medium {
+  font-size:13px;
+  line-height:1.5em;
+}
+
+.text-intro {
+  font-size:14px;
+  line-height: 1.4em;
+}
+
+.text-largest{
+  font-size: 2em;
+  line-height: 1.5em;
+}
+
+.text-caps {
+  text-transform:uppercase;
+}
+
+.text-dampen-slight {
+  color:$colour-grey-darkest;
+}
+
+.text-dampen {
+  color:$colour-grey-dark;
+}
+
+.text-thin {
+  @include font-weight(300);
+}
+
+.text-space {
+  margin-left:0.5em;
+}
+
+.text-block {
+  display:block;
+}
+
+.text-align-right {
+  text-align:right;
+}
+
+.text-align-center {
+  text-align:center;
+}
+
+.text-highlight {
+  color:$colour-orange;
+  @include font-weight(700);
+}
+
+.text-error, .text-save {
+  color:$colour-red;
+}
+
+.no-wrap {
+  white-space:nowrap;
+}
+
+.no-wrap--ellipsis {
+  display:block;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+.text-grey-dark {
+  color: $colour-grey-dark;
+}
+
+.text-wfs {
+  color: $colour-wrewards-green;
+}

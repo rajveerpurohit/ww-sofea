@@ -1,0 +1,9 @@
+.textarea {
+  padding: 10px;
+  font-family:$font-default;
+  border: $input-border-width solid $colour-grey;
+  width: 100%;
+  font-size: 12px;
+  resize: vertical;
+  overflow: scroll;
+}

@@ -1,0 +1,48 @@
+.nav-list-x {
+  margin:0;
+  padding:0;
+  list-style:none;
+  white-space:nowrap;
+}
+
+.nav-list-x__item {
+  display:inline-block;
+  vertical-align:middle;
+}
+
+.nav-list-x__item--line {
+  & + & {
+    border-left:1px solid #000;
+    margin-left:10px;
+    padding-left:10px;
+  }
+}
+
+.nav-list-x--space {
+  margin-left:10px;
+}
+
+.nav-list-x--wrap {
+  white-space:normal;
+}
+
+.nav-list-x__item--wrap {
+  margin-top:2px;
+  margin-bottom:2px;
+}
+
+// Only go into horizontal nav at specific breakpoints
+@mixin nav-list-x__item($breakpoint, $modifier) {
+  @media (min-width:$breakpoint) {
+    .nav-list-x__item--#{$modifier} {
+      display:inline-block;
+    }
+    .nav-list-x__item--#{$modifier}.nav-list-x--space {
+      & + & {
+        margin-left:10px;
+      }
+    }
+  }
+}
+//can add more breakpoints as needed
+@include nav-list-x__item($breakpoint-medium, medium);

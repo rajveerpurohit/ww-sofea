@@ -1,0 +1,179 @@
+.main-header-nav{
+  display: inline-block;
+  height: 50px;
+  line-height: 1;
+  margin-right: 50px;
+  vertical-align: top;
+  @media (min-width: $breakpoint-tablet-pt-min){
+    height: 36px;
+    margin-right: 0;
+    vertical-align: middle;
+  }
+  // Outputs .main-header-nav__item
+  &__item{
+    vertical-align: middle;
+    margin-left: 0;
+    @media (min-width: $breakpoint-tablet-pt-min){
+      margin-left: 32px;
+      &:first-of-type{
+        margin-left: 0;
+      }
+    }
+    @media (max-width: $breakpoint-tablet-pt){
+      // background: red;
+      height: 50px;
+      line-height: 50px;
+      margin-left: -4px;
+      text-align: center;
+      vertical-align: middle;
+      width: 50px;
+      .mini-cart__prod{
+        line-height: normal;
+      }
+      &.child-is-open{
+        background: white;
+      }
+      // Outputs .main-header-nav__item--foot-mobi
+      &--foot-mobi{
+        background: $colour-grey-light;
+        border-top: $colour-grey 6px solid;
+        text-align: left;
+        bottom: 0;
+        height: $gutter-width * 3;
+        margin-left: 0;
+        padding: ($gutter-width / 2) $gutter-width;
+        position: fixed;
+        width: 50vw;
+        .main-header-nav__title,
+        .main-header-nav__label{
+          display: block;
+        }
+      }
+      &-address{
+        left: 0;
+        &::after {
+          content: "";
+          display: block;
+          background: $colour-grey-light;
+          border-top: $colour-grey 6px solid;
+          width: calc(100% + 1px);
+          height: 60px;
+          position: absolute;
+          left: calc(100% - 1px);
+          top: -6px;
+        }
+      }
+      &-delivery{
+        right: 0;
+      }
+    }
+    &.main-header-nav__item-delivery{
+      .fly-out__toggle{
+        @media (max-width: $breakpoint-tablet-pt){
+          text-align: left;
+        }
+      }
+      .fly-out__content{
+        @media (max-width: $breakpoint-tablet-pt){
+          padding: 20px;
+          margin-top: 0 !important;
+        }
+        @media (min-width: $breakpoint-tablet-pt-min){
+          left: -100px;
+          padding-left: 10px;
+          padding-right: 10px;
+          border: 1px solid $colour-grey;
+        }
+      }
+    }
+    // Correction for modal toggles not fitting center
+    .fly-out__toggle{
+      @media (max-width: $breakpoint-tablet-pt){
+        display: block;
+        text-align: center;
+        vertical-align: middle;
+      }
+    }
+  }
+  // Outputs .main-header-nav__label
+  &__label{
+    color: $colour-grey-darker;
+    display: none;
+    @media (min-width: $breakpoint-tablet-pt-min){
+      display: block;
+    }
+  }
+  // Outputs .main-header-nav__title
+  &__title{
+    display: none;
+    text-transform: uppercase;
+    @media (min-width: $breakpoint-tablet-pt-min){
+      display: block;
+    }
+  }
+  &__mini-cart{
+    position: relative;
+    @media (min-width: $breakpoint-tablet-pt-min){
+      padding-right: 44px;
+    }
+  }
+  .fly-out__content{
+    background: white;
+    border-color: $colour-grey;
+    box-shadow: 0 2px 7px rgba(0,0,0,0.1);
+    padding: 1em;
+    text-align: left;
+    @media (min-width: $breakpoint-tablet-pt-min){
+      &::after{
+        background: white;
+        border-bottom: 1px solid $colour-grey;
+        border-right: 1px solid $colour-grey;
+        content: "";
+        display: block;
+        height: 16px;
+        left: calc(50% - 8px);
+        position: absolute;
+        top: -8px;
+        transform: rotate(45deg);
+        width: 16px;
+      }
+    }
+  }
+}
+.fly-out__content{
+  &.main-header-nav{
+    &__profile-nav{
+      left: 0;
+      padding: 2em 0 0;
+      top: calc(100% + 26px);
+      @media (max-width: $breakpoint-tablet-pt){
+        border: 0 none;
+        box-shadow: none;
+        height: calc(100vh - 50px);
+        padding-top: 1em;
+        position: fixed;
+        top: 50px;
+        width: 100vw;
+        z-index: 99;
+      }
+      .nav-list__item{
+        font-size: 15px;
+        font-weight: bold;
+        line-height: 1em;
+        margin: 0 0 1em;
+      }
+      .nav-list__item + .nav-list__item{
+        margin-top: 0;
+      }
+    }
+
+  }
+  .nav-list__link{
+    display: block;
+    padding: ($gutter-width/2) $gutter-width;
+    &:hover{
+      background: black;
+      color: white;
+    }
+  }
+}

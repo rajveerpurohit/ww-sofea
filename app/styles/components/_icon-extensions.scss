@@ -1,0 +1,194 @@
+.btn--right:before {
+  @extend .icon--right-grey;
+}
+
+a[class*=" btn--gradient"].btn--right:before {
+  @extend .icon--right-dark;
+}
+
+.btn--primary.btn--right:before {
+  @extend .icon--right-white;
+}
+
+.btn--down:before {
+  @extend .icon--down-dark;
+}
+
+.mini-cart.is-open {
+  .icon--cart-dark {
+    @extend .icon--x-dark;
+  }
+}
+
+.horizontal-menu {
+  a, a:visited {
+    &.has-sub-menu:after {
+      @extend .icon--right-grey;
+    }
+  }
+}
+
+.slick-prev {
+  @extend .icon--left-dark;
+}
+.slick-next {
+  @extend .icon--right-dark;
+}
+.slick-prev, .slick-next {
+  height:100%;
+  width:18px;
+}
+
+.slick-vertical {
+  .slick-prev {
+    @extend .icon--up-grey;
+  }
+  .slick-next {
+    @extend .icon--down-grey;
+  }
+  .slick-prev, .slick-next {
+    height:18px;
+    width:100%;
+  }
+}
+
+.main-header-nav .nav-list-x__link:after {
+  @extend .icon--down-dark;
+}
+
+.main-header-nav__profile .nav-list-x__link:before {
+  @extend .icon--profile-grey;
+  .is-logged-in & {
+    @extend .icon--profile-blue;
+  }
+}
+
+.main-header-nav__address .nav-list-x__link:before {
+  @extend .icon--delivery-grey;
+  .is-logged-in & {
+    @extend .icon--delivery-blue;
+  }
+}
+
+.main-header-nav__delivery .nav-list-x__link:before {
+  @extend .icon--van-blue;
+}
+
+// Icons changes for active states on mobile
+.child-is-open{
+  .icon--cart-white,
+  .icon--user-white{
+    @extend .icon--close;
+  }
+}
+.nav-toggle{
+  &.active{
+    .icon--menu{
+      @extend .icon--close;
+    }
+  }
+}
+.search-toggle{
+  &.active{
+    .icon--search-white{
+      @extend .icon--close;
+    }
+  }
+}
+
+
+.enhanced-select__icon {
+  @extend .icon--down-dark;
+  width:35px;
+  height:$form-field-height - 2px;
+  background-position:50% 50%;
+}
+
+.label-checkbox.is-checked:before {
+  @extend .icon--tick-grey;
+  background-position:40% 50%;
+  background-repeat:no-repeat;
+  width:1em;
+  height:1em;
+}
+
+.product-size.is-sold-out:after {
+  @extend .icon--x-dark;
+  width:100%;
+  height:100%;
+}
+
+.icon--van-dark-thin {
+  @extend .icon--van-dark;
+  width:19px;
+  background-size:100% auto;
+}
+
+.list__item--chevron {
+  @extend .icon--right-dark;
+  width:auto;
+  height:auto;
+  background-size:auto 10px;
+  background-repeat:no-repeat;
+  background-position:0 0.3em;
+}
+
+.arrow-link--back {
+  @extend .icon--left-circ-dark;
+  padding-left:1.4em;
+  width: auto;
+  background-repeat:no-repeat;
+  line-height: 1em;
+  &:hover {
+    @extend .icon--left-circ-lightgrey;
+    width: auto;
+  }
+}
+
+.arrow-link--forward {
+  @extend .icon--right-circ-dark;
+  background-position: right center;
+  background-repeat: no-repeat;
+  width: auto;
+  padding-right: 1.4em;
+  line-height: 1em;
+  &:hover {
+    @extend .icon--right-circ-lightgrey;
+    width: auto;
+  }
+}
+
+.link--circ-arrow-hover:hover {
+  .icon--left-circ-dark {
+    @extend .icon--left-circ-lightgrey;
+  }
+  .icon--right-circ-dark {
+    @extend .icon--right-circ-lightgrey;
+  }
+}
+
+.datepicker-btn i {
+  display:inline-block;
+  @extend .icon--datepicker;
+}
+
+.product-atc__x {
+  width:10px;
+  background-size:contain;
+}
+
+.cancel-btn {
+  border: none;
+  .icon {
+    content: ' ';
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 6px;
+    @extend .icon--cancel-dark;
+  }
+  &:hover {
+    .icon {
+      @extend .icon--cancel-lightgrey;
+    }
+  }
+}

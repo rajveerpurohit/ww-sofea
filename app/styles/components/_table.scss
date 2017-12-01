@@ -1,0 +1,144 @@
+.table {
+  width:100%;
+  border-collapse:collapse;
+  font-size:0.75em;
+  max-width:100%;
+  background:#fff;
+}
+.table--nutrition {
+  font-size:1em;
+  th {
+    font-weight:normal;
+  }
+  thead {
+    th {
+      font-weight:bold;
+    }
+  }
+}
+th, td {
+  box-sizing:border-box;
+  padding:($table-cell-padding / 2) $table-cell-padding;
+  text-align:left;
+}
+
+// Borders
+.table--border-cells {
+  th, td {
+    border:1px solid $colour-grey;
+  }
+}
+
+.table--border-rows {
+  th, td {
+    border-top:1px solid $colour-grey;
+    border-bottom:1px solid $colour-grey;
+  }
+}
+
+// Set column sizes
+.table--2-col {
+  th,td{
+    width:50%;
+  }
+}
+.table--3-col {
+  th,td{
+    width:calc(100% / 3);
+  }
+}
+
+// Alignment
+.table--center {
+  td, th {
+    text-align:center;
+  }
+}
+
+// Tables with zebra rows
+.table--zebra {
+  tbody {
+    tr {
+      background:#fff;
+      &:nth-of-type(odd) {
+        background:$colour-grey-light;
+      }
+    }
+    // Ensure that zebra-stripe table cells over multiple rows consistently have the same background
+    td[rowspan] {
+      background:$colour-grey-light;
+    }
+  }
+}
+
+// Table head
+.table__head {
+  background:#fff;
+  &--dark{
+    background:$colour-grey;
+  }
+  tr {
+    background:inherit;
+  }
+  &--reverse-border{
+    th{
+      border: 1px solid #fff;
+    }
+  }
+}
+
+
+// Scrolling tables
+.table-scroll {
+  &--x {
+    overflow-x:scroll;
+  }
+  td {
+    &:empty {
+      &::before {
+        content:"-";
+      }
+    }
+  }
+}
+
+.table-scroll__row {
+  position:relative;
+}
+
+// Table rows with sticky 1st column
+// Rows like these cannot contain cells with colspan
+.table-scroll__row--sticky {
+  white-space: nowrap;
+  th:first-child {
+    background: inherit;
+    position: absolute;
+  }
+  &-narrow {
+    th:first-child {
+      width: ($table-sticky-cell-width * 0.75);
+      + th,
+      + td {
+        padding-left: (($table-sticky-cell-width * 0.75) + $table-cell-padding);
+      }
+    }
+  }
+  &-normal {
+    th:first-child {
+      width: $table-sticky-cell-width;
+      + th,
+      + td{
+        padding-left: ($table-sticky-cell-width + $table-cell-padding);
+      }
+    }
+  }
+  &-wide {
+    th:first-child {
+      width: ($table-sticky-cell-width * 1.5);
+      + th,
+      + td {
+        padding-left: (($table-sticky-cell-width * 1.5) + $table-cell-padding);
+      }
+    }
+  }
+}

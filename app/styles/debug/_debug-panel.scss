@@ -1,0 +1,35 @@
+.debug-panel {
+  //max-width:600px;
+  margin:0 auto 2em;
+  border:1px solid $colour-grey;
+  & + & {
+    margin-top:1em;
+  }
+}
+
+.debug-panel__head, .debug-panel__content, .debug-panel__foot {
+  padding:1em;
+  > *:first-child {
+    margin-top:0;
+  }
+  > *:last-child {
+    margin-bottom:0;
+  }
+}
+
+.debug-panel__head {
+  border-bottom:1px solid $colour-grey;
+}
+
+.debug-panel__foot {
+  border-top:1px solid $colour-grey;
+}
+
+.debug-panel--dark {
+  background-color:#000;
+  color:#fff;
+  border:0;
+  .debug-panel__head, .debug-panel__foot {
+    border-color:#fff;
+  }
+}

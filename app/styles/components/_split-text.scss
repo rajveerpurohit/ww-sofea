@@ -1,0 +1,10 @@
+@media (min-width: $breakpoint-xxlarge){
+  .split-text__highlight{
+    margin-right: -0.25em;
+  }
+  .split-text__normal{
+    display: inline-block;
+    font-family: $font-graphic-500;
+    width: 100%;
+  }
+}

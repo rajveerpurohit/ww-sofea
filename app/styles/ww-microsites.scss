@@ -1,0 +1,137 @@
+// having separate file for icon data allows us to make performance tweaks around when/how we load this
+@import "base/config";
+@import "../images/svgcss-microsites/microsite-svg.data";
+@import "components/_rotating-banner.scss";
+@import "components/_video-banner.scss";
+
+@mixin common-font {
+	font-family: $font-graphic-500;
+  font-weight: normal;
+}
+
+.site-page{
+	margin-left:0;
+	width:95%;
+	margin: 2% 2.5%;
+	&:before{
+		height:0;
+	}
+	&:after{
+		height:0;
+	}
+}
+
+.microsite-header{
+	padding: 25px 0;
+	.jtone & {
+		background-color:#f37ab0;
+	}
+	.re &{
+		background-color:#000;
+	}
+}
+
+.microsite-header{
+	padding: 25px 0;
+	.studiow & {
+		background-color:#565656;
+	}
+}
+
+.microsite-header__logo{
+	display:block;
+	margin:0 auto;
+}
+
+.microsite-nav{
+	.studiow &, .jtone &, .re &{
+		display: none;
+	}
+}
+
+.re {
+	body, p, a, h1, h2, h3, h4, h5, div, li {
+		@include common-font;
+		color: #000;
+	}
+}
+
+.microsite-footer__rights{
+	@media (min-width:$breakpoint-medium) {
+	  float:left;
+	}
+}
+
+.microsite-footer__privacy{
+	@media (min-width:$breakpoint-medium) {
+	  float:right;
+	}
+}
+
+.microsite-footer{
+	@include common-font;
+	background: none #000000;
+	text-align: center;
+	clear: both;
+	overflow: hidden;
+	padding: 8px 2.5%;
+	position: relative;
+	line-height:30px;
+	color: #B5B5B5;
+	ul {
+		line-height: 2.5em;
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+	li {
+			display: inline-block;
+			text-align: center;
+			vertical-align: top;
+			padding: 0 15px;
+			a {
+				text-decoration: none;
+				text-transform: uppercase;
+			}
+		}
+	}
+	a{
+		color: inherit;
+	}
+	.re & {
+		border-top: solid 1px #999;
+		background: #fff;
+		color: #000;
+	}
+	.jtone & {
+		border-top: solid 1px #999;
+    background: #fff;
+    color: #525252;
+	}
+	.studiow & {
+		border-top: solid 1px #CCC;
+		background: #fff;
+		color: #B5B5B5;
+		font-family: Georgia, Times, 'Times New Roman', serif;
+		a {
+			color: #B5B5B5;
+		}
+	}
+}
+
+/** STUDIO-W **/
+.studiow {
+	body &{
+		font-family: Georgia, Times, 'Times New Roman', serif;
+	}
+}
+
+.jtone {
+	body &{
+		@include common-font;
+		color: #525252;
+	}
+}
+
+.microsite-footer{
+	border-top: solid 1px #999;
+}

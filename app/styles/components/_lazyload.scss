@@ -1,0 +1,30 @@
+.lazyload-container {
+  .loading {
+    width:100%;
+    height:50vh;
+    position:relative;
+    &::before {
+      position:absolute;
+      top:40%;
+      left:50%;
+      margin-left:-($loading-size/2);
+    }
+    &.loading--large::before {
+      margin-left:-($loading-size-large/2);
+    }
+  }
+}
+
+.lazyload {
+  opacity: 0;
+}
+
+.lazyloaded {
+  opacity: 1;
+  transition: opacity 500ms ease;
+}
+
+.lazyloaded ~ .loading {
+  height:0;
+  overflow:hidden;
+}

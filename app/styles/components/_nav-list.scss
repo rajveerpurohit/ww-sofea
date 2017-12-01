@@ -1,0 +1,129 @@
+.nav-list {
+  margin:0;
+  padding:0;
+  list-style:none;
+}
+
+.nav-list__item {
+  display:block;
+  margin:0.2em 0;
+}
+
+.nav-list__link--main {
+  display:block;
+  &, &:visited {
+    text-decoration:none;
+    color:#fff;
+    text-transform:uppercase;
+    font-size:0.875em;
+    padding:5px;
+    font-family:$font-graphic-600;
+    font-weight:normal;
+  }
+  &:hover, &.is-current{
+    color:#000;
+    background-color:#fff;
+  }
+}
+
+.nav-list__link--sub {
+   display:block;
+   &, &:visited {
+     text-decoration:none;
+     color:#bcbcbc;
+     font-size:0.75em;
+     padding:5px;
+     font-family:$font-graphic-600;
+     font-weight:normal;
+   }
+   &:hover {
+     color:#fff;
+     text-decoration:underline;
+   }
+ }
+
+.nav-list__link--filter {
+  &, &:visited {
+    display:block;
+    text-decoration:none;
+    border-bottom:2px solid transparent;
+  }
+  &:hover {
+    border-color:#000;
+  }
+  &.is-current {
+    font-weight: 700;
+  }
+}
+
+.nav-list__qnty {
+  float:right;
+  padding-left:10px;
+}
+
+// tabbed nav list
+.nav-list--tabbed {
+  border-bottom: solid 1px $colour-grey;
+  line-height: 17px;
+  margin-bottom: 16px;
+  overflow: visible;
+}
+
+.nav-list__item--tabbed {
+  margin:0;
+}
+
+.nav-list__item--tabbed-underlined {
+  display:inline-block;
+}
+
+.nav-list__link--tabbed {
+  text-decoration: none;
+  font-size: 0.75em;
+  font-weight: bold;
+  padding: 6px 1%;
+}
+
+.nav-list__link--tabbed-boxed {
+  display: block;
+  text-align: center;
+  border-top: 1px solid $colour-grey;
+  &.is-current {
+    background-color: $colour-grey-lightest;
+  }
+}
+
+.nav-list__link--tabbed-underlined {
+  display: inline-block;
+  &.is-current {
+    border-bottom: 4px solid $colour-grey-darkest;
+  }
+}
+
+@media (min-width: $breakpoint-medium){
+  .nav-list--tabbed {
+    height: 24px;
+  }
+  .nav-list--tabbed-underlined {
+    height: 27px;
+  }
+  .nav-list__item--tabbed-boxed {
+    display:inline-block;
+  }
+  .nav-list__link--tabbed {
+    padding: 6px 10px;
+  }
+  .nav-list__link--tabbed-underlined {
+    display: inline;
+  }
+  .nav-list__link--tabbed-boxed {
+    display: inline;
+    text-align: left;
+    border-top: none;
+    &.is-current{
+      background-color: inherit;
+      border: 1px solid $colour-grey;
+      border-bottom: 1px solid #fff;
+    }
+  }
+}

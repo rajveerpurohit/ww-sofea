@@ -1,0 +1,95 @@
+@media (max-width: $breakpoint-tablet-pt){
+  .search-toggle{
+    box-sizing: content-box;
+    display: inline-block;
+    height: 50px;
+    position: fixed;
+    right: 155px;
+    text-align: center;
+    top: 0;
+    width: 50px;
+    z-index: 99;
+    &.active{
+      background-color: white;
+    }
+  }
+}
+
+.search-bar {
+  background: white;
+  display: block;
+  padding: ($gutter-width * 0.8) $gutter-width;
+  position: absolute;
+  top: 100%;
+  width: 25%;
+  z-index: 99;
+  @media (max-width: $breakpoint-tablet-pt){
+    display: none;
+    &.is-open{
+      display: block;
+      height: calc(100vh - 50px);
+      width: 100%;
+    }
+  }
+  @media (min-width: $breakpoint-tablet-pt-min){
+    right: (-$gutter-width);
+    top: auto;
+  }
+}
+.search-bar__input[type=search] {
+  background-color: $colour-grey-light;
+  border: none;
+  cursor: text;
+  height: 40px;
+  padding: 0 10px;
+}
+
+.search-bar .search-bar__submit {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  height: 16px;
+  margin-top: -8px;
+  position: absolute;
+  right: $gutter-width;
+  top: 50%;
+  width: 30px;
+  -webkit-appearance: none;
+  @media (max-width: $breakpoint-tablet-pt){
+    margin-top: -2px;
+    top: 36px;
+  }
+}
+
+.search-bar__suggestions {
+  background-color: #fff;
+  font-size: 13px;
+  line-height: normal;
+  margin-top: 5px;
+  max-height: calc(80vh - 52px);
+  overflow-y: scroll;
+  padding: 0 $gutter-width 0;
+  text-align: left;
+  width: 100%;
+  .nav-list__item {
+    line-height: 2em;
+    padding: 0 5px;
+    &.is-selected {
+      background-color:$colour-grey-darkest;
+      a, a:visited {
+        color: #fff;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+@media (min-width: $breakpoint-tablet-pt-min) {
+  .search-bar{
+    transition: width 300ms;
+    &.is-open {
+      position: absolute;
+      width: calc(100% + (#{$gutter-width} * 2)) !important;
+    }
+  }
+}

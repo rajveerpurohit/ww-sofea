@@ -1,0 +1,101 @@
+.landing__row{
+  margin-bottom: $gutter-width;
+  width: 100%;
+  &::after{
+    clear: both;
+    content: "";
+    display: table;
+  }
+}
+.landing__link{
+  display: block;
+  position: relative;
+  width: 100%;
+  z-index: 9;
+  font-size: 0;
+}
+.landing__image{
+  height: auto;
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+/* Landing page "grid" */
+.landing__block{
+  position: relative;
+}
+.landing__row--single{
+  .landing__block{
+    width: 100%;
+  }
+}
+.landing__block--half-fourth{
+  @media (max-width: $breakpoint-medium-max){
+    @include gridColSpan(1 of 2);
+  }
+  @media (min-width: $breakpoint-medium){
+    @include gridColSpan(1 of 4);
+  }
+}
+
+// Shoppable content, articles and recipes
+// Uses .product-card to set up the rest of the base styles
+
+.landing__row--featured {
+  .product-card__image-wrap {
+    display: block;
+  }
+  .product-card__details {
+    margin: 0.5em 0 1em;
+    height: 40px;
+    padding-bottom: 0;
+  }
+}
+
+.landing__row--featured-articles {
+  .product-card__visual {
+    padding-top: 100%;
+  }
+  .product-card__details {
+    height: 2.5em;
+    line-height: 1.25em;
+    overflow: hidden;
+  }
+  .product-card__name {
+    white-space: normal;
+  }
+}
+
+.landing__product-card {
+  @media (max-width: $breakpoint-small-max){
+    margin-bottom: $gutter-width;
+  }
+  @media (min-width: $breakpoint-small) and (max-width: $breakpoint-medium-max){
+    @include gridColSpan(1 of 2);
+    &:nth-child(n+5){
+      display: none;
+    }
+  }
+  @media (min-width: $breakpoint-medium) and (max-width: $breakpoint-xlarge-max){
+    @include gridColSpan(1 of 3);
+    &:nth-child(n+4){
+      display: none;
+    }
+  }
+  @media (min-width: $breakpoint-xlarge) and (max-width: $breakpoint-fullplus - 0.01em){
+    @include gridColSpan(1 of 4);
+    &:nth-child(n+5){
+      display: none;
+    }
+  }
+  @media (min-width: $breakpoint-fullplus) and (max-width: $breakpoint-xfull-max){
+    @include gridColSpan(1 of 5);
+    &:nth-child(n+6){
+      display: none;
+    }
+  }
+  @media (min-width: $breakpoint-xfull){
+    @include gridColSpan(1 of 6);
+  }
+}

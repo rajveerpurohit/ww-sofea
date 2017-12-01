@@ -1,0 +1,303 @@
+// formErrors from old CSS remove when refactored
+.formErrors {
+  padding-top: 5px;
+  position: relative;
+  color: $colour-red;
+  font-size: 11px;
+  margin: 0.417em 0 0 0;
+  clear: both;
+  display: none;
+  &.quantityErrors {
+    margin-left: 1%;
+    display: block;
+  }
+}
+// Adding home page CSS here - to be removed as soon as page is refreshed and refactored
+// Loads of ugly selectors for just this one page - can't be helped ... my sincerest apologies
+.grid--homepage{
+  @media (min-width: $breakpoint-medium){
+  //  margin-left: -20px;
+  }
+  img{
+    max-width: 100%;
+    width: 100%;
+  }
+}
+.homeNav{
+  font-size: 0;
+  img{
+    height: auto;
+    max-width: 768px;
+    width: 100%;
+  }
+}
+section.contentWrapper{
+  float: left;
+}
+.pageHeader.departmentHeader.one{
+  float: left;
+  .mainHeader{
+    width: 100%;
+    @media (min-width: 768px){
+      float: left;
+      margin: 0 2% 0 0;
+      width: 64.5%;
+    }
+    @media (min-width: 960px){
+      margin: 0 1% 20px 0;
+      width: 50%;
+    }
+  }
+  .mainHeader + .subHeader.mainSubHeader{
+    width: 100%;
+    @media (min-width: 768px){
+      float: left;
+      margin: 13px 0 0;
+      width: 32.5%;
+    }
+    @media (min-width: 960px){
+      margin: 3% 0 0;
+      width: 49%;
+    }
+    a:first-child{
+      display: none;
+      @media (min-width: 960px){
+        display: block;
+        float: left;
+        margin-right: 2%;
+        width: 51%;
+        + .stepsShop{
+          float: left;
+          margin: 0;
+          width: 47%;
+        }
+      }
+      + .stepsShop + a{
+        display: none;
+        @media (min-width: 768px) and (max-width: 959px){
+          display: block;
+        }
+      }
+      + .stepsShop + a ~ a{
+        display: none;
+        font-size: 0;
+        @media (min-width: 768px){
+          display: block;
+        }
+        @media (min-width: 960px){
+          float: left;
+          width: 47%;
+        }
+      }
+    }
+  }
+  .subHeader.subTwo{
+    width: 100%;
+    @media (min-width: 768px){
+      display: none;
+    }
+    .contentBlock{
+      p{
+        margin: 0;
+      }
+    }
+  }
+  .subTwo + .subHeader.mainSubHeader{
+    margin: 0 0 1%;
+    width: 100%;
+    @media (min-width: 768px){
+      display: none;
+    }
+    a{
+      display: block;
+      float: left;
+      width: 50%;
+    }
+  }
+  .subTwo + .subHeader.mainSubHeader + .subHeader{
+    clear: both;
+    padding-top: 16px;
+    width: 100%;
+    @media (min-width: 960px){
+      clear: none;
+      float: left;
+      padding-top: 0.5%;
+      width: 49%;
+    }
+    > a:first-child{
+      display: none;
+      @media (min-width: 768px){
+        display: block;
+        width: 30%;
+      }
+      @media (min-width: 960px){
+        width: 51%;
+      }
+    }
+    > a,
+    .contentBlock{
+      float: left;
+      font-size: 0;
+      width: 100%;
+      @media (min-width: 768px){
+        margin-right: 2%;
+        width: 32.5%;
+      }
+    }
+    .contentBlock{
+      margin-bottom: 2%;
+      @media (min-width: 960px){
+        width: 47%;
+        &:first-of-type{
+          margin-bottom: 0;
+          margin-right: 0;
+        }
+        .hide-on-desktop{
+          display: none;
+        }
+      }
+      + .contentBlock{
+        margin-right: 0;
+        @media (min-width: 960px){
+          margin-top: 2%;
+        }
+      }
+    }
+    .bottom-child{
+      float: left;
+      @media (min-width: 960px){
+        margin-top: 2%;
+      }
+    }
+  }
+}
+.stepsShop{
+  margin-top: 0;
+  img{
+    width: 100%;
+  }
+  a{
+    display: block;
+    float: left;
+    width: 25%;
+  }
+}
+.mainHeader > a + a{display: none}
+
+//Margin for colour swatches - to be removed when wrapping issue is solved and added in there
+.colour-swatch {
+  margin-right:0.25em;
+}
+
+.hidden {
+  display: none;
+}
+
+a.btn--secondary {
+  color: $colour-font-default;
+}
+
+//Panel padding quickfix - will be replaced by box model utils
+.mini-cart__empty-msg, .panel.promo-list__item, .grid__third--large .panel {
+  padding: $gutter-width / 2;
+}
+
+// the following belongs in components as "_purchases.scss" post refactor
+.purchases__header-table {
+  margin: -.2em 0 2em;
+  td {
+    padding: .2em 0;
+  }
+}
+
+.purchases__table {
+  th {
+    width: 100%;
+    border: 0;
+    font-size: .8em;
+    font-weight: normal;
+    &:first-of-type {
+      padding-left: 0;
+    }
+    &:last-of-type {
+      padding-right: 0;
+    }
+    @media (min-width: $breakpoint-small) {
+      font-size: .9em;
+    }
+    @media (min-width: $breakpoint-medium) {
+      font-size: 1em;
+    }
+    @media (min-width: $breakpoint-large) {
+      font-size: 1.2em;
+    }
+  }
+  td {
+    vertical-align: top;
+    padding: .6em 1.2em;
+    &.flush {
+      padding: 0;
+    }
+    &:first-of-type {
+      padding-left: 0;
+    }
+    &:last-of-type {
+      padding-right: 0;
+    }
+  }
+  // remove verbosity on mobile
+  th:nth-child(2n + 3),
+  td:nth-child(2n + 3) {
+    display: none;
+    @media (min-width: $breakpoint-medium) {
+      display: table-cell;
+    }
+  }
+  .arrow-link--forward {
+    height: auto;
+    &:hover {
+      height: auto;
+    }
+  }
+}
+
+.purchases__table-item {
+  width: 45%;
+  figure {
+    float: left;
+    a {
+      margin-right: 12px;
+      img {
+        width: 80px;
+        border-color: inherit;
+      }
+    }
+  }
+}
+
+.purchases__table-button {
+  padding: 0;
+  font-family: $font-default;
+  text-transform: none;
+}
+
+.purchases__table-price--save {
+  line-height: normal;
+}
+
+.purchases__table-foot {
+  td {
+    border: 0;
+    text-align: right;
+    padding: 1.1em 0;
+  }
+  tr:first-of-type td {
+    padding-bottom: .5em;
+  }
+  span {
+    font-family: $font-graphic-600;
+    font-size: 1.6em;
+    padding: 0 0 .3em;
+    border-bottom: 1px solid $colour-grey;
+  }
+}

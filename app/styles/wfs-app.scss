@@ -1,0 +1,239 @@
+@import "base/config";
+@import "components/progress-bar";
+//WFS Application form additions
+.wfs-app{
+  max-width: 820px;
+}
+.wfs-app__logo{
+  color: white;
+  display: inline-block;
+  font-family: $font-graphic-300;
+  font-size: 21px;
+  line-height: 18px;
+  margin-left: 6px;
+  @media (min-width: $breakpoint-medium){
+    margin-top: 9px;
+  }
+}
+//Bespoke list of requirements
+@media (min-width: $breakpoint-medium){
+  .wfs-app__requirements{
+    display: table;
+    margin: 0 0 4em;
+    padding: 0;
+    width: 100%;
+  }
+  .wfs-app__requirement{
+    display: table-cell;
+    text-align: center;
+    &::before{
+      content: "\2022\00a0";
+      display: inline-block;
+      font-size: 1.3em;
+      line-height: 1em;
+      vertical-align: middle;
+    }
+  }
+}
+
+//Silent label as wrapper for images that target the same radio buttons - resets styles and removes pseudo element
+.label--silent{
+  padding: 0;
+  &::before{
+    content: none;
+  }
+}
+
+//Custom widths for WFS app form fields
+ .wfs-app__form-field{
+   max-width: 450px;
+   width: 100%;
+   .wfs-app__form-column &{
+     max-width: 100%;
+   }
+   //Adding some bespoke styling for select
+   .enhanced-select{
+     padding-left: 0.5em;
+   }
+   .enhanced-select__label{
+     color: $colour-grey-dark;
+     font-size: 16px;
+   }
+   //Margin for buttons (because they don't have labels)
+   .btn{
+     margin-top: 2em;
+   }
+ }
+
+//Custom/bespoke divider (<hr>) for WFS application forms
+.wfs-app__divider{
+  border-top-color: $colour-grey;
+  @media (min-width: $breakpoint-medium){
+    margin: 2em 5%;
+  }
+}
+
+//Custom font size for WFS form buttons
+.wfs-app__button-next{
+  font-size: 16px;
+  font-weight: 600;
+}
+
+//Modifications for modal
+.wfs-app__modal{
+  padding: 3em 0;
+}
+.wfs-app__modal-heading{
+  margin-bottom: 0.75em;
+}
+.wfs-app__modal-continue{
+  margin-bottom: 4em;
+  .input--submit{
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+  }
+}
+
+#suburbModal {
+  max-height: 75vh;
+  @media(min-height: $breakpoint-large){
+    max-height: 50vh;
+  }
+}
+
+//WFS details forms columns - used to avoid adding an 11-column grid config or modifying the 2-column grid with a 90px gutter
+.wfs-app__form-column{
+  @media (min-width: $breakpoint-medium){
+    float: left;
+    width: 45%;
+    &:nth-of-type(odd){
+      clear: left;
+      margin-right: 10%;
+    }
+  }
+}
+
+//Headings inside WFS app form leading into enhanced label elements, have too much margin
+.wfs-app__form-subheading{
+  margin-bottom: 0;
+}
+
+//Custom icon for info bubble trigger
+.icon--info-bubble{
+  background-color: black;
+  color: white;
+  font-weight: 900;
+  height: 22px;
+  line-height: 22px;
+  text-align: center;
+  text-indent: 0;
+  width: 22px;
+}
+
+//Info panel/tooltip for now
+.wfs-app{
+  &__field-info{
+    bottom: 0;
+    left: 92%;
+    position: absolute;
+    z-index: 99;
+  }
+  &__info{
+    &-trigger{
+      bottom: 4px;
+      position: absolute;
+    }
+    &-bubble{
+      background-color: #F7F4F4;
+      border-radius: 5px;
+      bottom: 50px;
+      box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+      color: $colour-grey-darkest;
+      padding: 1em;
+      position: absolute;
+      right: -2.5em;
+      width: 12em;
+      &::after{
+        border-color: #F7F4F4 transparent transparent transparent;
+        border-style: solid;
+        border-width: 1.2em;
+        content: "";
+        display: block;
+        height: 0;
+        position: absolute;
+        right: 0.65em;
+        top: 100%;
+        width: 0;
+      }
+      &::before{
+        background: #F7F4F4;
+        box-shadow: -1px 1px 10px 0 rgba(0, 0, 0, 0.5);
+        content: "";
+        display: block;
+        height: 1.6em;
+        position: absolute;
+        right: 1em;
+        top: calc(100% - 0.75em);
+        transform: rotate(-45deg);
+        width: 1.6em;
+        z-index: -1;
+      }
+    }
+  }
+  @media (min-width: $breakpoint-medium){
+    &__field-info{
+      left: 105%;
+    }
+    &__info{
+      &-bubble{
+        left: -5.5em;
+        right: auto;
+        &::after{
+          left: calc(50% - 1em);
+          right: auto;
+        }
+        &::before{
+          left: calc(50% - 0.65em);
+          right: auto;
+        }
+      }
+    }
+  }
+}
+// WFS application outcome screens
+// Choose card element tweaks
+.wfs-app__choose{
+  &-image{
+    @media (max-width: $breakpoint-medium-max){
+      padding-left: 40px;
+    }
+  }
+  &-description{
+    h4{
+      margin-bottom: 0.4em;
+      text-transform: capitalize;
+    }
+    ul{
+      list-style-type: disc;
+      padding-left: 20px;
+    }
+  }
+}
+
+//Bespoke styles to fix specific issues
+//Styles for the wfs ajax spinner
+.wfs-app__form {
+  .btn ~ .loading {
+    bottom: calc(((100% - 24px) / 2) - 10px );
+    left: calc(50% - 10px);
+  }
+}
+
+.page-wfs-app ~ .modal {
+  .modal__close {
+    display: none;
+  }
+  .modal__content {
+    overflow-y: auto;
+  }
+}

@@ -1,0 +1,94 @@
+.wrewards-member-tiers__tier {
+  &:nth-child(1){
+    background: #ccc;
+  }
+  &:nth-child(2){
+    background: #ddd;
+  }
+  &:nth-child(3){
+    background: #eee;
+  }
+}
+
+.btn--gradient-lime {
+  @include linear-gradient(#ccda00, #b0bb00);
+  &:hover {
+    @include linear-gradient(#b0bb00, #ccda00);
+  }
+}
+
+.btn--gradient-blue {
+  @include linear-gradient(#0046ba, #003c9f);
+  &:hover {
+    @include linear-gradient(#003c9f, #0046ba);
+  }
+}
+
+.btn--gradient-purple {
+  @include linear-gradient(#b929b9, #9f23a0);
+  &:hover {
+    @include linear-gradient(#9f23a0, #b929b9);
+  }
+}
+
+.btn--gradient-cyan {
+  @include linear-gradient(#0098cc, #0083af);
+  &:hover {
+    @include linear-gradient(#0083af, #0098cc);
+  }
+}
+
+a.btn--secondary {
+  &.btn--gradient-lime, &.btn--gradient-blue, &.btn--gradient-purple, &.btn--gradient-cyan {
+    color: #fff;
+  }
+}
+
+.btn--gradient-lime, .btn--gradient-blue, .btn--gradient-purple, .btn--gradient-cyan {
+  color: #fff;
+}
+
+.wrewards-member-tiers__tier-header {
+  border: 1px solid $colour-grey;
+  padding: 10px 10px 2.6em 10px;
+  background: #fff;
+}
+
+.wrewards-member-tiers__tier-heading {
+  margin-bottom: 0;
+  font-family:$font-graphic-600;
+}
+
+.wrewards-member-tiers__tier-sub-heading{
+  float: left;
+  color:#7f7f7f;
+}
+
+.wrewards-member-tiers__level-name {
+  font-size: 48.75px;
+  font-family:$font-graphic-700;
+  line-height: 1em;
+  display: block;
+  color: #c7d13c;
+  width: 100%;
+}
+
+.wrewards-member-tiers__tier-body{
+  padding: 0 10px 10px;
+}
+
+@media (min-width:$breakpoint-medium) {
+  .wrewards-member-tiers__tier-body{
+    height: calc(13 * 1.5em);
+  }
+  .wrewards-apply__card-column{
+    min-height:345px;
+    .btn{
+      position: absolute;
+      bottom:0;
+      &:first-of-type{
+        bottom:32px;
+      }
+    }
+  }
+}

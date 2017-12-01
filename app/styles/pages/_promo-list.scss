@@ -1,0 +1,11 @@
+@media (min-width: $breakpoint-small){
+  .promo-list__item {
+    height: 200px;
+  }
+}
+
+@media (min-width: $breakpoint-medium){
+  .promo-list__item {
+    height: 175px;
+  }
+}

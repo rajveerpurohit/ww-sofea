@@ -1,0 +1,28 @@
+$tooltip-pointer-size:8px !default;
+
+.tooltip {
+  display:inline-block;
+  background-color:#000;
+  color:#fff;
+  font-size:12px;
+  padding:0.5em 1em;
+  position:absolute;
+  margin-left:(-$tooltip-pointer-size);
+  opacity:.8;
+  z-index:$z-index-modals;
+  white-space: nowrap;
+}
+
+.tooltip__pointer {
+  display:block;
+  background-color:#000;
+  height:$tooltip-pointer-size;
+  width:$tooltip-pointer-size;
+  position:absolute;
+  z-index:1;
+  pointer-events:none;
+  right:0;
+  top:50%;
+  margin:(-$tooltip-pointer-size/2) (-$tooltip-pointer-size/2) 0 0;
+  @include transform(rotate(45deg));
+}

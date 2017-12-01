@@ -1,0 +1,115 @@
+@mixin button-variant($colour, $background, $border) {
+  &, &:visited {
+    color:$colour;
+    background-color:$background;
+    border-color:$border;
+  }
+}
+
+@mixin btn {
+  cursor:pointer;
+  -webkit-appearance:none;
+  display:inline-block;
+  font-family:$font-graphic-600;
+  font-weight:normal;
+  font-size:12px;
+  text-transform:uppercase;
+  letter-spacing:0.2px;
+  text-decoration:none;
+  outline:none;
+  text-align:center;
+  vertical-align:middle;
+  border:1px solid transparent;
+  border-radius: 0;
+  background:none;
+  padding:8px 10px;
+  width:auto;
+  &:hover {
+    text-decoration:none;
+  }
+  &:active {
+    outline:none;
+  }
+  &.disabled, &[disabled] {
+    cursor:not-allowed;
+    @include button-variant($colour-font-default, $colour-grey-lightest, $colour-grey);
+    opacity:0.5;
+  }
+}
+
+.btn {
+  @include btn;
+}
+
+.btn--primary {
+  @include button-variant(#fff, #151515, #151515);
+  background-image:linear-gradient(to bottom, $colour-grey-darkest, #151515);
+  &:hover {
+    background-image:linear-gradient(to bottom, #151515, $colour-grey-darkest);
+    background-color: $colour-grey-darkest;
+    border-color: $colour-grey-darkest;
+  }
+}
+
+.btn--secondary {
+  @include button-variant($colour-font-default, $colour-grey, $colour-grey);
+  background-image:linear-gradient(to bottom, $colour-grey-lightest, $colour-grey);
+  &:hover {
+    background-image:linear-gradient(to bottom, $colour-grey, $colour-grey-lightest);
+    background-color: $colour-grey-lighter;
+    border-color: $colour-grey-lighter;
+  }
+}
+
+.btn--highlight {
+  @include button-variant($colour-font-default, #94d5f0, #94d5f0);
+  background-image:linear-gradient(to bottom, #94d5f0, #73a5ba);
+  border:none;
+  padding:9px 10px;
+}
+
+.btn--large {
+  font-size:14px;
+}
+
+.btn--block {
+  display:block;
+  width:100%;
+}
+
+.btn--left {
+  text-align: left;
+}
+
+.btn--right:before, .btn--down:before {
+  content:"";
+  display:block;
+  float:right;
+  vertical-align:middle;
+  background-repeat:no-repeat;
+  background-position:center;
+  background-size:auto 100%;
+  margin-left:10px;
+}
+
+.btn--down:before {
+  margin-top:3px;
+}
+
+.btn--align-left {
+  text-align:left;
+}
+
+.btn--silent {
+  text-transform:none;
+  font-family:$font-default;
+  font-weight:400;
+}
+
+.btn--flat {
+  &,
+  &:hover,
+  &:visited {
+    background-image: none;
+  }
+}

@@ -1,0 +1,28 @@
+$blue-print-bg:$colour-blue;
+$blue-print-shadow:rgba(90, 139, 176, 1);
+$blue-print-shadow-end:rgba(90, 139, 176, 0);
+$blue-print-lines:rgba(255, 255, 255, 0.3);
+$blue-print-grid:80px;
+$blue-print-grid-small:10px;
+
+@mixin bluePrint($blue-print-bg, $blue-print-lines, $blue-print-shadow, $blue-print-shadow-end) {
+  background-color:$blue-print-bg;
+  background-image:linear-gradient($blue-print-lines 2px, transparent 2px),
+    linear-gradient(90deg, $blue-print-lines 2px, transparent 2px),
+    linear-gradient($blue-print-lines 1px, transparent 1px),
+    linear-gradient(90deg, $blue-print-lines 1px, transparent 1px);
+    background-size:auto 100%,
+    $blue-print-grid $blue-print-grid,
+    $blue-print-grid $blue-print-grid,
+    $blue-print-grid-small $blue-print-grid-small,
+    $blue-print-grid-small $blue-print-grid-small;
+  background-position:50% 50%,
+  -2px -2px,
+  -2px -2px,
+  -1px -1px,
+  -1px -1px;
+}
+
+.debug-blueprint {
+  @include bluePrint($blue-print-bg, $blue-print-lines, $blue-print-shadow, $blue-print-shadow-end);
+}

@@ -1,0 +1,19 @@
+.wfs-features__block {
+  padding: 10px 0 16px;
+  border-bottom: 1px solid $colour-grey;
+  h3 {
+    margin-bottom: 7px;
+  }
+}
+
+.info-box--grey {
+  background: $colour-grey;
+  padding: .7em;
+}
+
+@media (min-width:$breakpoint-medium){
+  .wfs-features__column:nth-of-type(2) {
+    border-left: 1px solid $colour-grey;
+    padding-left: 20px;
+  }
+}

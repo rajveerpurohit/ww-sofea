@@ -1,0 +1,17 @@
+.icon {
+  display:inline-block;
+  vertical-align:middle;
+  background-repeat:no-repeat;
+  background-position:center;
+  text-align:left;
+  text-indent:-999em;
+  overflow:hidden;
+}
+
+.icon + .icon {
+  margin-left:0.6em;
+}
+
+.icon + .icon-text, .icon-text + .icon {
+  margin-left:0.6em;
+}

@@ -1,0 +1,56 @@
+.block-seo__article--wrewards{
+  padding: 220px 0 0;
+  position: relative;
+  font-family: $font-graphic-500;
+  text-align: center;
+  text-transform: uppercase;
+  * {
+    left: 0;
+    margin: 0;
+    padding: 0 24px;
+    position: absolute;
+    width: 100%;
+  }
+  &.theme-dark{
+    // Outputs .block-seo__article--wrewards.theme-dark
+    background: black;
+    color: white;
+  }
+  // Styles specific to the WRewards SEO block, therefore nested
+  .block-seo__heading{
+    font-size: 20px;
+    line-height: 1;
+    top: 48px;
+    &::first-letter{
+      font-family: $font-graphic-700;
+    }
+  }
+  .block-seo__offer{
+    color: $colour-wrewards-green;
+    font-family: $font-graphic-600;
+    font-size: 30px;
+    line-height: 1.1em;
+    max-height: 2.2em;
+    overflow: hidden;
+    top: 68px;
+  }
+  .block-seo__link{
+    bottom: #{$gutter-width * 2.4};
+    color: white;
+    font-family: $font-graphic-500;
+    left: 0;
+    margin: 0 auto;
+    position: absolute;
+    text-decoration: none;
+    &::after{
+      content: "\203A";
+      color: white;
+      display: inline-block;
+      font-size: 2em;
+      font-family: wfuturasemibold;
+      margin-left: 0.2em;
+      line-height: 0.4em;
+      vertical-align: top;
+    }
+  }
+}

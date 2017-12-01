@@ -1,0 +1,21 @@
+.my-details-section {
+  width: 100%;
+  border-bottom: 1px solid #e6e6e6;
+  .accordion__content {
+    margin-top: 10px;
+  }
+  &__cell {
+    margin-bottom: 6px;
+  }
+  &__form {
+    padding-bottom: 6px;
+    padding-top: 12px;
+  }
+}
+
+.my-details-section__row {
+  border-top: 1px solid #e6e6e6;
+  padding: 6px 0 0;
+  overflow: auto;
+  zoom: 1;
+}

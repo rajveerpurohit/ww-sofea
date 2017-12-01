@@ -1,0 +1,55 @@
+select {
+  -webkit-appearance:menulist;
+}
+
+.enhanced-select {
+  display:inline-block;
+  width:100%;
+  padding:0 25px 0 12px;
+  height:$form-field-height;
+  line-height:$form-field-height;
+  position:relative;
+  background-color:#fff;
+  border:1px solid $colour-grey;
+  color:$colour-font-default;
+  font-size:12px;
+  &:hover, &:focus, &.is-focused {
+    border-color:$colour-grey-dark;
+  }
+  select {
+    @include opacity(0);
+    z-index:10;
+    width:100%;
+    height:$form-field-height;
+    display:block;
+    position:absolute;
+    left:0;
+    top:0;
+    -webkit-appearance:menulist-button;
+    &:disabled {
+      & + .enhanced-select__label {
+        color: #ccc;
+      }
+      & ~ .enhanced-select__icon {
+        display: none;
+      }
+    }
+  }
+}
+
+.enhanced-select__label {
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  padding-right:5px;
+  display:block;
+  text-align:left;
+}
+
+.enhanced-select__icon {
+  display:block;
+  position:absolute;
+  top:0;
+  right:0;
+  z-index:8;
+}

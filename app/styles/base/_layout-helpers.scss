@@ -1,0 +1,88 @@
+html, body {
+  margin:0;
+  padding:0;
+}
+
+hr {
+  display:block;
+  height:1px;
+  border:0;
+  border-top:1px solid #000;
+  margin:1em 0;
+  padding:0;
+  &.hr--light {
+    border-color:$colour-grey;
+  }
+}
+// Centering content and applying a max width
+.content--centered{
+  margin: 0 auto;
+  max-width: 1440px;
+  width: 100%;
+}
+// styles related to product list filter style side navigation in the context of pages e.g. My Account
+.page-layout__content {
+  margin-top:$gutter-width;
+}
+
+// position layout helpers
+.pos {
+  &--rel{
+    position: relative;
+  }
+  &--abs {
+    position: absolute;
+  }
+  //direction modifiers - add other offsets as needed
+  &--top {
+    top: 0;
+    &-sml {
+      top: $gutter-width / 2;
+    }
+    &-med {
+      top: $gutter-width;
+    }
+  }
+  &--right {
+    right: 0;
+    &-sml {
+      right: $gutter-width / 2;
+    }
+    &-med {
+      right: $gutter-width;
+    }
+  }
+  &--bottom {
+    bottom: 0;
+    &-sml {
+      bottom: $gutter-width / 2;
+    }
+    &-med {
+      bottom: $gutter-width;
+    }
+  }
+  &--left {
+    left: 0;
+    &-sml {
+      left: $gutter-width / 2;
+    }
+    &-med {
+      left: $gutter-width;
+    }
+  }
+}
+
+@media (min-width:$breakpoint-medium) {
+  .page-layout__aside {
+    float:left;
+    width:160px;
+  }
+  .page-layout__content {
+    width: calc(100% - 180px);
+    float: right;
+    margin-top: 0;
+    position: relative;
+    display: block;
+    z-index: 10;
+  }
+}

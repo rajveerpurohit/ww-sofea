@@ -1,0 +1,319 @@
+.site-header {
+  background:#000;
+  height: 50px;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width:100%;
+  z-index:$z-index-menus + 20;
+  @media (min-width: $breakpoint-tablet-pt-min){
+    background: #fff;
+    height: 200px;
+    position: relative;
+  }
+  // Outputs .site-header__wfs
+  &__wfs{
+    display: none;
+    @media (min-width: $breakpoint-tablet-pt-min){
+      background: #000;
+      display: block;
+      height: 40px;
+      line-height: 40px;
+      padding: 0 $gutter-width;
+    }
+    @media (min-width: $breakpoint-desktop-min){
+      .content--centered{
+        padding: 0 $gutter-width;
+      }
+    }
+  }
+}
+
+// Top bar/nav
+@media (min-width: $breakpoint-tablet-pt-min){
+  .wfs-nav{
+    color: #fff;
+    &-item{
+      color: inherit;
+      display: inline-block;
+      font-size: 11px;
+      margin: 0 0.5em;
+      text-decoration: none;
+      text-transform: uppercase;
+      .icon{
+        margin-top: -0.2em;
+      }
+    }
+    &--links{
+      .wfs-nav-item:first-of-type{
+        margin-left: 0;
+      }
+    }
+    &--values{
+      .wfs-nav-item:last-of-type{
+        margin-right: 0;
+      }
+    }
+  }
+}
+// Site header wrappers
+.site-header__wrapper{
+  height: 50px;
+  line-height: 50px;
+  vertical-align: middle;
+  @media (min-width: $breakpoint-tablet-pt-min){
+    height: 86px;
+    line-height: 86px;
+  }
+  // Site logo in header
+  // Outputs .site-header__wrapper--logo
+  &--logo{
+    clear: left;
+    float:left;
+    margin-left: $gutter-width;
+    vertical-align: middle;
+    &::after{
+      clear: both;
+      content: "";
+      display: table;
+    }
+  }
+  &--account{
+    float: right;
+    margin-right: $gutter-width;
+    @media (max-width: $breakpoint-tablet-pt){
+      margin-right: 5px;
+    }
+  }
+  &--navigation{
+    @media (min-width: $breakpoint-tablet-pt-min){
+      clear: both;
+      border-bottom: 1px solid $colour-grey;
+      border-top: 1px solid $colour-grey;
+      height: 74px;
+      line-height: 1;
+      margin: 0 $gutter-width;
+      position: relative;
+    }
+  }
+}
+// Site header logo specific
+.site-header__logo {
+  background-image: $logo-sprites;
+  background-position: 0 -100px;
+  display: inline-block;
+  height: 13px;
+  text-indent: -999em;
+  vertical-align: middle;
+  width: 128px;
+  @media (max-width: 345px){
+    background-position: 0 -72px;
+    background-size: 120%;
+  }
+  @media (min-width: $breakpoint-tablet-pt-min){
+    background-position: 0 -125px;
+    height: 22px;
+    width: 210px;
+  }
+}
+
+// .site-header {
+//   .site-header__menu-toggle, .site-header__search-toggle, .site-header__cart-toggle {
+//     margin:5px 0 5px 5px;
+//     background-position:100% 50%;
+//   }
+//   .site-header__search-toggle, .site-header__cart-toggle {
+//     width:35px;
+//     height:25px;
+//     background-size:25px auto;
+//     padding-left:10px;
+//     border-left:1px solid $colour-grey-darkest;
+//   }
+// }
+
+// .site-header__nav, .site-header__cart {
+//   text-align:left;
+//   height:100%;
+//   padding:10px 40px 10px 10px;
+//   position:fixed;
+//   top:0;
+//   z-index:1;
+//   .touchevents & {
+//     overflow-y:scroll;
+//   }
+// }
+
+// .site-header__nav {
+//   width:250px;
+//   left:-250px;
+//   padding-top:52px;
+//   transition:left 0.5s ease;
+//   background:#000;
+//   .site-header__close {
+//     right:10px;
+//     top:12px;
+//   }
+// }
+
+// .site-header__search-fly-out {
+//   position:static;
+// }
+
+// .site-header__search {
+//   width:100vw;
+//   left:0;
+//   padding:20px;
+//   background:rgba(0,0,0,.6);
+// }
+
+// .site-header__cart {
+//   width:260px;
+//   right:-260px;
+//   transition:right 0.5s ease;
+//   background:#fff;
+//   z-index: $z-index-menus + 20;
+//   border-left:1px solid $colour-grey-darkest;
+//   .site-header__close {
+//     left:10px;
+//     top:12px;
+//   }
+// }
+
+// .site-header__close {
+//   position:absolute;
+// }
+
+// .site-header__nav .nav-list--sub {
+//   margin-top:1em;
+//   padding-top:1em;
+//   border-top:1px solid #fff;
+// }
+
+// Toggle menu & cart
+// .menu-open {
+//   .site-header__nav {
+//     left:0;
+//   }
+// }
+// .cart-open {
+//   .site-header__cart {
+//     right:0;
+//   }
+// }
+
+// @keyframes slide-in {
+//   from {width:$header-closed-width;}
+//   to {width:$header-open-width;}
+// }
+
+// @media (max-width:($breakpoint-medium - 0.001em)){
+//   .site-header__search{
+//     height: 100vh;
+//   }
+// }
+
+// @media only screen and (min-width:$breakpoint-medium) {
+//   .site-header {
+//     width:$header-closed-width;
+//     height:100%;
+//     left:0;
+//     top:0;
+//     text-align:left;
+//   }
+//
+//   .site-header__logo {
+//     background-position:0 0;
+//     width:34px;
+//     height:34px;
+//     margin-left:10px;
+//     position:relative;
+//     z-index:100;
+//   }
+//
+//   .site-header {
+//     .site-header__menu-toggle {
+//       margin:-15px 5px 5px;
+//       background-position:center;
+//     }
+//   }
+//
+//   .site-header__menu-toggle {
+//     position:absolute;
+//     z-index:100;
+//     top:50%;
+//     right:-10px;
+//     transform:rotate(-90deg);
+//     background-color:#000;
+//     padding:20px;
+//     border-radius:3px;
+//   }
+//
+//   .site-header__search-toggle, .site-header__cart-toggle {
+//     display:none;
+//   }
+//
+//   .site-header__nav {
+//     width:$header-open-width;
+//   }
+//
+//   .site-header__close {
+//     display:none;
+//   }
+//
+//   .menu-open {
+//     .site-header {
+//       animation:slide-in 0.5s;
+//       width:$header-open-width;
+//     }
+//     .site-header__logo {
+//       background-position:0 -34px;
+//       width:157px;
+//       height:18px;
+//       margin-top:20px;
+//     }
+//   }
+// }
+
+// @media only screen and (min-width:$breakpoint-large) {
+//   html, html.menu-open {
+//     .site-header{
+//       width:210px;
+//     }
+//
+//     .site-header__logo {
+//       background-position:0 -34px;
+//       width:157px;
+//       height:18px;
+//       margin-top:20px;
+//     }
+//
+//     .site-header__nav {
+//       left:0;
+//       padding-right:10px;
+//       width:200px;
+//       padding-bottom: 74px;
+//     }
+//
+//     .site-header__menu-toggle, .site-header__close {
+//       display:none;
+//     }
+//
+//     .site-header-foot__icon-wrap {
+//       padding: 14px;
+//       width: 100%;
+//       position: absolute;
+//       bottom:0;
+//       background:#000;
+//       z-index: 2;
+//       display:block;
+//     }
+//
+//     .site-header-foot__icon {
+//       background-image:$logo-sprite;
+//       background-position:0 0;
+//       width:34px;
+//       height:34px;
+//       display:block;
+//     }
+//   }
+// }

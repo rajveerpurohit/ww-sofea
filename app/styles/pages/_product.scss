@@ -1,0 +1,125 @@
+$product-qty-width:70px;
+
+.product {
+  font-size:12px;
+  max-width:1200px;
+}
+
+.product__title {
+  margin-bottom:0.25em;
+}
+
+.product__brand-logo-link {
+  margin-bottom: 6px;
+  display: block;
+}
+
+.product__brand-logo-link img {
+  display: block;
+}
+
+.product__size-selector {
+  white-space: normal;
+  .nav-list-x__item {
+    margin: 0 3px 3px 0;
+    float: left;
+  }
+}
+
+.product-qty {
+  width:$product-qty-width;
+  float:left;
+}
+
+.product-atc {
+  position:relative;
+  margin-left:$product-qty-width + 5px;
+}
+
+.product-atc__remove {
+  position:absolute;
+  top:0;
+  right:0;
+  font-family:$font-default;
+  font-weight:400;
+  padding-left:5px;
+  padding-right:5px;
+  .icon + .icon, .icon-text + .icon {
+    margin-left:2px;
+  }
+}
+
+.product-atl.product-atl {
+  clear:both;
+  display:block;
+}
+
+.product-atc + .product-atl {
+  padding-top:0.6em;
+}
+
+.pdp__image, .pdp__thumb {
+  text-align:center;
+}
+
+.pdp__image {
+  img {
+    max-height:385px;
+  }
+}
+
+.pdp__thumb {
+  @include opacity(0.7);
+  &:hover, &.is-selected {
+    @include opacity(1);
+  }
+  img {
+    max-height:100px;
+  }
+}
+
+.pdp__atc {
+  padding-top:1em;
+}
+
+.product-size {
+  position:relative;
+  display:inline-block;
+  text-decoration:none;
+  padding:0 10px;
+  height:25px;
+  border:1px solid $colour-grey;
+  text-align:center;
+  line-height:25px;
+  margin-right: 0.25em;
+  &.is-sold-out {
+    cursor:not-allowed;
+    background-color:$colour-grey;
+    color:$colour-grey-dark;
+    &:after {
+      content:"";
+      position:absolute;
+      top:0;
+      left:0;
+      background-position:0 -2px;
+      background-size:101% 27px;
+      background-repeat:no-repeat;
+      @include opacity(0.1);
+    }
+  }
+  &.is-selected {
+    background-color:$colour-grey-darkest;
+    border-color:$colour-grey-darkest;
+    color:#fff;
+  }
+  // Hover fix for colour swatch as sizes which are spans
+  &:hover{
+    cursor: pointer;
+  }
+}
+
+.product__fb-like {
+  display:block;
+  height:20px;
+  margin-top:-4px;
+}

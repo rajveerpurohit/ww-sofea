@@ -1,0 +1,11 @@
+.site-page {
+  padding-top: 50px;
+  @media (min-width: $breakpoint-tablet-pt-min){
+    padding-top: 0;
+  }
+  &::before,
+  &::after {
+    content:"";
+    display:block;
+  }
+}

@@ -1,0 +1,59 @@
+.rotate-banner{
+  height: 0;
+  padding: 0 0 33.3%;
+  position: relative;
+  @media (max-width: $breakpoint-medium-max){
+    padding-bottom: 100%;
+  }
+  &__trigger{
+    opacity: 0;
+  }
+  &__banner{
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    transition: opacity 300ms ease-in;
+    width: 100%;
+    z-index: 0;
+    a{
+      height: 100%;
+      width: 100%;
+    }
+    img{
+      height: 100%;
+      object-fit: cover;
+      width: 100%;
+    }
+    input:checked + &{
+      opacity: 1;
+      z-index: 1;
+    }
+  }
+  &__nav{
+    bottom: 1em;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    z-index: 9;
+    &-item{
+      background: #9b9b9b;
+      border-radius: 50%;
+      display: inline-block;
+      height: 1em;
+      margin: 0 0.25em;
+      opacity: 0.75;
+      overflow: hidden;
+      text-indent: -999em;
+      width: 1em;
+      &:hover{
+        background: #fefefe;
+      }
+      &.banner-is-active{
+        background: #fefefe;
+        opacity: 1;
+      }
+    }
+  }
+}

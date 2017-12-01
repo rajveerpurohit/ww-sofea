@@ -1,0 +1,57 @@
+.progress{
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  &::before{
+    background: $colour-grey;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 18px;
+    position: absolute;
+    right: 18px;
+    top: 17px;
+  }
+}
+
+.progress__step{
+  color: $colour-grey;
+  display: block;
+  position: relative;
+  text-align: center;
+  span{
+    display: inline-block;
+    &.icon{
+      background-color: white;
+    }
+    &.progress__label{
+      display: block;
+      font-weight: 600;
+      line-height: 1em;
+      margin-top: 1em;
+      padding: 0 0.5em;
+      white-space: normal;
+    }
+  }
+  &--current{
+    color: black;
+  }
+  &--complete{
+    color: $colour-wfs-steps-green;
+  }
+}
+//Fallback for lacking flexbox support (IE9)
+.no-flexbox{
+  .progress{
+    display: block;
+    &__step{
+      float: left;
+      width: 25%;
+    }
+    &::after{
+      clear: both;
+      content: "";
+      display: table;
+    }
+  }
+}

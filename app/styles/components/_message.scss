@@ -1,0 +1,28 @@
+.message {
+  margin-bottom: 1em;
+  padding: 10px;
+
+  &--general {
+    background-color: $colour-grey-lightest;
+  }
+  &--info {
+    background-color: $colour-blue;
+  }
+  &--warning {
+    background-color: #ffdea0;
+  }
+  &--error {
+    background-color: #ffa3a3;
+  }
+  &--success {
+    background-color: #33cc99;
+  }
+}
+
+//Closeness qualifier fix
+.message:not(.hidden) ~ .message{
+    display: none;
+}
+.message:not(.hidden) + br{
+    display: none;
+}

@@ -1,0 +1,18 @@
+.price {
+  font-family:$font-graphic-600;
+  font-weight:normal;
+  white-space:nowrap;
+}
+
+.price--original {
+  text-decoration:line-through;
+}
+
+.price--discounted {
+  color:$colour-red;
+}
+
+.currency {
+  display:inline-block;
+  margin-right:3px;
+}

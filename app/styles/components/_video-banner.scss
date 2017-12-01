@@ -1,0 +1,16 @@
+.video-banner{
+  margin: 0 auto;
+  max-width: 768px;
+  position: relative;
+  &__inner{
+    height: 0;
+    padding: 0 0 56.25%;
+    position: relative;
+    width: 100%;
+  }
+  &__frame{
+    height: 100%;
+    position: absolute;
+    width: 100%;
+  }
+}

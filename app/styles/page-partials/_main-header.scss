@@ -1,0 +1,35 @@
+.main-header{
+  
+}
+// .main-header {
+//   // @include gridContainer();
+//   background-color: white;
+//   padding-top:10px;
+//   position:relative;
+//   z-index:$z-index-menus + 10;
+// }
+//
+// .main-header__search {
+//   display:none;
+//   overflow:hidden;
+// }
+//
+// @media only screen and (min-width:$breakpoint-medium) {
+//   .main-header {
+//     margin-left: 54px;
+//     position:fixed;
+//     right: 0;
+//     left: 0;
+//     top: 0;
+//   }
+//   .main-header__search {
+//     display:block;
+//     z-index: 99999;
+//   }
+// }
+//
+// @media only screen and (min-width:$breakpoint-large) {
+//   .main-header {
+//     margin-left: 210px;
+//   }
+// }

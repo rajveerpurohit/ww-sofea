@@ -1,0 +1,37 @@
+@mixin opacity($opacity:0) {
+  $opacityPercent:$opacity * 100;
+  filter:alpha(opacity=$opacityPercent);
+  opacity:$opacity;
+}
+
+@mixin font-weight($weight) {
+  font-weight:$weight;
+  &.font-graphic, .font-graphic &,
+  &.price, .price & {
+    font-weight:normal;
+    @if $weight == 300 {
+      font-family:'wfuturalight';
+    } @else if $weight == 400 {
+      font-family: 'wfutura';
+    } @else if $weight == 500 {
+      font-family: 'wfuturamedium';
+    } @else if $weight == 600 {
+      font-family: 'wfuturasemibold';
+    } @else if $weight == 700 {
+      font-family:'wfuturabold';
+    }
+  }
+}
+
+@mixin linear-gradient($top, $bottom) {
+  background-image: linear-gradient(to bottom, $top 0%, $bottom 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$top}', endColorstr='#{$bottom}',GradientType=0 );
+}
+
+@mixin transform($transform) {
+  -webkit-transform:$transform;
+  -moz-transform:$transform;
+  -ms-transform:$transform;
+  -o-transform:$transform;
+  transform:$transform;
+}

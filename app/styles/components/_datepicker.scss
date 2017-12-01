@@ -1,0 +1,13 @@
+.datepicker-btn {
+  width:32px;
+  height:32px;
+  text-align:center;
+  padding-top:7px;
+  display:block;
+  float:left;
+  margin-left:-32px;
+  pointer-events:none;
+}
+input[type="text"].datepicker-field.datepicker-field, .datepicker-field {
+  float:left;
+}

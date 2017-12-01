@@ -1,0 +1,157 @@
+@mixin gridContainer($max-width:none) {
+  max-width:$max-width;
+  margin-left:auto;
+  margin-right:auto;
+  &:after {
+    content:"";
+    display:block;
+    clear:both;
+  }
+}
+
+@mixin gridColSpan($column-settings, $gutter-setting:$gutter-width) {
+  $column-span: nth($column-settings, 1);
+  $total-columns: nth($column-settings, 3);
+  $total-gutters: ($total-columns - 1);
+  $sibling-gutters: ($column-span - 1);
+  width: calc((((100% - #{($gutter-setting * $total-gutters)} ) / #{$total-columns}) * #{$column-span}) + #{($gutter-setting * $sibling-gutters)});
+  $wrapfix:0px;
+  @if($total-columns == 3){
+    $wrapfix:0.1px;
+    @media screen\0 {
+      width: calc((((100% - #{($gutter-setting * $total-gutters)} ) / #{$total-columns}) * #{$column-span}) + #{($gutter-setting * $sibling-gutters)} - #{$wrapfix});
+    }
+  }
+  float:left;
+  margin-right:$gutter-setting;
+
+  @if ($column-span = 1) {
+    &:nth-of-type(#{$total-columns}n+#{$total-columns}) {
+      margin-right:0;
+      & ~ * {
+        margin-top:$gutter-setting;
+      }
+    }
+    &:nth-of-type(#{$total-columns}n+#{($total-columns + 1)}) {
+      clear:both;
+    }
+  }
+  &:last-child, &--last {
+    margin-right:0;
+  }
+}
+
+@mixin gridStacked($size-modifier) {
+  .grid__half#{$size-modifier},
+  .grid__two-thirds#{$size-modifier},
+  .grid__third#{$size-modifier},
+  .grid__fourth#{$size-modifier},
+  .grid__two-fourths#{$size-modifier},
+  .grid__three-fourths#{$size-modifier} {
+    * + & {
+      margin-top:$gutter-width;
+    }
+  }
+}
+
+@mixin gridBreakpoint($size-modifier) {
+
+  .grid__half#{$size-modifier},
+  .grid__two-thirds#{$size-modifier},
+  .grid__third#{$size-modifier},
+  .grid__fourth#{$size-modifier},
+  .grid__two-fourths#{$size-modifier},
+  .grid__three-fourths#{$size-modifier} {
+    * + & {
+      margin-top:0;
+    }
+  }
+
+  .grid__half#{$size-modifier} {
+    @include gridColSpan(1 of 2);
+  }
+  .grid__two-thirds#{$size-modifier} {
+    @include gridColSpan(2 of 3);
+  }
+  .grid__third#{$size-modifier} {
+    @include gridColSpan(1 of 3);
+  }
+  .grid__fourth#{$size-modifier} {
+    @include gridColSpan(1 of 4);
+  }
+  .grid__two-fourths#{$size-modifier} {
+    @include gridColSpan(2 of 4);
+  }
+  .grid__three-fourths#{$size-modifier} {
+    @include gridColSpan(3 of 4);
+  }
+
+  [class*=grid-visible] {
+    display:none;
+  }
+  [class*=grid-hidden] {
+    display:block;
+  }
+  .grid-visible#{$size-modifier} {
+    display:block !important;
+  }
+  .grid-hidden#{$size-modifier} {
+    display:none !important;
+  }
+  .grid-align-right#{$size-modifier} {
+    text-align:right;
+  }
+} // end @mixin gridBreakpoint
+
+/* ------------ default grid ------------ */
+
+.grid-wrapper {
+  padding:0 $gutter-width;
+}
+
+.grid {
+  @include gridContainer();
+}
+
+.grid--fixed {
+  @include gridContainer($grid-fixed-width);
+}
+
+.grid--space-y {
+  margin-top: $gutter-width;
+}
+
+.grid--tight-y.grid--tight-y{
+  margin-top: 0;
+}
+
+.grid--align-right {
+  text-align:right;
+}
+
+@include gridBreakpoint('');
+@include gridStacked(--small);
+@include gridStacked(--medium);
+@include gridStacked(--large);
+@include gridStacked(--xlarge);
+@include gridStacked(--full);
+
+@media (min-width:$breakpoint-small) {
+  @include gridBreakpoint(--small);
+}
+
+@media (min-width:$breakpoint-medium) {
+  @include gridBreakpoint(--medium);
+}
+
+@media (min-width:$breakpoint-large) {
+  @include gridBreakpoint(--large);
+}
+
+@media (min-width:$breakpoint-xlarge) {
+  @include gridBreakpoint(--xlarge);
+}
+
+@media (min-width:$breakpoint-full) {
+  @include gridBreakpoint(--full);
+}

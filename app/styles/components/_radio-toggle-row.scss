@@ -1,0 +1,10 @@
+.radio-toggle__row{
+  padding: 5px;
+  border-bottom: 1px solid $colour-grey;
+  &:first-child{
+    border-top: 1px solid $colour-grey;
+  }
+  &.is-selected{
+    background-color: $colour-grey;
+  }
+}

@@ -1,0 +1,29 @@
+.block-brand{
+  background: $colour-grey-lightest;
+  transition: background 300ms;
+  &:hover{
+    background: $colour-grey;
+  }
+}
+.block-brand__link{
+  display: block;
+  font-size: 0;
+  margin: 0 auto;
+  max-height: 150px;
+  max-width: 264px;
+  text-align: center;
+}
+.block-brand__logo{
+  width: 100%;
+}
+.block-brand__logo--hover{
+  height: 0;
+}
+.block-brand__link:hover{
+  .block-brand__logo{
+    height: 0;
+  }
+  .block-brand__logo--hover{
+    height: auto;
+  }
+}

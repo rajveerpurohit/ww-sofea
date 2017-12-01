@@ -1,0 +1,31 @@
+.theme{
+  &--light {
+    color: $colour-font-default;
+    background: $colour-grey-lightest;
+  }
+
+  &--light-transparent {
+    color: $colour-font-default;
+    background: rgba($colour-grey-lightest, 0.75);
+  }
+
+  &--medium {
+    color: $colour-font-default;
+    background: $colour-grey;
+  }
+
+  &--dark {
+    color: #fff;
+    background: $colour-anthracite;
+  }
+
+  &--promo-primary{
+    background-color: #fff;
+    color: $colour-red;
+    border-color: $colour-red;
+  }
+}
+
+[class*="theme--"] a {
+    color: inherit;
+}

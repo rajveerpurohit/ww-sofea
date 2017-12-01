@@ -1,0 +1,163 @@
+// having separate file for icon data allows us to make performance tweaks around when/how we load this
+@import "base/config";
+@import "../images/svgcss-brands/brands-svg.data";
+
+// brand styles by brand
+.main-page.ww-brand{
+  // In case we need to tweak .main-page for brand
+}
+.ww-brand--chanel{
+  // In case we need to tweak .main-page for Chanel
+}
+// Custom header styles
+.ww-brand__header-wrap{
+  display: none;
+  //.ww-brand--wbeauty &,
+  .ww-brand--bobbi-brown & {
+    display: block;
+  }
+  .ww-brand--chanel & {
+    display: block;
+  }
+  .ww-brand--clinique & {
+    display: block;
+  }
+  .ww-brand--estee-lauder & {
+    display: block;
+  }
+  .ww-brand--glamglow & {
+    display: block;
+  }
+  .ww-brand--la-mer & {
+    display: block;
+  }
+}
+.ww-brand__header{
+  // Setting a base style that we should override along the line
+  background-color: #000000;
+  padding: 16px 32px;
+  // Setting styles for the span inside to center it by default
+  // Outputs: .ww-brand__header span{...}
+  span{
+    @media (max-width: $breakpoint-medium-max){
+      display: block;
+      margin: 0 auto;
+    }
+  }
+  // Adding brand specific parent selector to this header
+  // Outputs: .ww-brand--brand-name .ww-brand__header
+  // Extending the brand specific icon class to create a background image icon as located in _brands-svg.dada.scss
+  // Outputs: .icon--brand-name, .ww-brand--brand-name .ww-brand__header span
+  .ww-brand--bobbi-brown & {
+    // background-color: #000000; Example of how you could change the background colour of the brand header
+    span{
+      @extend .icon--bobbi-brown;
+    }
+  }
+  .ww-brand--chanel & {
+    span{
+      @extend .icon--chanel;
+    }
+  }
+  .ww-brand--clinique & {
+    span{
+      @extend .icon--clinique;
+    }
+  }
+  .ww-brand--estee-lauder & {
+    span{
+      @extend .icon--estee-lauder;
+    }
+  }
+  .ww-brand--glamglow & {
+    span{
+      @extend .icon--glamglow;
+    }
+  }
+  .ww-brand--la-mer & {
+    span{
+      @extend .icon--la-mer;
+    }
+  }
+  // Outputs: .ww-brand--wbeauty .ww-brand__header
+  /*.ww-brand--wbeauty & {
+    // Outputs: .ww-brand--wbeauty .ww-brand__header
+    background-color: #ffffff;
+    span{
+      @extend .icon--wbeauty;
+    }
+  }*/
+}
+// Hide breadcrumbs for selected brands
+.ww-brand{
+  &--chanel{
+    .product-list__breadcrumb{
+      visibility: hidden;
+    }
+  }
+}
+.ww-brand__size-swatch{
+    margin-right: 5px;
+    text-align: center;
+    font-size: 10px;
+    .colour-swatch {
+      margin-right: 0;
+    }
+    span{
+      display: block;
+    }
+    img.colour-swatch.colour-swatch--large.active{
+      border-color: black;
+      & ~ span{
+        font-weight: 600;
+      }
+    }
+}
+// Regular landing page headers
+.product-detail__grid .heading--sub{
+  // Outputs: .ww-brand--chanel .landing__header
+  // Outputs: .ww-brand--chanel .product-detail__grid .heading--sub for product detail pages
+  .ww-brand--chanel & {
+    span{
+      // Make the spans inside this heading bold again
+      font-weight: 600;
+      // Text case back to upper
+      text-transform: uppercase;
+    }
+  }
+}
+// Chanel landing headers need to be bold
+.ww-brand--chanel .landing__header{
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+}
+// Product card details additions
+.ww-brand .product-card .product-card__details{
+  height: 80px;
+  margin-top: 29px;
+}
+.ww-brand--chanel .product-card__quick{
+  // Hide Quick View on Chanel products on listing pages
+  display: none !important;
+}
+// Product card details
+.product-card__heading{
+  // Don't display unless the brand class exists
+  display: none;
+  .ww-brand & {
+    display: block;
+  }
+  .ww-brand--chanel & {
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+}
+// Hide extra headings in minicart and on PLP
+// Minicart
+.mini-cart__prod{
+  a{
+    span.grid--visible{
+      display: none !important;
+    }
+  }
+}

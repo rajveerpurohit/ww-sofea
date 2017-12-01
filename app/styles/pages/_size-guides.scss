@@ -1,0 +1,22 @@
+.size-guide-measurements{
+	background: $colour-grey-lightest;
+	padding: 15px;
+	float: right;
+	width: calc(33% - 10px);
+}
+
+@media only screen and (max-width: $breakpoint-medium) {
+  .size-guide-measurements {
+    width: auto;
+  }
+}
+
+@media (min-width: $breakpoint-medium) and (max-width: $breakpoint-large) {
+  .size-guide-measurements {
+    width: 100%;
+    img {
+      width: 45%;
+      float: left;
+    }
+  }
+}

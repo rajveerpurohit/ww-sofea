@@ -1,0 +1,92 @@
+@mixin placeholder() {
+  &::-webkit-input-placeholder {@content;}
+  &:-moz-placeholder {@content;}
+  &::-moz-placeholder {@content;}
+  &:-ms-input-placeholder {@content;}
+}
+
+@mixin inputText() {
+  -webkit-appearance:none;
+  font-family:$font-default;
+  font-size:12px;
+  color:$colour-font-default;
+  height:$form-field-height;
+  background-color:#fff;
+  border:$input-border-width solid $colour-grey;
+  border-radius:0;
+  padding:0 $input-x-padding;
+  text-align:left;
+  width:100%;
+  @include placeholder() {
+    color:$colour-grey-dark;
+    font-size:12px;
+  };
+  &:focus, &.is-focused {
+    outline:0;
+    border-color:$colour-grey-dark;
+  }
+}
+
+.input {
+  &--text {
+    @include inputText;
+  }
+  &--submit {
+    @include btn;
+    @include button-variant(#fff, $colour-grey-darkest, $colour-grey-darkest);
+    background-image: linear-gradient(to bottom, $colour-grey-darkest, #151515);
+  }
+}
+
+input {
+  &[type="text"], &[type="password"], &[type="date"], &[type="email"], &[type="search"], &[type="time"], &[type="url"], &[type="tel"] {
+    @include inputText;
+  }
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  display: none;
+}
+
+.label-radio, .label-checkbox {
+  position:relative;
+  display:inline-block;
+  vertical-align:middle;
+  padding-left:1.5em;
+  cursor:pointer;
+  &:before {
+    content:"";
+    display:inline-block;
+    position:absolute;
+    top:50%;
+    left:0;
+    width:1em;
+    height:1em;
+    margin-top:-0.5em;
+  }
+}
+
+.label-checkbox:before {
+  background:#fff;
+  border:1px solid $colour-grey-dark;
+  border-radius:2px;
+}
+
+.label-radio:before {
+  border:1px solid $colour-grey-dark;
+  border-radius:50%;
+}
+
+.label-radio.is-checked:before {
+  background:#000;
+  box-shadow:inset 0 0 0 0.125em #fff;
+}
+
+input[type="checkbox"].is-enhanced, input[type="radio"].is-enhanced {
+  // display none and visibility hidden can affect JS event efficacy, so using opacity instead
+  @include opacity(0);
+  position:absolute;
+}

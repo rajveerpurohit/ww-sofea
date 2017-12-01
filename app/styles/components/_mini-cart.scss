@@ -1,0 +1,109 @@
+// Minicart badge and count
+.badge{
+  &__cart{
+    @media (min-width: $breakpoint-tablet-pt-min){
+      bottom: 0;
+      position: absolute;
+      right: -40px;
+    }
+    &-cart{
+      margin: 0 6px 3px 0;
+    }
+    &-count{
+      background: $colour-red;
+      border: 2px solid white;
+      border-radius: 50%;
+      bottom: -3px;
+      box-sizing: content-box;
+      color: white;
+      display: inline-block;
+      font-size: 11px;
+      font-weight: bold;
+      height: 19px;
+      line-height: 19px;
+      position: absolute;
+      right: -6px;
+      text-align: center;
+      text-decoration: none;
+      vertical-align: middle;
+      width: 19px;
+      @media (max-width: $breakpoint-tablet-pt-max){
+        bottom: 6px;
+        right: -14px;
+        .is-open & {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.mini-cart__contents {
+  background-color: #fff;
+  border: 0 none;
+  box-shadow: none;
+  font-size: 12px;
+  height: calc(100vh - 50px);
+  padding: 0 0.5em 0.5em;
+  position: fixed;
+  right: 0;
+  white-space: normal;
+  width: 100vw;
+  @media (min-width: $breakpoint-tablet-pt-min){
+    border: 1px solid $colour-grey-dark;
+    box-shadow: 2px 6px 6px rgba(0,0,0,0.3),-2px 3px 6px rgba(0,0,0,0.3);
+    height: auto;
+    position: absolute;
+    width: 242px;
+  }
+  &.fly-out__content--right{
+    right: -44px;
+    @media (max-width: $breakpoint-tablet-pt-max){
+      position: fixed;
+      left: auto;
+      right: 0;
+      top: 50px;
+    }
+  }
+}
+.mini-cart__prod.mini-cart__prod {
+  margin:0;
+  padding:1em 0;
+  & + & {
+    border-top:1px solid $colour-grey-light;
+  }
+  .list--silent {
+    margin-bottom:0;
+  }
+  &.slick-slide {
+    height:128px;
+    overflow:hidden;
+  }
+}
+
+.mini-cart .slick-vertical {
+  margin-top:0.5em;
+}
+
+.mini-cart__price {
+  font-weight:700;
+}
+
+.mini-cart__summary {
+  border-top:1px solid $colour-grey-light;
+  padding:10px 0;
+}
+
+.mini-cart__empty-msg {
+  @include font-weight(600);
+  font-size:1rem;
+}
+
+.mini-cart__ctas {
+  @include gridContainer();
+}
+
+.mini-cart__cta {
+  @include gridColSpan(1 of 2, 5px);
+  line-height: 1;
+}

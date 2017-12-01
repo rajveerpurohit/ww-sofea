@@ -1,0 +1,27 @@
+@media (max-width:$breakpoint-medium-max) {
+  .login-register__register-block {
+    .panel-row__item--medium + .panel-row__item--medium {
+      border-top: 1px solid $colour-grey-light;
+      padding-top: $gutter-width;  
+    }
+  }
+}
+@media (min-width:$breakpoint-medium) {
+  .login-register {
+    display: flex;
+    justify-content: space-between;
+    &__login-block {
+      @include gridColSpan(1 of 3);
+    }
+    &__register-block {
+
+      @include gridColSpan(2 of 3);
+      .grid__half--medium {
+        margin-right: 40px;
+      }
+      .panel-row__item--medium + .panel-row__item--medium:before {
+        left: -20px;
+      }
+    }
+  }
+}

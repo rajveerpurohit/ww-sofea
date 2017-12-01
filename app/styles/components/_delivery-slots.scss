@@ -1,0 +1,150 @@
+$delivery-slots-gutter:5px;
+
+.delivery-slots {
+  @include gridContainer();
+  text-align:center;
+  @extend .text-small;
+}
+
+.delivery-slots__slots, .delivery-slots__day {
+  @include gridContainer();
+  margin-top:$delivery-slots-gutter;
+}
+
+.delivery-slots__slot-label, .delivery-slots__day-label, .delivery-slots__day-slot {
+  @include gridColSpan(1 of 4, $delivery-slots-gutter);
+}
+
+.delivery-slots__day-label {
+  padding:1em 0;
+  text-align:left;
+}
+
+.delivery-slots__day-slot {
+  label {
+    cursor:pointer;
+    display:block;
+    padding:1em 0;
+    position:relative;
+  }
+  input[type="radio"] {
+    width:0;
+    padding:0;
+    margin:0;
+    overflow:hidden;
+  }
+}
+
+.delivery-slots__cost {
+  .price {
+    position:relative;
+    z-index:2;
+    pointer-events:none;
+  }
+  &:before {
+    cursor:pointer;
+    content:"";
+    display:block;
+    height:100%;
+    width:100%;
+    position:absolute;
+    left:0;
+    top:0;
+    z-index:1;
+    background-color:$delivery-slots-available;
+  }
+}
+input[type="radio"]:disabled + .delivery-slots__cost {
+  &:before {
+    cursor:not-allowed;
+    background-color:$delivery-slots-unavailable;
+  }
+  .price {
+    visibility: hidden;
+  }
+}
+.delivery-slots__day-slot--not-open input[type="radio"]:disabled + .delivery-slots__cost {
+  &:before {
+    background-color:$delivery-slots-unavailable;
+  }
+  .price {
+    visibility: hidden;
+  }
+}
+input[type="radio"]:checked + .delivery-slots__cost{
+  &::before {
+    background-color:$delivery-slots-selected;
+  }
+  .price{
+    visibility: hidden;
+  }
+}
+input[type="radio"]:checked + .delivery-slots__cost:after {
+  content: "";
+  display:block;
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDIxLjEuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMCIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHdpZHRoPSIxOHB4IiBoZWlnaHQ9IjE0cHgiIHZpZXdCb3g9IjAgMCAxOCAxNCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMTggMTQ7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPHN0eWxlIHR5cGU9InRleHQvY3NzIj4KCS5zdDB7ZmlsbDojRkZGRkZGO30KPC9zdHlsZT4KPHRpdGxlPnRpY2stZ3JleTwvdGl0bGU+CjxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPgo8ZyBpZD0iUGFnZS0xIj4KCTxnIGlkPSJ0aWNrLWdyZXkiPgoJCTxwYXRoIGlkPSJTaGFwZSIgY2xhc3M9InN0MCIgZD0iTTcuNCwxMi43Yy0wLjMsMC4zLTAuNiwwLjMtMC45LDBsLTAuMS0wLjFsMCwwbC0wLjMtMC4zbC0wLjktMC45bDAsMEwxLjIsNy40CgkJCWMtMC4zLTAuMy0wLjMtMC42LDAtMC45bDEuMy0xLjNDMi43LDUsMy4xLDUsMy4zLDUuMkw3LDguOWw3LjYtNy42YzAuMy0wLjMsMC42LTAuMywwLjksMGwxLjMsMS4zYzAuMywwLjMsMC4zLDAuNiwwLDAuOQoJCQlMNy40LDEyLjdMNy40LDEyLjdMNy40LDEyLjd6Ii8+Cgk8L2c+CjwvZz4KPC9zdmc+Cg==');
+  background-repeat: no-repeat;
+  background-position: center;
+  height:100%;
+  width:100%;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+}
+
+.delivery-key {
+  @include gridContainer();
+}
+
+.delivery-key__key {
+  display:inline-block;
+  width:48%;
+  font-size:12px;
+}
+
+.delivery-key__colour {
+  display:inline-block;
+  width:10px;
+  height:10px;
+  margin-right:5px;
+  vertical-align:middle;
+  &--not-open {
+    background-color:$delivery-slots-unavailable;
+  }
+  &--not-available {
+    background-color:$delivery-slots-unavailable;
+  }
+  &--available {
+    background-color:$delivery-slots-available;
+  }
+  &--selected {
+    background-color:$delivery-slots-selected;
+  }
+}
+
+@media (min-width:$breakpoint-medium) {
+  .delivery-slots__slot-label, .delivery-slots__day-label, .delivery-slots__day-slot {
+    @include gridContainer();
+    float:none;
+    width:100%;
+    margin-bottom:$delivery-slots-gutter;
+    text-align:center;
+  }
+  .delivery-slots__slot-label {
+    text-align:left;
+  }
+  .delivery-slots__slots, .delivery-slots__day {
+    @include gridColSpan(1 of 8, $delivery-slots-gutter);
+    margin-top:0;
+  }
+  .delivery-slots__slot-label {
+    padding:1em 0;
+  }
+  .delivery-key {
+    text-align:right;
+  }
+  .delivery-key__key {
+    width:auto;
+    margin-left:20px;
+  }
+}

@@ -1,0 +1,349 @@
+// TWW header
+.tww-header{
+  font-family: $font-graphic-600;
+  height: 48px;
+  text-align: center;
+  text-transform: uppercase;
+  @media (min-width: $breakpoint-medium){
+    height: 56px;
+    text-align: left;
+  }
+}
+.tww-header__content{
+  display: inline-block;
+  font-size: 18px;
+  line-height: 48px;
+  margin: 0 auto;
+  @media (min-width: $breakpoint-medium){
+    font-size: 24px;
+    line-height: 56px;
+    margin: 0;
+  }
+}
+.tww-header__content span{
+  display: inline-block;
+  height: 100%;
+  position: relative;
+  &:first-child{
+    font-family: $font-graphic-300;
+    padding-right: 0.4em;
+    &::after{
+      border-right: 2px solid #000;
+      content: "";
+      display: inline-block;
+      height: 100%;
+      position: absolute;
+      right: 0;
+    }
+  }
+  &:last-child{
+    padding-left: 0.4em;
+  }
+}
+// TWW row
+.landing__row--tww{
+  // This is mainly for the heading borders to not exceed this parent
+  overflow: hidden;
+}
+// TWW basic blocks/columns
+.tww-article{
+  position: relative;
+  text-align: center;
+}
+.tww-article__column{
+  position: relative;
+  &::before{
+    border-top: 1px solid $colour-grey;
+    content: "";
+    display: block;
+    position: absolute;
+    top: 8px;
+    width: 115%;
+  }
+}
+.tww-article__column--featured{
+  @media (min-width: $breakpoint-large){
+    margin-right: 360px;
+  }
+  @media (min-width: $breakpoint-xxxfull){
+    margin-right: 500px;
+  }
+}
+.tww-article__column--popular{
+  @media (min-width: $breakpoint-large){
+    padding: 0 0 0 20px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 340px;
+    &::after{
+      border-left: 1px solid $colour-grey;
+      bottom: 0;
+      content: "";
+      display: block;
+      left: 0;
+      position: absolute;
+      top: 36px;
+    }
+  }
+  @media (min-width: $breakpoint-xxxfull){
+    width: 480px;
+  }
+}
+// TWW article column headings
+.tww-article__column-header{
+  background: white;
+  display: inline-block;
+  font-family: $font-graphic-500;
+  font-size: 18px;
+  font-weight: normal;
+  line-height: 1em;
+  padding: 0 1.25em;
+  position: relative;
+  z-index: 1;
+}
+// TWW Articles --- Article lists
+.tww-article__list{
+  margin: 0;
+}
+// TWW Articles --- Article list items
+.tww-article__list-item{
+  margin: 0 0 40px;
+  position: relative;
+  @media (min-width: $breakpoint-xxlarge){
+    margin: 0;
+  }
+}
+.tww-article__list-item--featured{
+  @media (min-width: $breakpoint-large){
+    height: 100px;
+  }
+  @media (min-width: $breakpoint-xxlarge){
+    height: 290px;
+  }
+  @media (min-width: $breakpoint-xxxfull){
+    height: 380px;
+  }
+}
+.tww-article__list-item--popular{
+  border-bottom: 1px solid $colour-grey;
+  height: 100px;
+  @media (min-width: $breakpoint-large){
+    border-bottom: 0;
+  }
+  @media (min-width: $breakpoint-xxlarge){
+    height: 290px;
+  }
+  @media (min-width: $breakpoint-xxxfull){
+    height: 380px;
+  }
+}
+// TWW Articles --- Article image wrap
+.tww-article__list-item--featured{
+  @media (min-width: $breakpoint-large){
+    &:nth-of-type(2n){
+      .tww-article__image-wrap{
+        right: 0;
+      }
+    }
+  }
+}
+.tww-article__image-wrap--featured{
+  @media (min-width: $breakpoint-large){
+    height: 100px;
+    position: absolute;
+    width: 100px;
+    img{
+      height: 100%;
+      object-fit: cover;
+      width: 100%;
+    }
+  }
+  @media (min-width: $breakpoint-xxlarge){
+    height: 290px;
+    width: 290px;
+  }
+  @media (min-width: $breakpoint-xxxfull){
+    height: 380px;
+    width: 380px;
+  }
+}
+.tww-article__image-wrap--popular{
+  height: 100px;
+  position: absolute;
+  width: 100px;
+  img{
+    height: 100px;
+    object-fit: cover;
+    width: 100%;
+  }
+  @media (min-width: $breakpoint-xxlarge){
+    height: auto;
+    position: static;
+    width: 100%;
+    img{
+      height: auto;
+    }
+  }
+}
+// IE Overrides for object-fit
+.no-object-fit{
+  .tww-article__list-item--featured .tww-article__image-wrap{
+    @media (min-width: $breakpoint-large){
+      overflow: hidden;
+      img{
+        margin-left: -40%;
+        width: auto !important;
+      }
+    }
+  }
+  .tww-article__list-item--popular .tww-article__image-wrap{
+    overflow: hidden;
+    img{
+      margin-left: -40%;
+      width: auto !important;
+      @media (min-width: $breakpoint-xxlarge){
+        margin-left: 0;
+        width: 100% !important;
+      }
+    }
+  }
+}
+// TWW Articles --- Article content wrap
+.tww-article__content-wrap--featured{
+  @media (min-width: $breakpoint-large){
+    height: 100%;
+    margin: 0 0 0 116px;
+    text-align: left;
+    &::before{
+      content: "";
+      display: inline-block;
+      height: 100%;
+      margin-left: -0.3em;
+      vertical-align: middle;
+      width: 0.001px;
+    }
+  }
+  @media (min-width: $breakpoint-xxlarge){
+    margin: 0 0 0 340px;
+  }
+  @media (min-width: $breakpoint-xxxfull){
+    margin: 0 0 0 430px;
+  }
+}
+.tww-article__content-wrap--popular{
+  height: 100%;
+  margin: 0 0 0 116px;
+  text-align: left;
+  &::before{
+    content: "";
+    display: inline-block;
+    height: 100%;
+    margin-left: -0.3em;
+    vertical-align: middle;
+  }
+  @media (min-width: $breakpoint-xxlarge){
+    height: auto;
+    margin: 0;
+    text-align: center;
+    &::before{
+      content: none;
+    }
+  }
+}
+.tww-article__list-item--featured{
+  &:nth-of-type(2n){
+    .tww-article__content-wrap{
+      @media (min-width: $breakpoint-large){
+        margin: 0 116px 0 0;
+        text-align: right;
+      }
+      @media (min-width: $breakpoint-xxlarge){
+        margin: 0 340px 0 0;
+      }
+      @media (min-width: $breakpoint-xxxfull){
+        margin: 0 430px 0 0;
+      }
+    }
+  }
+}
+// TWW Articles --- Article content wrap inner
+.tww-article__content-wrap-inner--featured{
+  @media (min-width: $breakpoint-large){
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+.tww-article__content-wrap-inner--popular{
+  display: inline-block;
+  max-height: 6em;
+  overflow: hidden;
+  vertical-align: middle;
+}
+// TWW Articles --- Article content heading
+.tww-article__content-heading{
+  font-family: $font-graphic-500;
+  font-size: 27px;
+  font-weight: normal;
+  line-height: 1.2em;
+  margin: 1em 0 0.5em;
+  text-transform: uppercase;
+}
+.tww-article__content-heading--featured{
+  &:first-child{
+    @media (max-width: $breakpoint-large-max){
+      margin-top: 1em;
+    }
+  }
+  @media (min-width: $breakpoint-large){
+    font-family: $font-graphic-600;
+    font-size: 16px;
+    margin: 0;
+  }
+  @media (min-width: $breakpoint-xxlarge){
+    font-size: 38px;
+    line-height: 0.85em;
+    margin: 0 0 0.5em;
+  }
+}
+.tww-article__content-heading--popular{
+  font-family: $font-graphic-600;
+  font-size: 16px;
+  margin: 0;
+  @media (min-width: $breakpoint-xxlarge){
+    &:first-child{
+      margin-top: 1em;
+    }
+  }
+}
+// TWW Articles --- Article content text
+.tww-article__content-text{
+  font-family: $font-graphic-500;
+  font-size: 18px;
+  line-height: 1.2em;
+  margin: 0;
+}
+.tww-article__content-text--featured{
+  @media (min-width: $breakpoint-large){
+    font-size: 16px;
+  }
+  @media (min-width: $breakpoint-xxlarge){
+    font-size: 18px;
+  }
+}
+.tww-article__content-text--popular{
+  font-size: 16px;
+}
+// TWW Articles --- Article list item link
+// Raising specificity a little because IE and :visited
+a.tww-article__list-item-link{
+  background: rgba(0,0,0,0.001);
+  color: rgba(0,0,0,0);
+  display: block;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 99;
+}

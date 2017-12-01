@@ -1,0 +1,187 @@
+/* ---------- inline utility classes ----------- */
+// Block utilities using new breakpoints
+[class*="block-hidden"]{
+  display: none;
+}
+.block-hidden{
+  &--mobi-min{
+    @media (max-width: $breakpoint-tablet-pt){
+      display: block;
+    }
+  }
+  &--mobi-max{
+    @media (min-width: $breakpoint-tablet-pt-max){
+      display: block;
+    }
+  }
+}
+// Inline display utilities
+[class*=inline-visible] {
+  display:none;
+}
+
+@media (min-width:$breakpoint-small) {
+  .inline-visible--small {
+    display:inline;
+  }
+}
+@media (min-width:$breakpoint-medium) {
+  .inline-visible--medium {
+    display:inline;
+  }
+}
+@media (min-width:$breakpoint-large) {
+  .inline-visible--large {
+    display:inline;
+  }
+}
+@media (min-width:$breakpoint-xlarge) {
+  .inline-visible--xlarge {
+    display:inline;
+  }
+}
+@media (min-width:$breakpoint-full) {
+  .inline-visible--full {
+    display:inline;
+  }
+}
+// Inline-block utilities
+.display-inline-block {
+  display: inline-block;
+}
+// Inline-block utilities using new breakpoints
+[class*="inline-block-hidden"]{
+  display: none;
+}
+.inline-block-hidden{
+  &--mobi-max{
+    @media (min-width: $breakpoint-tablet-pt-max){
+      display: inline-block;
+    }
+  }
+}
+[class*="inline-block-visible"]{
+  display: inline-block;
+}
+.inline-block-visible{
+  &--mobi-max{
+    @media (min-width: $breakpoint-tablet-pt-max){
+      display: none;
+    }
+  }
+}
+
+.touchevents .touch-hidden, .no-touchevents .no-touch-hidden {
+  display:none;
+}
+
+.float-r{
+  float: right;
+  &--small{
+    @media (min-width:$breakpoint-small) {
+      float: right;
+    }
+  }
+  &--medium {
+    @media (min-width:$breakpoint-medium) {
+      float: right;
+    }
+  }
+  &--large {
+    @media (min-width:$breakpoint-large) {
+      float: right;
+    }
+  }
+}
+
+.float-l{
+  float:left;
+}
+
+.wrap {
+  white-space:normal;
+}
+
+.border {
+  //border thickness
+  &--weight-thin {
+    border: 1px solid;
+  }
+  &--weight-medium {
+    border: 3px solid;
+  }
+  &--weight-thick {
+    border: 5px solid;
+  }
+  &--weight-xthick {
+    border: 10px solid;
+  }
+
+  //border colour/tone
+  &--colour-white {
+    border-color: #fff;
+  }
+  &--colour-grey-light {
+    border-color: $colour-grey-lightest;
+  }
+  &--colour-grey {
+    border-color: $colour-grey;
+  }
+  &--colour-grey-dark {
+    border-color: $colour-grey-dark;
+  }
+  &--colour-black {
+    border-color: #000;
+  }
+}
+
+// accessible text - screen reader only
+.sr {
+  position:absolute;
+  left:-100vw;
+  top:auto;
+  width:1px;
+  height:1px;
+  overflow:hidden;
+}
+
+.circle {
+  border-radius: 50%;
+}
+
+.flush {
+  margin: 0;
+  padding: 0;
+  &-m {
+    margin: 0;
+  }
+  &-p {
+    padding: 0;
+  }
+}
+
+@mixin flexBreakpoint($size-modifier) {
+  .flex#{$size-modifier} {
+    display: flex;
+  }
+}
+
+@media (min-width:$breakpoint-small) {
+  @include flexBreakpoint(--small);
+}
+
+@media (min-width:$breakpoint-medium) {
+  @include flexBreakpoint(--medium);
+}
+
+@media (min-width:$breakpoint-large) {
+  @include flexBreakpoint(--large);
+}
+
+@media (min-width:$breakpoint-xlarge) {
+  @include flexBreakpoint(--xlarge);
+}
+
+@media (min-width:$breakpoint-full) {
+  @include flexBreakpoint(--full);
+}

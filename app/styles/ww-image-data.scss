@@ -1,0 +1,4 @@
+// having separate file for icon data allows us to make performance tweaks around when/how we load this
+@import "base/config";
+@import url("/images/svgcss/svg.data");
+@import "components/icon-extensions";

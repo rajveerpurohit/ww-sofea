@@ -1,0 +1,48 @@
+.checkout-footer {
+  width: 100%;
+  background: $colour-font-default;
+  clear: both;
+  padding: 0;
+  margin-top: 40px;
+  overflow: hidden;
+  font-size: 0.875em;
+  position: relative;
+  &__nav {
+    white-space: normal;
+    margin: 1em 0;
+    padding-left: 0;    
+    li {
+      width: 100%;
+      line-height: 1em;
+      text-align: left;
+      a {
+        color: $colour-grey-lighter;
+        font-size: 0.875em;
+        white-space: normal;
+        padding: 0.25em 1em;
+        display: block;
+      }
+    }
+  }
+}
+@media (min-width:$breakpoint-large) {
+  .checkout-footer {
+    padding: 15px 10%;
+    &__nav {
+      line-height: 2.5em;
+      margin: 0;
+      display: flex;
+      li {
+        text-align: center;
+        margin-left: 0;
+        vertical-align: top;
+        &:last-child{
+          padding-right: 0;
+        }
+        a {
+          padding: 0;
+        }
+      }
+    }
+  }
+}

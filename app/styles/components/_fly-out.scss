@@ -1,0 +1,108 @@
+@mixin flyOutStyles() {
+  position:relative;
+  z-index:$z-index-fly-outs;
+  display:inline-block;
+  .enhanced-select__label {
+    line-height:28px;
+  }
+  &.is-disabled {
+    .enhanced-select__label {
+      color: $colour-grey-dark;
+      cursor:not-allowed;
+    }
+    .enhanced-select {
+      border-color: $colour-grey;
+    }
+    .enhanced-select__icon {
+      display: none;
+    }
+  }
+  .fly-out__toggle {
+    cursor:pointer;
+  }
+  .fly-out__content {
+    position:absolute;
+    display:none;
+    left:0;
+  }
+  .fly-out__content--chrome {
+    background:#fff;
+    border:1px solid $colour-grey;
+    border-top:0;
+    width:100%;
+    padding:1em;
+    font-weight:700;
+    .nav-list__item + .nav-list__item {
+      margin-top:1em;
+    }
+  }
+  .fly-out__content--right {
+    left:auto;
+    right:0;
+  }
+  &.is-open {
+    z-index:$z-index-fly-outs + 1;
+    > .fly-out__content {
+      display:block;
+      z-index:$z-index-fly-outs + 2;
+      // Fixing mini-cart position
+      &.mini-cart__contents{
+        top: 50px;
+        @media (min-width: $breakpoint-tablet-pt-min){
+          top: 60px;
+        }
+      }
+    }
+  }
+}
+
+.fly-out {
+  @include flyOutStyles();
+}
+
+@mixin fly-out--toggle-overlay() {
+  .fly-out__toggle {
+    z-index:$z-index-fly-outs + 3;
+  }
+  .fly-out__content {
+    z-index:$z-index-fly-outs + 2;
+    top:-1em;
+    left:-1em;
+    padding:60px 1em 1em;
+    background-color:#fff;
+    border:1px solid #000;
+    font-weight:700;
+    .nav-list__item + .nav-list__item {
+      margin-top:1.5em;
+    }
+  }
+}
+
+.fly-out--toggle-overlay {
+  @include fly-out--toggle-overlay();
+}
+
+@media (min-width:$breakpoint-medium) {
+  .fly-out--min-medium {
+    @include flyOutStyles();
+  }
+  .fly-out--toggle-overlay-medium {
+    @include fly-out--toggle-overlay();
+  }
+}
+
+.fly-out--annotation {
+  &.pos--abs {
+    position: absolute;
+  }
+}
+.fly-out__content--annotation {
+  width: 180px;
+  padding: $gutter-width / 2;
+  top: $gutter-width * 1.5;
+}
+
+.fly-out__toggle .circle {
+  width: $gutter-width;
+  height: $gutter-width;
+}
