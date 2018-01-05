@@ -1,40 +1,28 @@
 import React from 'react';
 import { Link } from 'react-router';
 
+import Image from '../../basic/Image';
+
 const ImageBanner = ({contentData}) => {
+    const imageData = {
+                            url: contentData.media.uri,
+                            alt: contentData.media.uri,
+                            className: 'landing__image lazyloaded '
+                        };
 
-    let type = "@type";
-
-    const withLink = (contentData) => {
-         if(contentData[type] === "FreeDeliveryMessageImageBanner"){
+    const withLink = () => {
             return (
-                <Link className={`landing__link ${contentData.imageCSS}`} to={contentData.link.path} key={contentData.key}>
-                    <img className={`landing__image lazyloaded `} src={`${contentData.atgUrl}images/elasticera/content/landing_pages/home/${contentData.media.uri}`} />
-                </Link>
-            )
-        } else {
-            return (
-                <Link className={`landing__link ${contentData.imageCSS}`} to={contentData.link.path} key={contentData.key}>
-                    <img className={`landing__image lazyloaded `} src={`${contentData.atgUrl}${contentData.media.uri}`} />
-                </Link>
-            )
-        }
-        
-    }
+              <Link className={`landing__link ${contentData.imageCSS}`} to={contentData.link.path} key={contentData.key}>
+                <Image payload={imageData} />
+              </Link>
+            );
+    };
     const withoutLink = () => {
-        
-        if(contentData[type] === "FreeDeliveryMessageImageBanner"){
-            return <img className={`landing__image lazyloaded `} src={`${contentData.atgUrl}images/elasticera/content/landing_pages/home/${contentData.media.uri}`} key={contentData.key}/>
-        } else {
-            return <img className={`landing__image lazyloaded `} src={`${contentData.atgUrl}${contentData.media.uri}`} key={contentData.key}/>
-        }
-
-    }
+            return <Image payload={imageData} key={contentData.key} />;
+    };
 
     return (
-        contentData.link.path ? withLink(contentData) : withoutLink()
-    )
-}
+        contentData.link.path ? withLink() : withoutLink()
+    );
+};
 export default ImageBanner;
-
-//grid-visible--medium   style={{width:`${contentData.media.contentWidth}px`, height:`${contentData.media.contentHeight}px`}}

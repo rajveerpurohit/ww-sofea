@@ -1,0 +1,25 @@
+{
+  "apps": [{
+    "exec_mode": "fork_mode",
+    "name": "ww-EA",
+    "script": "compiled/server.js",
+    "watch": "enabled",
+    "env_dev": {
+      "APP_ENV": "ENV_DEV",
+      "MODE": "production",
+      "NODE_ENV": "production"
+    },
+    "env_sit": {
+      "APP_ENV": "ENV_SIT",
+      "MODE": "production",
+      "NODE_ENV": "production"
+    },
+    "env_uat"	: {
+      "APP_ENV": "ENV_UAT",
+      "MODE": "production",
+      "NODE_ENV": "production"
+    },
+    "error_file": "./logs/pm2/ww-EA-error.log",
+    "out_file": "./logs/pm2/ww-EA-out.log"
+  }]
+}

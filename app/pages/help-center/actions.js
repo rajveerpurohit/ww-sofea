@@ -4,9 +4,6 @@ import {serverUrls} from '../../../server/controllers/apiAggregatorEndPoints';
 
 polyfill();
 
-/*
- * CONSTANTS
-*/
 export const GET_HELP_JSON_SUCCESS = 'GET_HELP_JSON_SUCCESS';
 export const GET_HELP_FAILURE = 'GET_HELP_FAILURE';
 
@@ -23,10 +20,11 @@ export const helpFailureAction = () => {
   };
 };
 
-export const getHelpAction = () => {
+export const getHelpAction = (reqHeaders) => {
+
   return (dispatch) => {
-    return ServiceUtil.triggerServerRequest({url: serverUrls.helpcenter}).then((value) => {
-        dispatch(helpSuccessAction({data: value.body}))
+    return ServiceUtil.triggerServerRequest({headers: reqHeaders, url: serverUrls.helpcenter}).then((value) => {
+        dispatch(helpSuccessAction({data: value.body}));
     });
   };
 };

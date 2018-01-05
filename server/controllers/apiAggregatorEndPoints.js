@@ -1,29 +1,43 @@
 const endpoints = {
   megamenu: '/headers/megamenu',
-  utilitylink: '/headers/utilitylinks',
+  // utilitylink: '/headers/utilitylinks',
   logo: '/headers/headerlogo',
   profilestatus: '/customer/profilestatus',
-  login: '/currentUser/login',
-  currentUser: '/currentUser',
-  logout: '/currentUser/logout',
-  regions: '/regions',
+  labels: '/static/content/labels',
+  cartdetails: '/cart/cartdetails',
   cart: '/cart/',
   footer: '/footers',
-  //aboutUs: '/static/aboutus',
-  //faqs: '/static/faqs',
+  // aboutUs: '/static/aboutus',
+  // faqs: '/static/faqs',
   contactUs: '/footers/contactus',
-  helpcenter : '/footers/gethelpdetails',
+  contactInfo: '/footers/contactinfo',
+  helpcenter: '/footers/gethelpdetails',
   newsandpress: '/static/newsandpress',
   termsAndConditions: '/static/termsandconditions',
   usingWoolworthsOnline: '/static/usingwoolworthsonline',
   home: '/static/content/home',
+  landingpages: '/static/content/landingpages',
   woolWorthOnline: '/footers/getwoolworthsonline',
-  safenseure : '/footers/getsafesecuredetails',
-  aboutUs : '/footers/getaboutusdetails',
+  safenseure: '/footers/getsafesecuredetails',
+  aboutUs: '/footers/getaboutusdetails',
   faq: '/footers/getfaqdetails',
-  topHeader : '/headers/utilitylinks',
-  pressnews : '/footers/getnewsandpress',
-  footerterms : '/footers/gettermsandconditions'
+  faqDetails: '/static/content/staticPage/faqs',
+  leftnav: '/static/content/staticPage/leftNav',
+  topheader: '/headers/utilitylinks',
+  pressnews: '/footers/getnewsandpress',
+  footerterms: '/footers/gettermsandconditions',
+  region: '/regions',
+  corporateSales: '/footers/getcorporatesalesdetails',
+  suburb: '/regions/suburb',
+  search: '/search/typeahedsearch',
+  getConfNumber: '/token',
+  login: '/currentUser/login',
+  currentUser: '/currentUser',
+  logout: '/currentUser/logout',
+  leftNav: '/static/content/staticPage/leftNav',
+  storelocatorByGeoLocation:  '/storelocator/locatestorebylocation', 
+  storelocatorByArea: '/storelocator/'
+
 };
 
 const cachedEndpointsArray = [ // Response for these APIs will be cached by AKAMAI
@@ -45,11 +59,11 @@ const urls = {};
 const localesEAEndpointMap = {};
 for (const endpt in endpoints) {
   if (cachedEndpointsArray.indexOf(endpt) !== -1) {
-    urls[endpt] = cachedPrefix + "/" + endpt;
-    localesEAEndpointMap[endpt] = '/*' + cachedPrefix + "/" + endpt;
+    urls[endpt] = cachedPrefix + '/' + endpt;
+    localesEAEndpointMap[endpt] = '/*' + cachedPrefix + '/' + endpt;
   } else {
-    urls[endpt] = prefix + "/" + endpt;
-    localesEAEndpointMap[endpt] = '/*' + prefix + "/" + endpt;
+    urls[endpt] = prefix + '/' + endpt;
+    localesEAEndpointMap[endpt] = '/*' + prefix + '/' + endpt;
   }
 }
 

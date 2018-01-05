@@ -196,14 +196,15 @@ const ServiceUtil = {
     // if (typeof options.params !== "undefined") {
     //   options.params = ServiceUtil.sanitizeParams(options.params);
     // }
+
     const localPath = localeInfoUtil.getLocaleContextPath();
-    if (!localPath) {
+
+    if (!localPath && typeof window === 'undefined') {
       const endpointURL = options.url.split('/');
-      options.url = API_AGGRIGATOR_URL + '/api/' + endpoints[endpointURL[endpointURL.length - 1]];
+      options.url = API_AGGRIGATOR_URL + '/api' + endpoints[endpointURL[endpointURL.length - 1]];
     } else {
-      options.url = localPath + options.url;
+      options.url = window.location.origin + options.url;
     }
-    // loggerHandler.debug({ req: options }, ':::::ServiceUtil Triggering Server request', options.url);
     return new Promise((resolve, reject) => {
       const config = {
         method: 'GET',
@@ -215,6 +216,7 @@ const ServiceUtil = {
       if (!options.headers) {
         delete options.headers;
       }
+
       Object.assign(config, options);
       axios(config)
         .then((response) => {
@@ -238,7 +240,6 @@ const ServiceUtil = {
             body: response.error
           });
         }, (e) => {
-          // loggerHandler.error({ req: config, err: e }, 'ServiceUtil Server request error: ', e);
           if (e.status) {
             return reject({
               body: e.data.error

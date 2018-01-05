@@ -5,54 +5,37 @@ import axios from 'axios';
 import { Link } from 'react-router';
 import {bindActionCreators} from 'redux';
 import {getPressNews} from './actions';
-
+import SideBarComponent  from '../../components/basic/SideBarContent';
+import Panels from '../../components/basic/panels';
 class PressNews extends Component {
   static need = [
     getPressNews
   ];
   constructor(props) {
     super(props);
-    // this.state = {
-    //   panelData : []
-    // }
+
     this.primeComponent = this.primeComponent.bind(this);
     this.secondaryComponent = this.secondaryComponent.bind(this);
-    this.panelSection = this.panelSection.bind(this);
+  
   }
   componentDidMount(){
-    console.log("this----"+this.props.panelData);
-    // axios.get("http://172.21.40.151:8180/public/v1/common/jsonContent/newsandpress") 
-    //   .then((response)=>{
-    //     this.setState({
-    //       panelData : response.data.newsandpress.NewsAndPress
-    //     });
-    // });
   }
-  panelSection(getPanelData){
-    const createPanels = getPanelData.panels;
-    return createPanels.map((item,index)=>{
-      return  (
-        <section className="panel panel--padded grid__third--medium" key={index}>
-          <h2 className="heading heading--3 text-caps font-graphic">{item.panelHeading}</h2> 
-          <a href={item.panelContent.url} className="btn btn--secondary btn--right btn--block btn--align-left btn--block">{item.panelContent.displayName}<span />	</a> 
-        </section>);
-    });  
-  }
+ 
   secondaryComponent(){
     return(
-      <div className="grid grid--space-y">
+      
         <div className="grid">
           <header> 
           </header> 
           <div className="grid">
-             <img className=" img-fill-responsive" alt="Placeholder" src={this.props.panelData.imageUrl} /> 
+             <img className=" img-fill-responsive" alt="Placeholder" src={this.props.panelData ? this.props.panelData.imageUrl : ""} /> 
           </div>
           <p className="text-intro" /> 
           <article className="grid grid--space-y">
-            {this.props.panelData  ? this.panelSection(this.props.panelData) : null}
+            {this.props.panelData  ?  <Panels panelData = {this.props.panelData} /> : null}
           </article>	
         </div>	
-      </div>
+      
     )
   }
   primeComponent(){
@@ -61,7 +44,12 @@ class PressNews extends Component {
       <div className="main-page "> 	
         <nav className="breadCrumbs empty" />
         <div className="grid page-layout">
-          	{this.secondaryComponent()}
+        <div className="page-layout__aside">     
+             { this.props.contentAside && <SideBarComponent leftData={this.props.contentAside}/>}
+         </div>
+         <div className ="page-layout__content">
+            {this.secondaryComponent()}
+         </div>   
         </div>	
       </div>
     </main>
@@ -77,12 +65,9 @@ class PressNews extends Component {
 }
 const mapStateToProps = (state) => {
   return {
-    panelData : state.pressNewsReducer.pressNewsData
+    panelData : state.pressNewsReducer.pressNewsData,
+    contentAside : state.pressNewsReducer.contentAside,
     };
 };
-
-// const matchDispatchToProps = (dispatch) => {
-//   return bindActionCreators({getUsingWoolworthsOnline}, dispatch);
-// };
 
 export default connect(mapStateToProps)(PressNews);

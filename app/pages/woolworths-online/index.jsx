@@ -6,6 +6,8 @@ import axios from 'axios';
 import {bindActionCreators} from 'redux';
 import { Link } from 'react-router';
 import {getUsingWoolworthsOnline} from './action';
+import SideBarComponent from '../../components/basic/SideBarContent';
+import Panels from '../../components/basic/panels';
 
 class WoolworthsOnline extends Component {
   static need = [
@@ -15,52 +17,46 @@ class WoolworthsOnline extends Component {
     super(props);
     this.primeComponent = this.primeComponent.bind(this);
     this.secondaryComponent = this.secondaryComponent.bind(this);
-    this.panelSection = this.panelSection.bind(this);
   }
-  componentDidMount(){
-    console.log("@@@@@@@@@@@@@@@@@@@@", this.props);
+  componentDidMount() {
+
   }
-  panelSection(getPanelData){
-    const createPanels = getPanelData.panels;
-    return createPanels.map((item,index)=>{
-      return  (
-        <section className="panel panel--padded grid__third--medium" key={index}>
-          <h2 className="heading heading--3 text-caps font-graphic">{item.panelHeading}</h2>
-          <Link to={item.panelContent.url} className="btn btn--secondary btn--right btn--block btn--align-left btn--block">{item.panelContent.displayName}</Link>
-        </section>);
-    });
-    
-  }
-  secondaryComponent(){
-    return(
-      <div className="grid grid--space-y">
+  secondaryComponent() {
+    return (
+
       <div className="grid">
-         <header> 
-        </header> 
+        <header />
         <div className="grid">
-          <img className=" img-fill-responsive" alt="Placeholder" src={this.props.woolData.woolworthsOnline.imageUrl} />
+          <img className=" img-fill-responsive" alt="Placeholder" src={this.props.woolData.woolworthsOnline ? this.props.woolData.woolworthsOnline.imageUrl : ''} />
         </div>
-       
-        <p className="text-intro" />              
+
+        <p className="text-intro" />
         <article className="grid grid--space-y">
-           {this.props.woolData.woolworthsOnline.panels ? this.panelSection(this.props.woolData.woolworthsOnline) : null}
-        </article>                
-      </div>	
-    </div>
+          {this.props.woolData.woolworthsOnline ? <Panels panelData={this.props.woolData.woolworthsOnline} /> : null}
+
+        </article>
+
+      </div>
     );
   }
-  primeComponent(){
-    return(
+  primeComponent() {
+    return (
       <main className="grid grid--space-y site-main">
-      <div className="main-page ">
-        
-        <nav className="breadCrumbs empty" />
-       
-        <div className="grid page-layout">
-        	{this.secondaryComponent()}
-        </div>	
-      </div>
-    </main>
+        <div className="main-page ">
+
+          <nav className="breadCrumbs empty" />
+
+          <div className="grid page-layout">
+            <div className="page-layout__aside">
+              { this.props.contentAside && <SideBarComponent leftData={this.props.contentAside} />}
+            </div>
+            <div className="page-layout__content">
+              {this.secondaryComponent()}
+            </div>
+
+          </div>
+        </div>
+      </main>
     );
   }
   render() {
@@ -73,12 +69,9 @@ class WoolworthsOnline extends Component {
 }
 const mapStateToProps = (state) => {
   return {
-    woolData : state.woolOnline
+    woolData: state.woolOnline,
+    contentAside: state.woolOnline.contentAside
     };
 };
-
-// const matchDispatchToProps = (dispatch) => {
-//   return bindActionCreators({getUsingWoolworthsOnline}, dispatch);
-// };
 
 export default connect(mapStateToProps)(WoolworthsOnline);

@@ -27,14 +27,3 @@ export const footerJSONFailureAction = () => {
     type: GET_FOOTER_DATA_FAILURE
   };
 };
-
-export const getFooterData = (reqHeaders) => {
-  return (dispatch) => {
-    return ServiceUtil.triggerServerRequest({ headers: reqHeaders, url: serverUrls.footer}).then((value) => {
-      return Promise.all([
-        dispatch(footerJSONSuccessAction({data: value.body}))
-        ]);
-    });
-  };
-};
-

@@ -4,9 +4,6 @@ import {serverUrls} from '../../../server/controllers/apiAggregatorEndPoints';
 
 polyfill();
 
-/*
- * CONSTANTS
-*/
 export const GET_TERMSNCODITIONS_JSON_SUCCESS = 'GET_TERMSNCODITIONS_JSON_SUCCESS';
 export const GET_TERMSNCODITIONS_FAILURE = 'GET_PRESSNEWS_FAILURE';
 

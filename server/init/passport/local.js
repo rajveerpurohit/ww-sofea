@@ -9,7 +9,7 @@ import unsupportedMessage from '../../db/unsupportedMessage';
 
 export default (passport) => {
   if (!dbPassport || !dbPassport.local || !typeof dbPassport.local === 'function') {
-    console.warn(unsupportedMessage('passport-local'));
+    // console.warn(unsupportedMessage('passport-local'));
     return;
   }
 

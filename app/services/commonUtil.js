@@ -220,7 +220,7 @@ const CommonUtil = {
    * @return {[type]}             [description]
    */
   updatePageTitle(titleString, noCaseChange) {
-    titleString = titleString || 'Michael Kors';
+    titleString = titleString || 'Woolworths';
     if (typeof document !== 'undefined') {
       if (noCaseChange) {
         document.title = titleString;

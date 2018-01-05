@@ -1,23 +1,24 @@
-import { apiEndpoint } from '../../config/app';
+import { apiEndpoint, API_AGGRIGATOR_URL } from '../../config/app';
 import createRestApiClient from '../utils/createRestApiClient';
 import * as qs from 'qs';
-import  { user } from './api.js';
+import ServiceUtil from './serviceUtil';
+import {serverUrls} from '../../server/controllers/apiAggregatorEndPoints';
 
 export default () => {
-  const client = createRestApiClient().withConfig({ baseURL: apiEndpoint, withCredentials: true});
+  const client = createRestApiClient().withConfig({ baseURL: API_AGGRIGATOR_URL, withCredentials: true});
   return {
     login: ({ login, password }) => {
         const grant_type = 'password';
-        return client.request({
+        return ServiceUtil.triggerServerRequest({
         method: 'POST',
-        url: user.login,
-        headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-        data: qs.stringify({
+        url: serverUrls.login,
+        headers: {'Content-Type': 'application/json'},
+        data: {
           login,
           password,
           grant_type
-        })
-      })
+        }
+      });
     },
     signUp: ({ email, password }) => client.request({
       method: 'POST',
@@ -27,15 +28,14 @@ export default () => {
         password
       }
     }),
-    logOut: () => client.request({
+    logOut: () => ServiceUtil.triggerServerRequest({
       method: 'POST',
-      url: user.logout
+      url: serverUrls.logout
     }),
     isLoggedIn: () => {
-      return client.request({
-        method: 'GET',
-        url: user.currentUser
-      })
+      return ServiceUtil.triggerServerRequest({
+        url: serverUrls.currentUser
+      });
     }
   };
 };

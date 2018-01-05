@@ -11,36 +11,15 @@ class SafeAndSecure extends Component {
   constructor(props) {
 
     super(props);
-    // this.state = {
-    //   secureData : [],
-    //   contentAside : [],
-    //   moreOnPayments : [],
-    //   moreOnThis : [],
-    //   startshop : [],
-    //   customerService : [],
-    //   // leftData : []
-    // }
+
     this.primaryComponent = this.primaryComponent.bind(this);
     this.pageContent = this.pageContent.bind(this);
-    //this.contentAside = this.contentAside.bind(this);
+  
     this.paymentInfo = this.paymentInfo.bind(this);
     this.threeDSecure  = this.threeDSecure.bind(this);
-    //this.generateLi = this.generateLi.bind(this);
+    
   }
   componentDidMount(){
-    console.log("safesecure", this.props);
-    // axios.get("http://172.21.40.151:8180/public/v1/common/jsonContent/secure") 
-    //   .then((response)=>{
-    //     this.setState({
-    //       secureData : response.data.secure.SHOPONLINESAFELYWITHWOOLIES,
-    //        contentAside : response.data.secure.LeftNav,
-    //       moreOnPayments : response.data.secure.MOREONPAYMENTS,
-    //       moreOnThis : response.data.secure.MOREONTHIS,
-    //       startshop : response.data.secure.STARTSHOPPING,
-    //       customerService : response.data.secure.CustomerServiceMessage,
-    //       // leftData : response.data.secure.LeftNav
-    //     });
-    // });
   }
   primaryComponent(){
     return(
@@ -48,7 +27,6 @@ class SafeAndSecure extends Component {
       <nav className="breadCrumbs empty" />
       <div className="grid page-layout">
          <div className="page-layout__aside">     
-              {/* {this.contentAside()}   */}
              { this.props.contentAside && <SideBarComponent leftData={this.props.contentAside}/>}
          </div>
          {this.pageContent()}
@@ -56,28 +34,7 @@ class SafeAndSecure extends Component {
    </div>
     );
   }
-  // contentAside(){
-  //   return(
-  //     <nav className="subCategoryNav toggled ">
-  //     <div className="accordion accordion--chrome accordion--group" data-js="accordion" data-accordion-start="open-single" data-accordion-type="open-single" data-accordion-animated="true" data-accordion-active="true">
-  //        <div className="accordion__segment accordion__segment--chrome" data-js="accordion-segment">
-  //           <div className="accordion__toggle accordion__toggle--chrome accordion__toggle--line heading heading--4" data-js="accordion-toggle">Help</div>
-  //           <ul className="list--silent text-small accordion__content--chrome accordion__content accordion__content--animated" data-js="accordion-content" style={{height: 156}}>
-  //           {this.state.leftData.Help && this.generateLi(this.state.leftData.Help)}
-  //           </ul> 
-  //        </div>
-  //     </div>
-  //  </nav>
-  //   );
-  // }
-  // generateLi(generateData){
-  //   return generateData.map((item,index)=>{
-  //     return(
-  //       <li className="active"><Link to={item.url} className="nav-list__link--filter">{item.displayName}</Link></li>
-  //     );
-  //   });
-    
-  // }
+  
   pageContent(){
     return(
       <div className="page-layout__content">
@@ -158,10 +115,6 @@ const mapStateToProps = (state) => {
     customerService : state.secureReducer.secureData.CustomerServiceMessage
     };
 };
-
-// const matchDispatchToProps = (dispatch) => {
-//   return bindActionCreators({getUsingWoolworthsOnline}, dispatch);
-// };
 
 export default connect(mapStateToProps)(SafeAndSecure);
 

@@ -5,6 +5,8 @@ import axios from 'axios';
 import { Link } from 'react-router';
 import {bindActionCreators} from 'redux';
 import {getTermsNCondtions} from './actions';
+import SideBarComponent  from '../../components/basic/SideBarContent';
+import Panels from '../../components/basic/panels';
 
 class TermsConditions extends Component {
   static need = [
@@ -12,35 +14,18 @@ class TermsConditions extends Component {
   ];
   constructor(props) {
     super(props);
-    // this.state = {
-    //   termsData : []
-    // }
+
     this.primeComponent = this.primeComponent.bind(this);
     this.secondaryComponent =this.secondaryComponent.bind(this);
-    this.panelSection = this.panelSection.bind(this);
-  }
-  componentDidMount(){
-    // axios.get("http://172.21.40.151:8180/public/v1/common/jsonContent/termsandconditions") 
-    //   .then((response)=>{
-    //     this.setState({
-    //         termsData : response.data.termsandconditions.Legal
-    //     });
-    // });
-  }
-  panelSection(getPanelData){
-    const createPanels = getPanelData.panels;
-    return createPanels.map((item,index)=>{
-      return  (
-        <section className="panel panel--padded grid__third--medium" key={index}>
-          <h2 className="heading heading--3 text-caps font-graphic">{item.panelHeading}</h2> 
-          <Link to={item.panelContent.url} className="btn btn--secondary btn--right btn--block btn--align-left btn--block">{item.panelContent.displayName}</Link>
-        </section>);
-    });
     
   }
+  componentDidMount(){
+ 
+  }
+
   secondaryComponent(){
     return(
-      <div className="grid grid--space-y">
+      
         <div className="grid">
           <header> 
           </header> 
@@ -51,11 +36,11 @@ class TermsConditions extends Component {
           <p className="text-intro" />
         
           <article className="grid grid--space-y">
-            {this.props.termsData.panels ? this.panelSection(this.props.termsData) : null}
+            {this.props.termsData.panels ? <Panels panelData = {this.props.termsData} /> : null}
           </article>	
           
         </div>	
-      </div>
+      
     );
   }
   primeComponent(){
@@ -66,7 +51,12 @@ class TermsConditions extends Component {
           <nav className="breadCrumbs empty" />
          
           <div className="grid page-layout">
-            {this.secondaryComponent()}
+          <div className="page-layout__aside">     
+             { this.props.contentAside && <SideBarComponent leftData={this.props.contentAside}/>}
+         </div>
+            <div className ="page-layout__content">
+              {this.secondaryComponent()}
+            </div>   
           </div>	
         </div>
       </main>
@@ -82,12 +72,9 @@ class TermsConditions extends Component {
 }
 const mapStateToProps = (state) => {
   return {
-    termsData : state.footerTermsdReducer.termsData
+    termsData : state.footerTermsdReducer.termsData,
+    contentAside : state.footerTermsdReducer.contentAside,
     };
 };
-
-// const matchDispatchToProps = (dispatch) => {
-//   return bindActionCreators({getUsingWoolworthsOnline}, dispatch);
-// };
 
 export default connect(mapStateToProps)(TermsConditions);

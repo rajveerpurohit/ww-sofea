@@ -21,7 +21,7 @@ export default () => {
 
     passport.deserializeUser(dbPassport.deserializeUser);
   } else {
-    console.warn(unsupportedMessage('(de)serialize User'));
+    // console.warn(unsupportedMessage('(de)serialize User'));
   }
 
   // use the following strategies

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
+import { Link } from 'react-router';
 
 
 export default class SizeGuide extends Component {
@@ -19,58 +20,58 @@ export default class SizeGuide extends Component {
               <div className="grid grid--space-y">
                 <ul className="nav-list nav-list--tabbed nav-list--tabbed-boxed">
                   <li className="nav-list__item nav-list__item--tabbed nav-list__item--tabbed-boxed">
-                    <a href="#woolworths" className="nav-list__link nav-list__link--tabbed nav-list__link--tabbed-boxed is-current">
+                    <Link to="#woolworths" className="nav-list__link nav-list__link--tabbed nav-list__link--tabbed-boxed is-current">
                       Woolworths
-                    </a>
+                    </Link>
                   </li>
                   <li className="nav-list__item nav-list__item--tabbed nav-list__item--tabbed-boxed">
-                    <a href="#country-road" className="nav-list__link nav-list__link--tabbed nav-list__link--tabbed-boxed">
+                    <Link to="#country-road" className="nav-list__link nav-list__link--tabbed nav-list__link--tabbed-boxed">
                       Country Road
-                    </a>
+                    </Link>
                   </li>
                   <li className="nav-list__item nav-list__item--tabbed nav-list__item--tabbed-boxed">
-                    <a href="#trenery" className="nav-list__link nav-list__link--tabbed nav-list__link--tabbed-boxed">
+                    <Link to="#trenery" className="nav-list__link nav-list__link--tabbed nav-list__link--tabbed-boxed">
                       Trenery
-                    </a>
+                    </Link>
                   </li>
                   <li className="nav-list__item nav-list__item--tabbed nav-list__item--tabbed-boxed">
-                    <a href="#witchery" className="nav-list__link nav-list__link--tabbed nav-list__link--tabbed-boxed">
+                    <Link to="#witchery" className="nav-list__link nav-list__link--tabbed nav-list__link--tabbed-boxed">
                       Witchery
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </div>
               <div className="grid grid--space-y">
                 <ul className="nav-list nav-list--tabbed nav-list--tabbed-underlined">
                   <li className="nav-list__item nav-list__item--tabbed nav-list__item--tabbed-underlined">
-                    <a href="#men" className="nav-list__link nav-list__link--tabbed nav-list__link--tabbed-underlined is-current">
+                    <Link to="#men" className="nav-list__link nav-list__link--tabbed nav-list__link--tabbed-underlined is-current">
                       Men
-                    </a>
+                    </Link>
                   </li>
                   <li className="nav-list__item nav-list__item--tabbed nav-list__item--tabbed-underlined">
-                    <a href="#women" className="nav-list__link nav-list__link--tabbed nav-list__link--tabbed-underlined">
+                    <Link to="#women" className="nav-list__link nav-list__link--tabbed nav-list__link--tabbed-underlined">
                       Women
-                    </a>
+                    </Link>
                   </li>
                   <li className="nav-list__item nav-list__item--tabbed nav-list__item--tabbed-underlined">
-                    <a href="#boys" className="nav-list__link nav-list__link--tabbed nav-list__link--tabbed-underlined">
+                    <Link to="#boys" className="nav-list__link nav-list__link--tabbed nav-list__link--tabbed-underlined">
                       Boys
-                    </a>
+                    </Link>
                   </li>
                   <li className="nav-list__item nav-list__item--tabbed nav-list__item--tabbed-underlined">
-                    <a href="#girls" className="nav-list__link nav-list__link--tabbed nav-list__link--tabbed-underlined">
+                    <Link to="#girls" className="nav-list__link nav-list__link--tabbed nav-list__link--tabbed-underlined">
                       Girls
-                    </a>
+                    </Link>
                   </li>
                   <li className="nav-list__item nav-list__item--tabbed nav-list__item--tabbed-underlined">
-                    <a href="#baby" className="nav-list__link nav-list__link--tabbed nav-list__link--tabbed-underlined">
+                    <Link to="#baby" className="nav-list__link nav-list__link--tabbed nav-list__link--tabbed-underlined">
                       Baby
-                    </a>
+                    </Link>
                   </li>
                   <li className="nav-list__item nav-list__item--tabbed nav-list__item--tabbed-underlined">
-                    <a href="#homeware" className="nav-list__link nav-list__link--tabbed nav-list__link--tabbed-underlined">
+                    <Link to="#homeware" className="nav-list__link nav-list__link--tabbed nav-list__link--tabbed-underlined">
                       Homeware
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </div>
@@ -603,42 +604,42 @@ export default class SizeGuide extends Component {
         <footer className="grid grid--space-y site-footer content--centered">
           <div className="grid">
             <div className="accordion__segment site-footer__link-bucket link-bucket--logo">
-              <a href="#" className="site-header-foot__icon" />
+              <Link to="" className="site-header-foot__icon" />
             </div>
             <div className="accordion__segment site-footer__link-bucket">
               <div className="heading heading--3 site-footer__heading">
-                <a href="#">Join WRewards</a>
+                <Link to="">Join WRewards</Link>
               </div>
               <div className="accordion__content">
                 <div className="footer__box footer__box--promo">
-                  <a href="#">
+                  <Link to="">
                     <span className="footer__box__heading text-wfs font-graphic text-caps">Extra 5% off</span>
                     <span className="footer__box__text font-graphic text-caps">Selected items when you pay
                       <br />with your Woolies card.</span>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
             <div className="accordion__segment site-footer__link-bucket">
               <div className="heading heading--3 site-footer__heading">
-                <a href="#">Get the card</a>
+                <Link to="">Get the card</Link>
               </div>
               <div className="accordion__content">
-                <a href="#">
+                <Link to="">
                   <div className="footer__box footer__box--img-link-row">
                     <img src="/store/assets/images/content/footer/card-credit.png" alt="Credit card" />
                     <img src="/store/assets/images/content/footer/card-store.png" alt="Store card" />
                     <img src="/store/assets/images/content/footer/card-loan.png" alt="Revolving loan" />
                   </div>
-                </a>
+                </Link>
               </div>
             </div>
             <div className="accordion__segment site-footer__link-bucket">
               <div className="heading heading--3 site-footer__heading">
-                <a href="#">Give a gift card</a>
+                <Link to="">Give a gift card</Link>
               </div>
               <div className="accordion__content">
-                <a href="#">
+                <Link to="">
                   <div className="footer__box footer__box--img-link-row">
                     <img src="/store/assets/images/content/footer/card-gift-1.png" alt="Gift voucher" />
                     <img src="/store/assets/images/content/footer/card-gift-2.png" alt="Gift voucher" />
@@ -646,21 +647,21 @@ export default class SizeGuide extends Component {
                     <img src="/store/assets/images/content/footer/card-gift-4.png" alt="Gift voucher" />
                     <img src="/store/assets/images/content/footer/card-gift-5.png" alt="Gift voucher" />
                   </div>
-                </a>
+                </Link>
               </div>
             </div>
             <div className="accordion__segment site-footer__link-bucket">
               <div className="heading heading--3 site-footer__heading">
-                <a href="#">Get the new Woolies app</a>
+                <Link to="">Get the new Woolies app</Link>
               </div>
               <div className="accordion__content">
                 <div className="footer__box footer__box--img-link-row">
-                  <a href="#">
+                  <Link to="">
                     <img src="/store/assets/images/content/footer/store-app.png" alt="Download on the App Store" />
-                  </a>
-                  <a href="#">
+                  </Link>
+                  <Link to="">
                     <img src="/store/assets/images/content/footer/store-play.png" alt="Get it on Google Play" />
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -677,19 +678,19 @@ export default class SizeGuide extends Component {
                 <div className="footer__box">
                   <ul className="nav-list">
                     <li className="nav-list__item">
-                      <a href="#" className="nav-list__link">Login/Register</a>
+                      <Link to="" className="nav-list__link">Login/Register</Link>
                     </li>
                     <li className="nav-list__item">
-                      <a href="#" className="nav-list__link">Orders</a>
+                      <Link to="" className="nav-list__link">Orders</Link>
                     </li>
                     <li className="nav-list__item">
-                      <a href="#" className="nav-list__link">Shopping Lists</a>
+                      <Link to="" className="nav-list__link">Shopping Lists</Link>
                     </li>
                     <li className="nav-list__item">
-                      <a href="#" className="nav-list__link">Account details</a>
+                      <Link to="" className="nav-list__link">Account details</Link>
                     </li>
                     <li className="nav-list__item">
-                      <a href="#" className="nav-list__link">Link a card</a>
+                      <Link to="" className="nav-list__link">Link a card</Link>
                     </li>
                   </ul>
                 </div>
@@ -703,19 +704,19 @@ export default class SizeGuide extends Component {
                 <div className="footer__box">
                   <ul className="nav-list">
                     <li className="nav-list__item">
-                      <a href="#" className="nav-list__link">Help Center</a>
+                      <Link to="" className="nav-list__link">Help Center</Link>
                     </li>
                     <li className="nav-list__item">
-                      <a href="#" className="nav-list__link">Contact Us</a>
+                      <Link to="" className="nav-list__link">Contact Us</Link>
                     </li>
                     <li className="nav-list__item">
-                      <a href="#" className="nav-list__link">Using Woolworths Online</a>
+                      <Link to="" className="nav-list__link">Using Woolworths Online</Link>
                     </li>
                     <li className="nav-list__item">
-                      <a href="#" className="nav-list__link">Delivery Options</a>
+                      <Link to="" className="nav-list__link">Delivery Options</Link>
                     </li>
                     <li className="nav-list__item">
-                      <a href="#" className="nav-list__link">Returns &amp; Exchanges</a>
+                      <Link to="" className="nav-list__link">Returns &amp; Exchanges</Link>
                     </li>
                   </ul>
                 </div>
@@ -729,19 +730,19 @@ export default class SizeGuide extends Component {
                 <div className="footer__box">
                   <ul className="nav-list">
                     <li className="nav-list__item">
-                      <a href="#" className="nav-list__link">Store Locator</a>
+                      <Link to="" className="nav-list__link">Store Locator</Link>
                     </li>
                     <li className="nav-list__item">
-                      <a href="#" className="nav-list__link">About Us</a>
+                      <Link to="" className="nav-list__link">About Us</Link>
                     </li>
                     <li className="nav-list__item">
-                      <a href="#" className="nav-list__link">Careers</a>
+                      <Link to="" className="nav-list__link">Careers</Link>
                     </li>
                     <li className="nav-list__item">
-                      <a href="#" className="nav-list__link">Press &amp; News</a>
+                      <Link to="" className="nav-list__link">Press &amp; News</Link>
                     </li>
                     <li className="nav-list__item">
-                      <a href="#" className="nav-list__link">Sustainability</a>
+                      <Link to="" className="nav-list__link">Sustainability</Link>
                     </li>
                   </ul>
                 </div>
@@ -751,47 +752,47 @@ export default class SizeGuide extends Component {
               <div className="heading heading--3 site-footer__heading">Follow us on</div>
               <div className="accordion__content accordion__content--animated">
                 <div className="footer__box">
-                  <a className="social-icon__link" href="#">
+                  <Link className="social-icon__link" to="">
                     <span className="icon icon--facebook-dark" />
                     <span className="inline-block-hidden--mobi-max">Facebook</span>
-                  </a>
-                  <a className="social-icon__link" href="#">
+                  </Link>
+                  <Link className="social-icon__link" to="">
                     <span className="icon icon--twitter-dark" />
                     <span className="inline-block-hidden--mobi-max">Twitter</span>
-                  </a>
-                  <a className="social-icon__link" href="#">
+                  </Link>
+                  <Link className="social-icon__link" to="">
                     <span className="icon icon--pinterest-dark" />
                     <span className="inline-block-hidden--mobi-max">Pinterest</span>
-                  </a>
-                  <a className="social-icon__link" href="#">
+                  </Link>
+                  <Link className="social-icon__link" to="">
                     <span className="icon icon--instagram-dark" />
                     <span className="inline-block-hidden--mobi-max">Instagram</span>
-                  </a>
-                  <a className="social-icon__link" href="#">
+                  </Link>
+                  <Link className="social-icon__link" to="">
                     <span className="icon icon--youtube-dark" />
                     <span className="inline-block-hidden--mobi-max">YouTube</span>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
           </div>
           <div className="grid footer__end">
             <div className="grid__half--large">
-              <a href="/store/fragments/corporate/corporate-index.jsp?content=corporate-content&contentId=cmp208720" className="display-inline-block" style={{marginRight: 24}}>
+              <Link to="/store/fragments/corporate/corporate-index.jsp?content=corporate-content&contentId=cmp208720" className="display-inline-block" style={{marginRight: 24}}>
                 <img src="/store/assets/images/content/footer/100-secure.png" alt="100% Secure" />
-              </a>
+              </Link>
               <img src="/store/assets/images/content/footer/payments.png" alt="Secure Payments" />
             </div>
             <div className="grid__half--large">
               <p>
                 <span className="text-part">© 2017 Woolworths. All Rights Reserved.</span>
-                <a href="/store/fragments/corporate/corporate-index.jsp?content=corporate-landing&contentId=fol110048" className="text-part">Terms and Conditions</a>
-                <a href="/store/fragments/corporate/corporate-index.jsp?content=corporate-content&contentId=cmp205289" className="text-part">Privacy Policy</a>
+                <Link to="/store/fragments/corporate/corporate-index.jsp?content=corporate-landing&contentId=fol110048" className="text-part">Terms and Conditions</Link>
+                <Link to="/store/fragments/corporate/corporate-index.jsp?content=corporate-content&contentId=cmp205289" className="text-part">Privacy Policy</Link>
               </p>
             </div>
           </div>
         </footer>
-        <link href="/store/assets/css/ww-image-data.css" rel="stylesheet" type="text/css" property="stylesheet" />
+        <link to="/store/assets/css/ww-image-data.css" rel="stylesheet" type="text/css" property="stylesheet" />
       </div> 
          
         

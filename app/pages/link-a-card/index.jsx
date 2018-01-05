@@ -16,7 +16,7 @@ export default class LinkCard extends Component {
         <div className="main-page ">
          
           <nav className="breadcrumb empty" />
-          <input type="hidden" defaultValue="http://www.woolworths.co.za/store/cat/_/N-nmexhj" id="referer_url" />
+          <input type="hidden" defaultValue="#" id="referer_url" />
           <div className="grid grid--space-y page-layout">
            
             <div className="page-layout__aside">

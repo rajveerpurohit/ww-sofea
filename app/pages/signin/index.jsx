@@ -1,15 +1,31 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
-import SignIn from '../../containers/signin';
 
-const SignInPage = () => (
-   <main className="site-main grid">
-		<div className="grid grid--space-y">
-			<article className="checkout">
-				<SignIn />
-			</article>
-		</div>
-	</main>
-);
+import SignIn from '../../components/compound/signin';
 
-export default SignInPage;
+class SignInPage extends Component {
+
+
+	render() {
+		return (
+  <main className="site-main grid">
+    <div className="grid grid--space-y">
+    <article className="checkout">
+    <SignIn labels={this.props.labels} />
+  </article>
+  </div>
+  </main>
+		);
+	}
+}
+
+const mapStateToProps = (state) => {
+	if (state.labels.labels.myAccount) {
+		return {
+			labels: state.labels.labels.myAccount
+		};
+	}
+  
+};
+export default connect(mapStateToProps)(SignInPage);
+

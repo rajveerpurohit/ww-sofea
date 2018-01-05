@@ -3,7 +3,9 @@ import {
   GET_MEGANAV_JSON_SUCCESS,
   GET_MEGANAV_DATA_FAILURE,
   GET_LOGO_JSON_SUCCESS,
-  GET_LOGO_DATA_FAILURE
+  GET_LOGO_DATA_FAILURE,
+  GET_MINI_CART_JSON_SUCCESS,
+  GET_MINI_CART_DATA_FAILURE
 } from './actions';
 
 
@@ -36,10 +38,25 @@ const logoReducer = (state = {
       return state;
   }
 };
+const miniCartReducer = (state = {
+}, action) => {
+  switch (action.type) {
+    case GET_MINI_CART_JSON_SUCCESS:
+      return Object.assign({}, state, {miniCartData: action.data.data});
+    case GET_MINI_CART_DATA_FAILURE:
+      return Object.assign({}, state, {
+        isFetching: false
+      });
+    default:
+      return state;
+  }
+}
+
 
 const headerReducer = combineReducers({
   meganavReducer,
-  logoReducer
+  logoReducer,
+  miniCartReducer
 });
 
 export default headerReducer;

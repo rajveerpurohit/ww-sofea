@@ -90,7 +90,6 @@ module.exports = (env = {}) => {
   const prodConfig = isBrowser ? prodBrowserRender : prodServerRender;
   const devConfig = isBrowser ? devBrowserRender : devServerRender;
   const configuration = isProduction ? prodConfig : devConfig;
-  console.log("configuration--------", configuration.devtool)
 
   return configuration;
 };

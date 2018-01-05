@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
+import { Link } from 'react-router';
 
 export default class WoolStoreCard extends Component {
   constructor(props) {
@@ -18,36 +19,36 @@ export default class WoolStoreCard extends Component {
                   <h4 className="text-caps accordion__toggle--chrome accordion__toggle--line accordion__toggle" data-js="accordion-toggle">Store Card:</h4>
                   <ul className="list--silent text-small accordion__content--chrome accordion__content" data-js="accordion-content">
                     <li>
-                      <a href="#" className="nav-list__link--filter">
+                      <Link to="" className="nav-list__link--filter">
                         <strong>Features &amp; Benefits</strong>
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a href="#" className="nav-list__link--filter"> Pricing</a>
+                      <Link to="" className="nav-list__link--filter"> Pricing</Link>
                     </li>
                     <li>
-                      <a href="#" className="nav-list__link--filter"> Terms &amp; Conditions</a>
+                      <Link to="" className="nav-list__link--filter"> Terms &amp; Conditions</Link>
                     </li>
                     <li>
-                      <a href="#" className="nav-list__link--filter"> Apply Now</a>
+                      <Link to="" className="nav-list__link--filter"> Apply Now</Link>
                     </li>
                     <li>
-                      <a href="#" className="nav-list__link--filter"> View My Account</a>
+                      <Link to="" className="nav-list__link--filter"> View My Account</Link>
                     </li>
                     <li>
-                      <a href="#" className="nav-list__link--filter"> Payment Options</a>
+                      <Link to="" className="nav-list__link--filter"> Payment Options</Link>
                     </li>
                     <li>
                       <hr className="hr--light" />
                     </li>
                     <li>
-                      <a href="#" className="nav-list__link--filter"> Help</a>
+                      <Link to="" className="nav-list__link--filter"> Help</Link>
                     </li>
                     <li>
-                      <a href="#" className="nav-list__link--filter"> Contact Financial Services</a>
+                      <Link to="" className="nav-list__link--filter"> Contact Financial Services</Link>
                     </li>
                     <li>
-                      <a href="#" className="nav-list__link--filter"> Log out</a>
+                      <Link to="" className="nav-list__link--filter"> Log out</Link>
                     </li>
                   </ul>
                 </div>
@@ -57,17 +58,17 @@ export default class WoolStoreCard extends Component {
               <h2 className="heading--2 font-graphic text-caps">Woolworths Store Card</h2>
               <div className="grid">
                 <div className="grid__third--medium">
-                  <a href="#">
+                  <Link to="">
                     <img className="img-fill-responsive" src="/store/assets/images/content/banners/banner-wfs-store-card-apply.jpg" />
-                  </a>
+                  </Link>
                 </div>
                 <div className="grid__third--medium">
                   <img className="img-fill-responsive" src="/store/assets/images/content/banners/banner-wfs-store-card-contacts.jpg" />
                 </div>
                 <div className="grid__third--medium">
-                  <a href="#">
+                  <Link to="">
                     <img className="img-fill-responsive" src="/store/assets/images/content/banners/banner-wfs-store-card-wrewards.jpg" />
-                  </a>
+                  </Link>
                 </div>
               </div>
               <div className="grid grid--space-y">
@@ -78,7 +79,7 @@ export default class WoolStoreCard extends Component {
                     <p className="text-small">
                       <span className="icon icon--rosetta-limegreen icon-para__icon" />
                       <span className="icon-para__paragraph">As a Woolworths Store Cardholder, you're automatically part of our great
-                        <a href="#">WRewards programme</a> that offers you exclusive special lower prices on selected items at Woolies as well as other benefits.
+                        <Link to="">WRewards programme</Link> that offers you exclusive special lower prices on selected items at Woolies as well as other benefits.
                       </span>
                     </p>
                   </div>
@@ -87,7 +88,7 @@ export default class WoolStoreCard extends Component {
                     <p className="text-small">
                       <span className="icon icon--rainbow-grey icon-para__icon" />
                       <span className="icon-para__paragraph">Link your Store Card to our MySchool MyVillage MyPlanet fundraising programme and we'll donate up to 1% of the value of every Woolworths purchase you make to the organisation of your choice.
-                        <a href="#">Get more info</a>.
+                        <Link to="">Get more info</Link>.
                       </span>
                     </p>
                   </div>
@@ -137,7 +138,7 @@ export default class WoolStoreCard extends Component {
                     <p className="text-small">
                       <span className="icon icon--clock-grey icon-para__icon" />
                       <span className="icon-para__paragraph">Use your Woolworths Store Card to shop online at
-                        <a href="#">www.woolworths.co.za</a>.</span>
+                        <Link to="">www.woolworths.co.za</Link>.</span>
                     </p>
                   </div>
                   <div className="wfs-features__block">
@@ -166,7 +167,7 @@ export default class WoolStoreCard extends Component {
                     <p className="text-small">
                       <span className="icon icon--umbrella-grey icon-para__icon" />
                       <span className="icon-para__paragraph">Your peace of mind is important to us, so we offer you Comprehensive Balance Protection.
-                        <a href="#">Find out more about these options</a>.</span>
+                        <Link to="">Find out more about these options</Link>.</span>
                     </p>
                   </div>
                   <div className="wfs-features__block">
@@ -174,7 +175,7 @@ export default class WoolStoreCard extends Component {
                     <p className="text-small">
                       <span className="icon icon--phone-feature-grey icon-para__icon" />
                       <span className="icon-para__paragraph">Allows you to access your Woolworths Store Account info on your cellphone wherever you are.
-                        <a href="#" target="_blank">Find out more</a>.</span>
+                        <Link to="" target="_blank">Find out more</Link>.</span>
                     </p>
                   </div>
                   <div className="grid grid--space-y info-box--grey">

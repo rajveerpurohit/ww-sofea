@@ -1,10 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router';
+import {returnCartridge} from '../../../utils/homePageUtils';
 
 const BannerTemplateEleven = ({contentData}) => {
-
     return (
-        <div>BannerTemplateEleven</div>
-    )
-}
+      <div>{returnCartridge(contentData.main)}</div>
+    );
+};
 export default BannerTemplateEleven;

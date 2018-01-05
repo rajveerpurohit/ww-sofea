@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
+import { Link } from 'react-router';
 
 
 export default class PurchaseHistoryLanding extends Component {
@@ -19,22 +20,22 @@ export default class PurchaseHistoryLanding extends Component {
                   <h4 className="text-caps accordion__toggle--chrome accordion__toggle--line accordion__toggle" data-js="accordion-toggle">Online Purchases:</h4>
                   <ul className="list--silent text-small accordion__content--chrome accordion__content" data-js="accordion-content">
                     <li>
-                      <a href="#" className="nav-list__link--filter is-current"> My Online Purchases</a>
+                      <Link to="" className="nav-list__link--filter is-current"> My Online Purchases</Link>
                     </li>
                     <li>
-                      <a href="#" className="nav-list__link--filter"> Apply For Loyalty Card</a>
+                      <Link to="" className="nav-list__link--filter"> Apply For Loyalty Card</Link>
                     </li>
                     <li>
                       <hr className="hr--light" />
                     </li>
                     <li>
-                      <a href="#" className="nav-list__link--filter"> Help</a>
+                      <Link to="" className="nav-list__link--filter"> Help</Link>
                     </li>
                     <li>
-                      <a href="#" className="nav-list__link--filter"> Contact Us</a>
+                      <Link to="" className="nav-list__link--filter"> Contact Us</Link>
                     </li>
                     <li>
-                      <a href="#" className="nav-list__link--filter"> Log out</a>
+                      <Link to="" className="nav-list__link--filter"> Log out</Link>
                     </li>
                   </ul>
                 </div>
@@ -56,60 +57,60 @@ export default class PurchaseHistoryLanding extends Component {
                     </tr>
                   </thead>
                   <tbody className="table-scroll__body">
-                    <tr className="table-scroll__row" data-href="dashboard-index.jsp?content=purchases/purchase">
+                    <tr className="table-scroll__row" data-to="dashboard-index.jsp?content=purchases/purchase">
                       <td>
-                        <a href="/store/ww-store-pages/purchase-history-product.html">o36080005</a>
+                        <Link to="/store/ww-store-pages/purchase-history-product.html">o36080005</Link>
                       </td>
                       <td>2017-02-16</td>
                       <td>R 34.95</td>
                       <td>Order Placed</td>
                       <td />
                       <td className="text-align-right">
-                        <a title="cancel order" onclick="cancelOrder('o36080005');" href="javascript:;">
+                        <Link title="cancel order" onclick="cancelOrder('o36080005');" to="javascript:;">
                           <span className="icon icon--cancel-dark" />
-                        </a>
+                        </Link>
                       </td>
                     </tr>
-                    <tr className="table-scroll__row" data-href="dashboard-index.jsp?content=purchases/purchase">
+                    <tr className="table-scroll__row" data-to="dashboard-index.jsp?content=purchases/purchase">
                       <td>
-                        <a href="/store/ww-store-pages/purchase-history-product.html">o36080005</a>
+                        <Link to="/store/ww-store-pages/purchase-history-product.html">o36080005</Link>
                       </td>
                       <td>2017-02-16</td>
                       <td>R 34.95</td>
                       <td>Order Placed</td>
                       <td />
                       <td className="text-align-right">
-                        <a title="cancel order" onclick="cancelOrder('o36080005');" href="javascript:;">
+                        <Link title="cancel order" onclick="cancelOrder('o36080005');" to="javascript:;">
                           <span className="icon icon--cancel-dark" />
-                        </a>
+                        </Link>
                       </td>
                     </tr>
-                    <tr className="table-scroll__row" data-href="dashboard-index.jsp?content=purchases/purchase">
+                    <tr className="table-scroll__row" data-to="dashboard-index.jsp?content=purchases/purchase">
                       <td>
-                        <a href="/store/fragments/dashboard/dashboard-index.jsp?content=purchases/purchase&deliveryDate=&orderStatus=SUBMITTED&id=o36080005">o36080005</a>
+                        <Link to="/store/fragments/dashboard/dashboard-index.jsp?content=purchases/purchase&deliveryDate=&orderStatus=SUBMITTED&id=o36080005">o36080005</Link>
                       </td>
                       <td>2017-02-16</td>
                       <td>R 34.95</td>
                       <td>Order Placed</td>
                       <td />
                       <td className="text-align-right">
-                        <a title="cancel order" onclick="cancelOrder('o36080005');" href="javascript:;">
+                        <Link title="cancel order" onclick="cancelOrder('o36080005');" to="javascript:;">
                           <span className="icon icon--cancel-dark" />
-                        </a>
+                        </Link>
                       </td>
                     </tr>
-                    <tr className="table-scroll__row" data-href="dashboard-index.jsp?content=purchases/purchase">
+                    <tr className="table-scroll__row" data-to="dashboard-index.jsp?content=purchases/purchase">
                       <td>
-                        <a href="/store/fragments/dashboard/dashboard-index.jsp?content=purchases/purchase&deliveryDate=&orderStatus=SUBMITTED&id=o36080005">o36080005</a>
+                        <Link to="/store/fragments/dashboard/dashboard-index.jsp?content=purchases/purchase&deliveryDate=&orderStatus=SUBMITTED&id=o36080005">o36080005</Link>
                       </td>
                       <td>2017-02-16</td>
                       <td>R 34.95</td>
                       <td>Order Placed</td>
                       <td />
                       <td className="text-align-right">
-                        <a title="cancel order" onclick="cancelOrder('o36080005');" href="javascript:;">
+                        <Link title="cancel order" onclick="cancelOrder('o36080005');" to="javascript:;">
                           <span className="icon icon--cancel-dark" />
-                        </a>
+                        </Link>
                       </td>
                     </tr>
                   </tbody>

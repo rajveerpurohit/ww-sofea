@@ -13,19 +13,23 @@ export const GOOGLE_ANALYTICS_ID = process.env.GOOGLE_ANALYTICS_ID || null;
  * @type {Object}
  * API_AGGRIGATOR_URL = The Loopback API AGGRIGATOR URL
  * APP_PORT = The Port on which you want to run WW application on your local machine.
+ * ATG_URL = Domain URL for the images to reflect in different environments.
  */
 
 export const ENV_MAP = {
 
   ENV_DEV: {
     API_AGGRIGATOR_URL: 'http://172.21.40.23:3000',
+    ATG_URL: 'http://www-win-qa.woolworths.co.za/',
     APITimeout: 60000,
-    APP_PORT: 4040
+    APP_PORT: 3333
   },
   ENV_SIT: {
-    API_AGGRIGATOR_URL: 'http://172.21.40.23:3000',
+    API_AGGRIGATOR_URL: 'http://172.21.40.153:3000',
+    ATG_URL: 'http://www-win-qa.woolworths.co.za/', // Change according to deploy environment
     APITimeout: 60000,
-    APP_PORT: 5555
+    APP_PORT: 3333
   }
 
 };
+

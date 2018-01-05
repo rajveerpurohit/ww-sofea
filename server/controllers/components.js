@@ -20,7 +20,6 @@ const endpoints = apiaggregatorEndpoints.endpoints;
 
 const _API_AGGRIGATOR_URL = API_AGGRIGATOR_URL + '/api';
 
-console.log('API_AGGRIGATOR_URL......', _API_AGGRIGATOR_URL);
 
 const components = {
   setRequestHeader(req, config) {
@@ -79,11 +78,33 @@ const components = {
     };
 
     let url = '';
-    if (componentName === 'megamenu') {
-      url = _API_AGGRIGATOR_URL + endpoints[componentName];
+    url = _API_AGGRIGATOR_URL + endpoints[componentName];
+
+    if (componentName === 'landingpages') {
+      if (req.query.Nr && req.query.Ns && req.query.No && req.query.Nrpp) {
+        url += `?pageURL=${req.query.pageURL}&No=${req.query.No}&Nrpp=${req.query.Nrpp}&Nr=${req.query.Nr}&Ns=${req.query.Ns}`;
+      } else if (req.query.Nr && req.query.No && req.query.Nrpp) {
+        url += `?pageURL=${req.query.pageURL}&No=${req.query.No}&Nrpp=${req.query.Nrpp}&Nr=${req.query.Nr}`;
+      } else if (req.query.No && req.query.Nrpp) {
+        url += `?pageURL=${req.query.pageURL}&No=${req.query.No}&Nrpp=${req.query.Nrpp}`;
+      } else {
+        url += `?pageURL=${req.query.pageURL}`;
+      }
     }
 
+    if (componentName === 'storelocatorByGeoLocation') {
+      url += `?latitude=${req.query.latitude}&longitude=${req.query.longitude}&distance=${req.query.distance}`;
+    } else if (componentName === 'storelocatorByArea') {
+      url += `${req.query.suburbId}?distance=${req.query.distance}`;
+    }
 
+    if (componentName === 'faqDetails') {
+      url += `?contentId=${req.query.contentId}`;
+    }
+
+    if (componentName === 'search') {
+      url += `?Ntt=${req.query.searchQuery}&Dy=1`;
+    }
     /* hot fix to convert | in sanitized string, for PLP filters */
     url = url.replace('%7C', '|');
 

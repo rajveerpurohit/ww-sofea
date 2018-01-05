@@ -20,7 +20,7 @@ select {
     @include opacity(0);
     z-index:10;
     width:100%;
-    height:$form-field-height;
+    //height:$form-field-height;
     display:block;
     position:absolute;
     left:0;

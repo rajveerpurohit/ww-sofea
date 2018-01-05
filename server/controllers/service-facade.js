@@ -1,5 +1,5 @@
-const Promise = require("bluebird");
-const axios = require("axios");
+const Promise = require('bluebird');
+const axios = require('axios');
 
 const APITimeout = require('../../config/app').APITimeout;
 
@@ -14,6 +14,7 @@ const ServiceFacade = {
     // loggerHandler.debug('\nService-Facade ::: Printing Request headers sent to AA ::\n', JSON.stringify(config.headers));
 
     // Make sure to add Timeout for all AXIOS calls.
+
     config.timeout = APITimeout;
     axios(config)
       .then((response) => {
@@ -43,9 +44,7 @@ const ServiceFacade = {
   },
 
   triggerGetRequest(opts, callback) {
-    console.log('triggerGetRequest', opts.url);
     opts.method = 'GET';
-    console.log(opts);
     return new Promise((resolve, reject) => {
       ServiceFacade.sendRequest(opts, resolve, reject);
     }).then((response) => {
@@ -72,11 +71,11 @@ const ServiceFacade = {
 
   handlerRequestError(error, opts) {
     // loggerHandler.error({ req: opts, err: error }, 'Service Facade: Error in AA Service call for :', opts.url);
-    let errorString = "";
+    let errorString = '';
     if (error && error.data && error.data.error && error.data.error.name && error.data.error.statusMessage) {
-      errorString += error.data.error.name + " : " + error.data.error.statusMessage;
+      errorString += error.data.error.name + ' : ' + error.data.error.statusMessage;
     }
-    console.log("Error:", errorString);
+    console.log('Error:', errorString);
     console.log(opts);
     // loggerHandler.error({ req: opts, err: error }, 'Service Facade::: Error Details from AA server' + errorString);
   }

@@ -17,6 +17,6 @@ const createStylesheets = () => `
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed" />
 <link rel="stylesheet" href="/assets/${assets['app.css']}" />
 `;
-
+// <link rel="icon" type="image/png" href="/images/static/favicon-32x32.png" sizes="32x32" />
 export { createAppScript, createTrackingScript, createStylesheets };
 

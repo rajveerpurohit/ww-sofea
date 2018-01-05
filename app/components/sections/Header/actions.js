@@ -12,6 +12,21 @@ export const GET_MEGANAV_JSON_SUCCESS = 'GET_MEGANAV_JSON_SUCCESS';
 export const GET_MEGANAV_DATA_FAILURE = 'GET_MEGANAV_DATA_FAILURE';
 export const GET_LOGO_JSON_SUCCESS = 'GET_LOGO_JSON_SUCCESS';
 export const GET_LOGO_DATA_FAILURE = 'GET_LOGO_DATA_FAILURE';
+export const GET_MINI_CART_JSON_SUCCESS = 'GET_MINI_CART_JSON_SUCCESS';
+export const GET_MINI_CART_DATA_FAILURE = 'GET_MINI_CART_DATA_FAILURE';
+
+export const miniCartJSONSuccessAction = (data) => {
+  return {
+    type: GET_MINI_CART_JSON_SUCCESS,
+    data
+  };
+};
+
+export const miniCartJSONFailureAction = () => {
+  return {
+    type: GET_MINI_CART_DATA_FAILURE
+  };
+};
 
 export const megaNavJSONSuccessAction = (data) => {
   return {
@@ -34,6 +49,14 @@ export const logoJSONSuccessAction = (data) => {
 export const logoJSONFailureAction = () => {
   return {
     type: GET_LOGO_DATA_FAILURE
+  };
+};
+
+export const getminiCartData = () => {
+  return (dispatch) => {
+    return ServiceUtil.triggerServerRequest({url: serverUrls.cartdetails}).then((value) => {
+        dispatch(miniCartJSONSuccessAction({data: value.body}));
+    });
   };
 };
 

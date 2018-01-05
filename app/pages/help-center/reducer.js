@@ -4,12 +4,13 @@ import {
 } from './actions';
 
 
+
 export default function helpCenterReducer(state = {
+  helpCenterData: {}
 }, action) {
-   
   switch (action.type) {
     case GET_HELP_JSON_SUCCESS:
-      return Object.assign({}, state, {aboutUsData: action.data.data.help.help});
+      return Object.assign({}, state, {helpCenterData: action.data.data.help.help});
     case GET_HELP_FAILURE:
       return Object.assign({}, state, {
         isFetching: false

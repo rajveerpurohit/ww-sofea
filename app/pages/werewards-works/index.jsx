@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
+import { Link } from 'react-router';
 
 
 export default class WeRewardsWorks extends Component {
@@ -15,7 +16,7 @@ export default class WeRewardsWorks extends Component {
                 <div className="grid grid--space-y">
                     <h1 className="font-graphic text-caps">How it works</h1>
                     <p className="text-small">
-                    <a href="#">Terms and conditions apply</a>
+                    <Link to="">Terms and conditions apply</Link>
                     </p>
                     <p className="text-intro">
                     <strong>W</strong>Rewards is our way of rewarding customers INSTANTLY.
@@ -28,8 +29,8 @@ export default class WeRewardsWorks extends Component {
                         <strong>instantly</strong> on thousands of items throughout the store, from food to clothing to homeware to beauty and more.</li>
                     <li className="list__item--chevron">Earn
                         <strong>tiered benefits</strong>. Check your
-                        <a href="#">
-                        <strong>W</strong>Rewards tier status</a> to see just how much your shopping has paid off for you. Just remember to swipe your card before your till items are rung up. The more you shop, the higher your status, the more benefits you will receive.</li>
+                        <Link to="">
+                        <strong>W</strong>Rewards tier status</Link> to see just how much your shopping has paid off for you. Just remember to swipe your card before your till items are rung up. The more you shop, the higher your status, the more benefits you will receive.</li>
                     <li className="list__item--chevron">Want to
                         <strong>save even more?</strong> Pay with a Woolworths Store Card or Credit Card and you'll enjoy an additional
                         <strong>5% savings</strong>

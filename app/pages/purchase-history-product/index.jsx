@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
+import { Link } from 'react-router';
 
 export default class PurchaseHistoryProduct extends Component {
   constructor(props) {
@@ -18,22 +19,22 @@ export default class PurchaseHistoryProduct extends Component {
                   <h4 className="text-caps accordion__toggle--chrome accordion__toggle--line accordion__toggle" data-js="accordion-toggle">Online Purchases:</h4>
                   <ul className="list--silent text-small accordion__content--chrome accordion__content" data-js="accordion-content">
                     <li>
-                      <a href="#" className="nav-list__link--filter is-current"> My Online Purchases</a>
+                      <Link to="" className="nav-list__link--filter is-current"> My Online Purchases</Link>
                     </li>
                     <li>
-                      <a href="#" className="nav-list__link--filter"> Apply For Loyalty Card</a>
+                      <Link to="" className="nav-list__link--filter"> Apply For Loyalty Card</Link>
                     </li>
                     <li>
                       <hr className="hr--light" />
                     </li>
                     <li>
-                      <a href="#" className="nav-list__link--filter"> Help</a>
+                      <Link to="" className="nav-list__link--filter"> Help</Link>
                     </li>
                     <li>
-                      <a href="#" className="nav-list__link--filter"> Contact Us</a>
+                      <Link to="" className="nav-list__link--filter"> Contact Us</Link>
                     </li>
                     <li>
-                      <a href="#" className="nav-list__link--filter"> Log out</a>
+                      <Link to="" className="nav-list__link--filter"> Log out</Link>
                     </li>
                   </ul>
                 </div>
@@ -78,14 +79,14 @@ export default class PurchaseHistoryProduct extends Component {
                   <tr>
                     <td className="purchases__table-item">
                       <figure className="flush-m">
-                        <a rel={501506242} id={501506242} href="#" className="border--colour-grey">
+                        <Link rel={501506242} id={501506242} to="" className="border--colour-grey">
                           <img src="//images.woolworthsstatic.co.za/Cotton-Facecloth-MAUVE-6009173460592.jpg?o=xP5ZN@DuuuKKExFGSwgaPx51LRMj&V=OKih&w=350" title="Cotton Facecloth" alt="Cotton Facecloth" className="border--weight-thin" />
-                        </a>
+                        </Link>
                       </figure>
                       <div>
-                        <a href="#">
+                        <Link to="">
                           <strong>Cotton Facecloth</strong>
-                        </a>
+                        </Link>
                         <br />
                         <span>Product Code:
                           <br />6009173460592</span>
@@ -128,14 +129,14 @@ export default class PurchaseHistoryProduct extends Component {
                   <tr>
                     <td className="purchases__table-item">
                       <figure className="flush-m">
-                        <a rel={501506242} id={501506242} href="#" className="border--colour-grey">
+                        <Link rel={501506242} id={501506242} to="" className="border--colour-grey">
                           <img src="//images.woolworthsstatic.co.za/Coca-Cola-Original-2L-Limited-to-8-bottles-per-person-5449000009067.jpg?o=@DhhruHxbCSN9iMnUVkQdGb9@icj&V=7fiR&w=350" title="Coca-Cola Original 2L" alt="Coca-Cola Original 2L" className="border--weight-thin" />
-                        </a>
+                        </Link>
                       </figure>
                       <div>
-                        <a href="#">
+                        <Link to="">
                           <strong>Coca-Cola Original 2L</strong>
-                        </a>
+                        </Link>
                         <br />
                         <span>Product Code:
                           <br />5449000009067</span>

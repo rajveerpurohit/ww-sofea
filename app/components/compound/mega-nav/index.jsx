@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router';
-import {connect} from 'react-redux';
 
+import Search from '../search';
 import CategoryPromoImage from '../../basic/category-promo-image';
 
 export default class MegaNav extends Component {
@@ -19,20 +19,31 @@ export default class MegaNav extends Component {
         this.generateMegaNavFooterLinks = this.generateMegaNavFooterLinks.bind(this);
         this.handleMouseLeave = this.handleMouseLeave.bind(this);
         this.handleMouseEnter = this.handleMouseEnter.bind(this);
-        this.handleSearchFocus = this.handleSearchFocus.bind(this);
-        this.handleSearchBlur = this.handleSearchBlur.bind(this);
-		this.onNavClick = this.onNavClick.bind(this);
+        this.onNavClick = this.onNavClick.bind(this);
     }
 
     generateRootCategories(rootCategories) {
-        return rootCategories.map((rootCategory, index) => (
-          <li className="main-nav__list-item main-nav__list-item--primary has-descendant" key={index}>
-            <Link className="main-nav__link main-nav__link--primary link--parent-has-descendant" to="">{rootCategory.categoryName}</Link>
-            {this.generateSubCategories(rootCategory.subCategories, rootCategory.categoryImageURL, rootCategory.footerLinkCategories)}
-          </li>
-        ));
+        return rootCategories.map((rootCategory, index) => {
+          let dptRout = rootCategory.categoryURL; // .replace('/dept', '');
+          return (
+            <li className="main-nav__list-item main-nav__list-item--primary has-descendant" key={index} onClick={(e)=> { this.handleMouseLeave; this.checkMobileSubCat(e)}}>
+              <Link className="main-nav__link main-nav__link--primary link--parent-has-descendant" to={dptRout} >{rootCategory.categoryName}</Link>
+              {this.generateSubCategories(rootCategory.subCategories, rootCategory.categoryImageURL, rootCategory.footerLinkCategories)}
+            </li>
+        );
+        });
     }
+    checkMobileSubCat(event){
+      //event.preventDefault();
+     // alert(event.target.className)
+      // if(event.target.className !== ' hover'){
+      //   event.target.className += ' hover';
+      //   event.target.nextSibling.className+= ' is-open';
+      //   event.target.parentElement.parentElement.className += ' child-is-open';
+      // }
 
+    }
+   
     generateCol(colX) {
        if (colX.length) {
             return (
@@ -59,14 +70,14 @@ export default class MegaNav extends Component {
                         if (subCategory.categoryCSS) {
                             const spanClass = subCategory.categoryCSS.split('--')[1];
                             cols.col_1.push(
-                              <li key={index} className={`main-nav__list-item main-nav__column-${subCategory.columnIndex} main-nav__list-item--column-start ${subCategory.categoryCSS}   main-nav__list-item--secondary`}>
+                              <li onClick={this.handleMouseLeave} key={index} className={`main-nav__list-item main-nav__column-${subCategory.columnIndex} main-nav__list-item--column-start ${subCategory.categoryCSS}   main-nav__list-item--secondary`}>
                                 <Link className="main-nav__link link--parent-has-descendant" to=""><span className={`main-nav__promo--${spanClass}`}>{subCategory.categoryName}</span></Link>
                                 {this.generateChildCategories(subCategory.subCategories)}
                               </li>
                             );
                         } else {
                             cols.col_1.push(
-                              <li key={index} className={`main-nav__list-item main-nav__column-${subCategory.columnIndex}   main-nav__list-item--secondary`}>
+                              <li onClick={this.handleMouseLeave} key={index} className={`main-nav__list-item main-nav__column-${subCategory.columnIndex}   main-nav__list-item--secondary`}>
                                 <Link className="main-nav__link link--parent-has-descendant" to="">{subCategory.categoryName}</Link>
                                 {this.generateChildCategories(subCategory.subCategories)}
                               </li>
@@ -75,7 +86,7 @@ export default class MegaNav extends Component {
                         break;
                     case 2:
                         cols.col_2.push(
-                          <li key={index} className={`main-nav__list-item main-nav__column-${subCategory.columnIndex}   main-nav__list-item--secondary`}>
+                          <li onClick={this.handleMouseLeave} key={index} className={`main-nav__list-item main-nav__column-${subCategory.columnIndex}   main-nav__list-item--secondary`}>
                             <Link className="main-nav__link link--parent-has-descendant" to="">{subCategory.categoryName}</Link>
                             {this.generateChildCategories(subCategory.subCategories)}
                           </li>
@@ -83,7 +94,7 @@ export default class MegaNav extends Component {
                         break;
                     case 3:
                         cols.col_3.push(
-                          <li key={index} className={`main-nav__list-item main-nav__column-${subCategory.columnIndex}   main-nav__list-item--secondary`}>
+                          <li onClick={this.handleMouseLeave} key={index} className={`main-nav__list-item main-nav__column-${subCategory.columnIndex}   main-nav__list-item--secondary`}>
                             <Link className="main-nav__link link--parent-has-descendant" to="">{subCategory.categoryName}</Link>
                             {this.generateChildCategories(subCategory.subCategories)}
                           </li>
@@ -91,7 +102,7 @@ export default class MegaNav extends Component {
                         break;
                     default:
                         cols.col_4.push(
-                          <li key={index} className={'main-nav__list-item main-nav__list-item--secondary'}>
+                          <li onClick={this.handleMouseLeave} key={index} className={'main-nav__list-item main-nav__list-item--secondary'}>
                             <Link className="main-nav__link link--parent-has-descendant" to="">{subCategory.categoryName}</Link>
                             {this.generateChildCategories(subCategory.subCategories)}
                           </li>
@@ -112,10 +123,10 @@ export default class MegaNav extends Component {
               {this.generateCol(cols.col_2)}
               {this.generateCol(cols.col_3)}
               {this.generateCol(cols.col_4)}
-              <li className="main-nav__list-item main-nav__list-item--promo block-hidden--mobi-max main-nav__list-item--secondary">
+              <li onClick={this.handleMouseLeave} className="main-nav__list-item main-nav__list-item--promo block-hidden--mobi-max main-nav__list-item--secondary">
                 <CategoryPromoImage payload={categoryPromoImageData} />
               </li>
-              <li className="main-nav__list-item main-nav__list-item--footer block-hidden--mobi-max main-nav__list-item--secondary has-descendant">
+              <li onClick={this.handleMouseLeave} className="main-nav__list-item main-nav__list-item--footer block-hidden--mobi-max main-nav__list-item--secondary has-descendant">
                 <ul className="main-nav__list main-nav__list--footer main-nav__list--tertiary main-nav__list--is-descendant">
                   {this.generateMegaNavFooterLinks(footerlinks)}
                 </ul>
@@ -150,8 +161,8 @@ export default class MegaNav extends Component {
               <ul className="main-nav__list main-nav__list--tertiary main-nav__list--is-descendant">
                 {
                     childCategories.map((childCategory, index) => (
-                      <li key={index} className="main-nav__list-item  main-nav__list-item--tertiary">
-                        <Link to="" className="main-nav__link">{childCategory.categoryName}</Link>
+                      <li onClick={this.handleMouseLeave} key={index} className="main-nav__list-item  main-nav__list-item--tertiary">
+                        <Link to={childCategory.categoryURL} className="main-nav__link">{childCategory.categoryName}</Link>
                       </li>
                     ))
                 }
@@ -166,27 +177,36 @@ export default class MegaNav extends Component {
     handleMouseLeave() {
         this.setState({onHoverClass: 'no-hover' });
     }
-    handleSearchFocus() {
-        this.setState({searchOpenClass: 'is-open'});
-    }
-    handleSearchBlur() {
-        this.setState({searchOpenClass: ''});
-    }
-	onNavClick() {
+	onNavClick(event) {
         const navToggle = document.getElementsByClassName('nav-toggle')[0];
         const navUL = document.getElementById('main-nav').getElementsByTagName('ul')[0];
         if (navToggle.className.indexOf('active') > -1) {
-            alert('test');
             document.getElementsByTagName('body')[0].className = document.getElementsByTagName('body')[0].className.replace(/\bnav-is-open\b/g, '');
             document.getElementById('main-nav').className = document.getElementById('main-nav').className.replace(/\bis-open\b/g, '');
             navToggle.className = navToggle.className.replace(/\b active\b/g, '');
             navUL.className = navUL.className.replace(/\b is-open\b/g, '');
+            document.getElementsByClassName('main-nav__list hover-ready main-nav__list--primary')[0].style.backgroundColor = 'none';
+           
+           
         } else {
-            alert('none');
+            
             document.getElementsByClassName('nav-toggle')[0].className += ' active';
             navUL.className += ' is-open';
-            document.getElementById('main-nav').className += ' is-open';
-            document.getElementsByTagName('body')[0].className += ' nav-is-open';
+            document.getElementById('main-nav').className += 'is-open';
+            document.getElementsByTagName('body')[0].className += 'nav-is-open';
+            document.getElementsByClassName('main-nav__list hover-ready main-nav__list--primary')[0].style.backgroundColor = '#FFFFFF';
+
+            let links = document.getElementsByClassName('main-nav__link main-nav__link--primary link--parent-has-descendant');
+            Array.prototype.forEach.call(links, data => {
+               data.setAttribute('href','javascript:void(0)');
+            });
+        }
+
+        if(document.getElementsByClassName('main-nav__link main-nav__link--primary link--parent-has-descendant hover')){
+          document.getElementsByClassName('main-nav__link main-nav__link--primary link--parent-has-descendant').className = document.getElementsByClassName('main-nav__link main-nav__link--primary link--parent-has-descendant hover').className.replace(/\bhover\b/g, '');
+          document.getElementsByClassName('main-nav__list main-nav__list--secondary main-nav__list--is-descendant').className = document.getElementsByClassName('main-nav__list main-nav__list--secondary main-nav__list--is-descendant is-open').className.replace(/\bis-open\b/g, '');
+          document.getElementsByClassName('/main-nav__list no-hover main-nav__list--primary is-open').className = document.getElementsByClassName('/main-nav__list no-hover main-nav__list--primary is-open').className.replace(/\bchild-is-open\b/g, '');
+          //main-nav__list no-hover main-nav__list--primary is-open child-is-open
         }
     }
 
@@ -198,17 +218,13 @@ export default class MegaNav extends Component {
           <span className="search-toggle">
             <span className="icon icon--search-white inline-block-visible--mobi-max" />
           </span>
-          <form className={`search-bar fly-out ${this.state.searchOpenClass}`} action="" method="post" onFocus={this.handleSearchFocus} onBlur={this.handleSearchBlur} >
-            <input type="search" className={`search-bar__input ${this.state.searchOpenClass}`} onFocus={this.handleSearchFocus} onBlur={this.handleSearchBlur} placeholder="Search..." />
-            <input className="search-bar__submit icon icon--search-grey" type="submit" />
-            <div className="search-bar__suggestions fly-out__content" />
-          </form>
+          <Search />
         </div>
-        <nav id="main-nav" className="main-nav__list no-hover" onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave}>
-          <Link className="nav-toggle" onClick={this.onNavClick.bind(this)}>
+        <nav id="main-nav" className="main-nav__list " onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave}>
+          <Link className="nav-toggle" onClick={e => {this.onNavClick(e)}}>
             <span className="icon icon--menu inline-block-visible--mobi-max" />
           </Link>
-          <ul className={`main-nav__list ${this.state.onHoverClass}`}>
+          <ul className={`main-nav__list ${this.state.onHoverClass} main-nav__list--primary`}>
             {this.props.rootCategories ? this.generateRootCategories(this.props.rootCategories) : null}
             <li className="width-marker" />
           </ul>

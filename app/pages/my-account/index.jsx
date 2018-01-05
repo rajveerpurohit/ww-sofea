@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
+import { Link } from 'react-router';
 
 
 export default class MyAccount extends Component {
@@ -20,13 +21,13 @@ export default class MyAccount extends Component {
                   <h4 className="accordion__toggle--chrome accordion__toggle" data-js="accordion-toggle">MY ACCOUNT</h4>
                   <ul className="list--silent text-small accordion__content--chrome accordion__content" data-js="accordion-content">
                     <li>
-                      <a className="nav-list__link--filter strong" href="#">Help</a>
+                      <Link className="nav-list__link--filter strong" to="">Help</Link>
                     </li>
                     <li>
-                      <a className="nav-list__link--filter strong is-current" href="#">Contact Us</a>
+                      <Link className="nav-list__link--filter strong is-current" to="">Contact Us</Link>
                     </li>
                     <li>
-                      <a className="nav-list__link--filter strong" href="#">Log out</a>
+                      <Link className="nav-list__link--filter strong" to="">Log out</Link>
                     </li>
                   </ul>
                 </div>
@@ -43,38 +44,38 @@ export default class MyAccount extends Component {
                 <div className="panel panel-card panel--flex">
                   <header className="panel-card__header">
                     <h3 className="font-graphic text-caps">
-                      <a href="dashboard-index.jsp?content=myaccount/user-details" className="link--silent">My Details</a>
+                      <Link to="dashboard-index.jsp?content=myaccount/user-details" className="link--silent">My Details</Link>
                     </h3>
                   </header>
                   <section className="panel-card__body">
                     <ul className="list--silent text-small">
                       <li className="list__item--chevron">
-                        <a href="/store/fragments/dashboard/dashboard-index.jsp?content=myaccount/user-details">My personal details</a>
+                        <Link to="/store/fragments/dashboard/dashboard-index.jsp?content=myaccount/user-details">My personal details</Link>
                       </li>
                       <li className="list__item--chevron">
-                        <a href="/store/fragments/dashboard/dashboard-index.jsp?content=myaccount/delivery-details">Create delivery address</a>
+                        <Link to="/store/fragments/dashboard/dashboard-index.jsp?content=myaccount/delivery-details">Create delivery address</Link>
                       </li>
                       <li className="list__item--chevron">
-                        <a href="/store/fragments/dashboard/dashboard-index.jsp?content=myaccount/payment-details">My online payment details</a>
+                        <Link to="/store/fragments/dashboard/dashboard-index.jsp?content=myaccount/payment-details">My online payment details</Link>
                       </li>
                     </ul>
                   </section>
                   <footer className="panel-card__footer">
                     <strong />
-                    <a className="arrow-link--forward link--silent text-small" href="/store/fragments/dashboard/dashboard-index.jsp?content=myaccount/user-details">View all</a>
+                    <Link className="arrow-link--forward link--silent text-small" to="/store/fragments/dashboard/dashboard-index.jsp?content=myaccount/user-details">View all</Link>
                   </footer>
                 </div>
                
                 <div className="panel panel-card panel--flex">
                   <header className="panel-card__header">
                     <h3 className="font-graphic text-caps">
-                      <a href="/fragments/dashboard/dashboard-index.jsp?content=preferences/consents" className="link--silent">My Preferences</a>
+                      <Link to="/fragments/dashboard/dashboard-index.jsp?content=preferences/consents" className="link--silent">My Preferences</Link>
                     </h3>
                   </header>
                   <section className="panel-card__body">
                     <ul className="list--silent text-small">
                       <li className="list__item--chevron">
-                        <a href="/store/fragments/dashboard/dashboard-index.jsp?content=preferences/consents">View Communication Consents</a>
+                        <Link to="/store/fragments/dashboard/dashboard-index.jsp?content=preferences/consents">View Communication Consents</Link>
                       </li>
                     </ul>
                   </section>
@@ -85,7 +86,7 @@ export default class MyAccount extends Component {
                 <div className="panel panel-card panel--flex panel-card--tealblue">
                   <header className="panel-card__header">
                     <h3 className="font-graphic text-caps">
-                      <a href="dashboard-index.jsp?content=wfs/about-wfs" className="link--silent">Financial Services</a>
+                      <Link to="dashboard-index.jsp?content=wfs/about-wfs" className="link--silent">Financial Services</Link>
                     </h3>
                   </header>
                   <section className="panel-card__body">
@@ -93,11 +94,11 @@ export default class MyAccount extends Component {
                   </section>
                   <footer className="panel-card__footer">
                     <strong>
-                      <a className="arrow-link--forward link--silent text-small" href="/store/fragments/dashboard/dashboard-index.jsp?content=wfs/about-wfs">Apply now</a>
+                      <Link className="arrow-link--forward link--silent text-small" to="/store/fragments/dashboard/dashboard-index.jsp?content=wfs/about-wfs">Apply now</Link>
                     </strong>
                     <br />
                     <strong>
-                      <a className="arrow-link--forward link--silent text-small" href="/store/fragments/dashboard/dashboard-index.jsp?content=wfs/connect-card&source=wfs">Add your Woolies card</a>
+                      <Link className="arrow-link--forward link--silent text-small" to="/store/fragments/dashboard/dashboard-index.jsp?content=wfs/connect-card&source=wfs">Add your Woolies card</Link>
                     </strong>
                   </footer>
                 </div>
@@ -105,7 +106,7 @@ export default class MyAccount extends Component {
                 <div className="panel panel-card panel--flex panel-card--lumo-green">
                   <header className="panel-card__header">
                     <h3 className="font-graphic text-caps">
-                      <a href="dashboard-index.jsp?content=rewards/about-rewards" className="link--silent">My WRewards</a>
+                      <Link to="dashboard-index.jsp?content=rewards/about-rewards" className="link--silent">My WRewards</Link>
                     </h3>
                   </header>
                   <section className="panel-card__body">
@@ -113,11 +114,11 @@ export default class MyAccount extends Component {
                   </section>
                   <footer className="panel-card__footer">
                     <strong>
-                      <a className="arrow-link--forward link--silent text-small" href="/store/fragments/wrewards/wrewards-application.jsp?content=../dashboard/rewards/apply-wrewards&apply=rewards">Sign up now</a>
+                      <Link className="arrow-link--forward link--silent text-small" to="/store/fragments/wrewards/wrewards-application.jsp?content=../dashboard/rewards/apply-wrewards&apply=rewards">Sign up now</Link>
                     </strong>
                     <br />
                     <strong>
-                      <a className="arrow-link--forward link--silent text-small" href="/store/fragments/dashboard/dashboard-index.jsp?content=wfs/connect-card&source=rewards">Add your WRewards card</a>
+                      <Link className="arrow-link--forward link--silent text-small" to="/store/fragments/dashboard/dashboard-index.jsp?content=wfs/connect-card&source=rewards">Add your WRewards card</Link>
                     </strong>
                   </footer>
                 </div>
@@ -125,8 +126,8 @@ export default class MyAccount extends Component {
                 <div className="panel panel-card panel--flex">
                   <header className="panel-card__header">
                     <h3 className="font-graphic text-caps">
-                      <a href="/store/fragments/dashboard/dashboard-index.jsp?content=shopping-lists/shopping-lists-index" className="link--silent">My Shopping Lists
-                      </a>
+                      <Link to="/store/fragments/dashboard/dashboard-index.jsp?content=shopping-lists/shopping-lists-index" className="link--silent">My Shopping Lists
+                      </Link>
                       <span className="icon icon--shopping-list-dark" />
                     </h3>
                     <p className="inline-visible-small-only">0 items</p>
@@ -135,7 +136,7 @@ export default class MyAccount extends Component {
                   <section className="panel-card__body" />
                   <footer className="panel-card__footer">
                     <strong>
-                      <a className="arrow-link--forward link--silent text-small" href="dashboard-index.jsp?content=shopping-lists/create-list">Create a new list</a>
+                      <Link className="arrow-link--forward link--silent text-small" to="dashboard-index.jsp?content=shopping-lists/create-list">Create a new list</Link>
                     </strong>
                   </footer>
                 </div>
@@ -143,7 +144,7 @@ export default class MyAccount extends Component {
                 <div className="panel panel-card panel--flex panel-card--hot-pink">
                   <header className="panel-card__header">
                     <h3 className="font-graphic text-caps">
-                      <a href="dashboard-index.jsp?content=purchases/purchase-history" className="link--silent">My Online Orders</a>
+                      <Link to="dashboard-index.jsp?content=purchases/purchase-history" className="link--silent">My Online Orders</Link>
                     </h3>
                   </header>
                   <section className="panel-card__body">
@@ -151,7 +152,7 @@ export default class MyAccount extends Component {
                   </section>
                   <footer className="panel-card__footer">
                     <strong>
-                      <a className="arrow-link--forward link--silent text-small" href="/store/">Start shopping</a>
+                      <Link className="arrow-link--forward link--silent text-small" to="/store/">Start shopping</Link>
                     </strong>
                   </footer>
                 </div>
@@ -159,22 +160,22 @@ export default class MyAccount extends Component {
                 <div className="panel panel-card panel--flex">
                   <header className="panel-card__header">
                     <h3 className="font-graphic text-caps">
-                      <a href="/store/fragments/help/help-index.jsp" className="link--silent">Need Help ?</a>
+                      <Link to="/store/fragments/help/help-index.jsp" className="link--silent">Need Help ?</Link>
                     </h3>
                   </header>
                   <section className="panel-card__body">
                     <ul className="list--silent text-small">
                       <li className="list__item--chevron">
-                        <a href="/store/fragments/help/help-index.jsp?content=faqs">FAQs</a>
+                        <Link to="/store/fragments/help/help-index.jsp?content=faqs">FAQs</Link>
                       </li>
                       <li className="list__item--chevron">
-                        <a href="/store/fragments/help/help-index.jsp?content=contact">Ask a question</a>
+                        <Link to="/store/fragments/help/help-index.jsp?content=contact">Ask a question</Link>
                       </li>
                     </ul>
                   </section>
                   <footer className="panel-card__footer">
                     <strong>
-                      <a className="arrow-link--forward link--silent text-small" href="/store/fragments/help/help-index.jsp">View all</a>
+                      <Link className="arrow-link--forward link--silent text-small" to="/store/fragments/help/help-index.jsp">View all</Link>
                     </strong>
                   </footer>
                 </div>

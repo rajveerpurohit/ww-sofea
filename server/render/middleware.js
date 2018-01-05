@@ -3,6 +3,7 @@ import createRoutes from '../../app/routes';
 import configureStore from '../../app/store/configureStore';
 import * as types from '../../app/types';
 import pageRenderer from './pageRenderer';
+import {headerReducer, footer, labels, deliveryDetails} from '../index';
 
 import preRenderMiddleware from './preRenderMiddleware';
 
@@ -19,7 +20,11 @@ export default function render(req, res) {
       isWaiting: false,
       message: '',
       userName: ''
-    }
+    },
+    headerReducer,
+    footer,
+    labels,
+    deliveryDetails
   }, history);
   const routes = createRoutes(store);
 
@@ -62,9 +67,14 @@ export default function render(req, res) {
           res
         )
         .then((data) => {
-          store.dispatch({ type: types.REQUEST_SUCCESS, data });
-          const html = pageRenderer(store, props);
-          res.status(200).send(html);
+          try {
+            store.dispatch({ type: types.REQUEST_SUCCESS, data });
+            const html = pageRenderer(store, props);
+            res.status(200).send(html);
+          } catch (e) {
+          console.log('Error in Server Side Rendering :::', e);
+          res.status(500).json(e);
+        }
         })
         .catch((error) => {
           console.log('Error in Server Side Rendering :::', error);

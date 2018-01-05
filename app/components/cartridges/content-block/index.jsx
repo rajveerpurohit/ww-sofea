@@ -2,10 +2,10 @@ import React from 'react';
 import ImageBanner from '../image-banner';
 
 const ContentBlock = ({contentData}) => {
-    const genrateBlocks = (images, atgUrl, withParagraph) => {
+    const genrateBlocks = (images, withParagraph) => {
         if (withParagraph) {
             return images.map((img, index) => {
-                const imgData = {...img, atgUrl, key: index};
+                const imgData = {...img, key: index};
                 return (
                   <p key={index}>
                     <ImageBanner contentData={imgData} key={index} />
@@ -14,7 +14,7 @@ const ContentBlock = ({contentData}) => {
             });
         }
             return images.map((img, index) => {
-                const imgData = {...img, atgUrl, key: index};
+                const imgData = {...img, key: index};
                 return (
                   <ImageBanner contentData={imgData} key={index} />
                 );
@@ -23,28 +23,28 @@ const ContentBlock = ({contentData}) => {
     const renderStepShop = () => {
         return (
           <div className="stepsShop">
-            {genrateBlocks(contentData.contentBlockImages, contentData.atgUrl)}
+            {genrateBlocks(contentData.contentBlockImages)}
           </div>
         );
     };
     const renderContentBlockWithParagraph = () => {
         return (
           <div className="contentBlock">
-            {genrateBlocks(contentData.contentBlockImages, contentData.atgUrl, true)}
+            {genrateBlocks(contentData.contentBlockImages, true)}
           </div>
         );
     };
     const renderBottomChild = () => {
         return (
           <div className="bottom-child">
-            {genrateBlocks(contentData.contentBlockImages, contentData.atgUrl)}
+            {genrateBlocks(contentData.contentBlockImages)}
           </div>
         );
     };
     const renderDefault = () => {
         return (
           <div className="contentBlock">
-            {genrateBlocks(contentData.contentBlockImages, contentData.atgUrl)}
+            {genrateBlocks(contentData.contentBlockImages)}
           </div>
         );
     };

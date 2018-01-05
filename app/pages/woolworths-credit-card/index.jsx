@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
+import { Link } from 'react-router';
 
 export default class WoolCreditCard extends Component {
   constructor(props) {
@@ -18,49 +19,49 @@ export default class WoolCreditCard extends Component {
                   <h4 className="text-caps accordion__toggle--chrome accordion__toggle--line accordion__toggle" data-js="accordion-toggle">Credit Card:</h4>
                   <ul className="list--silent text-small accordion__content--chrome accordion__content" data-js="accordion-content">
                     <li>
-                      <a href="#" className="nav-list__link--filter"> Black Credit Card</a>
+                      <Link to="" className="nav-list__link--filter"> Black Credit Card</Link>
                     </li>
                     <li>
-                      <a href="#" className="nav-list__link--filter"> Gold Credit Card</a>
+                      <Link to="" className="nav-list__link--filter"> Gold Credit Card</Link>
                     </li>
                     <li>
-                      <a href="#" className="nav-list__link--filter"> Silver Credit Card</a>
+                      <Link to="" className="nav-list__link--filter"> Silver Credit Card</Link>
                     </li>
                     <li>
-                      <a href="#" className="nav-list__link--filter"> WRrewards</a>
+                      <Link to="" className="nav-list__link--filter"> WRrewards</Link>
                     </li>
                     <li>
-                      <a href="#" className="nav-list__link--filter"> Apply Now</a>
+                      <Link to="" className="nav-list__link--filter"> Apply Now</Link>
                     </li>
                     <li>
-                      <a href="#" className="nav-list__link--filter"> Balance Protection Insurance</a>
+                      <Link to="" className="nav-list__link--filter"> Balance Protection Insurance</Link>
                     </li>
                     <li>
-                      <a href="#" className="nav-list__link--filter"> View My Account</a>
+                      <Link to="" className="nav-list__link--filter"> View My Account</Link>
                     </li>
                     <li>
-                      <a href="#" className="nav-list__link--filter"> Payment Options</a>
+                      <Link to="" className="nav-list__link--filter"> Payment Options</Link>
                     </li>
                     <li>
-                      <a href="#" className="nav-list__link--filter"> Online Shopping Tips &amp; Security</a>
+                      <Link to="" className="nav-list__link--filter"> Online Shopping Tips &amp; Security</Link>
                     </li>
                     <li>
-                      <a href="#" className="nav-list__link--filter"> Logon to Credit Card Banking Online</a>
+                      <Link to="" className="nav-list__link--filter"> Logon to Credit Card Banking Online</Link>
                     </li>
                     <li>
-                      <a href="#" className="nav-list__link--filter"> More About Credit Card Banking Online</a>
+                      <Link to="" className="nav-list__link--filter"> More About Credit Card Banking Online</Link>
                     </li>
                     <li>
                       <hr className="hr--light" />
                     </li>
                     <li>
-                      <a href="#" className="nav-list__link--filter"> Help</a>
+                      <Link to="" className="nav-list__link--filter"> Help</Link>
                     </li>
                     <li>
-                      <a href="#" className="nav-list__link--filter"> Contact Financial Services</a>
+                      <Link to="" className="nav-list__link--filter"> Contact Financial Services</Link>
                     </li>
                     <li>
-                      <a href="#" className="nav-list__link--filter"> Log out</a>
+                      <Link to="" className="nav-list__link--filter"> Log out</Link>
                     </li>
                   </ul>
                 </div>
@@ -72,43 +73,43 @@ export default class WoolCreditCard extends Component {
               <hr className="hr--light" />
               <div className="grid panel-row--medium">
                 <div className="grid__fourth--medium panel-row__item--medium">
-                  <a href="#">
+                  <Link to="">
                     <img className="img-fill-responsive" src="/store/assets/images/content/banners/banner-wfs-credit-cards-black.jpg" />
-                  </a>
+                  </Link>
                   <p>
-                    <a href="#" className="text-small link--silent link--circ-arrow-hover">
+                    <Link to="" className="text-small link--silent link--circ-arrow-hover">
                       <span className="icon-text">Read more</span>
                       <span className="icon icon--right-circ-dark">»</span>
-                    </a>
+                    </Link>
                   </p>
                 </div>
                 <div className="grid__fourth--medium panel-row__item--medium">
-                  <a href="#">
+                  <Link to="">
                     <img className="img-fill-responsive" src="/store/assets/images/content/banners/banner-wfs-credit-cards-gold.jpg" />
-                  </a>
+                  </Link>
                   <p>
-                    <a href="#" className="text-small link--silent link--circ-arrow-hover">
+                    <Link to="" className="text-small link--silent link--circ-arrow-hover">
                       <span className="icon-text">Read more</span>
                       <span className="icon icon--right-circ-dark">»</span>
-                    </a>
+                    </Link>
                   </p>
                 </div>
                 <div className="grid__fourth--medium  panel-row__item--medium">
-                  <a href="#">
+                  <Link to="">
                     <img className="img-fill-responsive" src="/store/assets/images/content/banners/banner-wfs-credit-cards-silver.jpg" />
-                  </a>
+                  </Link>
                   <p>
-                    <a href="#" className="text-small link--silent link--circ-arrow-hover">
+                    <Link to="" className="text-small link--silent link--circ-arrow-hover">
                       <span className="icon-text">Read more</span>
                       <span className="icon icon--right-circ-dark">»</span>
-                    </a>
+                    </Link>
                   </p>
                 </div>
                 <div>
                   <div className="grid__fourth--medium  panel-row__item--medium">
-                    <a href="#">
+                    <Link to="">
                       <img className="img-fill-responsive" src="/store/assets/images/content/banners/banner-wfs-membership-difference.jpg" />
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -123,13 +124,13 @@ export default class WoolCreditCard extends Component {
                   <h4 className="heading--4 font-graphic">Contact Us</h4>
                   <ul className="list--silent text-small">
                     <li>Phone :
-                      <a href="#">086 50 20 20</a>
+                      <Link to="">086 50 20 20</Link>
                     </li>
                     <li>Fax :
-                      <a href="#">0861 50 20 06</a>
+                      <Link to="">0861 50 20 06</Link>
                     </li>
                     <li>Email :
-                      <a href="#">creditcard@wfs.co.za</a>
+                      <Link to="">creditcard@wfs.co.za</Link>
                     </li>
                   </ul>
                 </div>
@@ -137,20 +138,20 @@ export default class WoolCreditCard extends Component {
                   <h4 className="heading--4 font-graphic">Balance Protection Insurance</h4>
                   <p className="text-small">Choose the option that suits your needs.</p>
                   <p>
-                    <a href="#" className="text-small link--silent link--circ-arrow-hover">
+                    <Link to="" className="text-small link--silent link--circ-arrow-hover">
                       <span className="icon-text">More Details</span>
                       <span className="icon icon--right-circ-dark">»</span>
-                    </a>
+                    </Link>
                   </p>
                 </div>
                 <div className="grid__third--medium panel-row__item--medium">
                   <h4 className="heading--4 font-graphic">View Accounts</h4>
                   <p className="text-small">Login to view all your account info</p>
                   <p>
-                    <a href="#" className="text-small link--silent link--circ-arrow-hover">
+                    <Link to="" className="text-small link--silent link--circ-arrow-hover">
                       <span className="icon-text">Login</span>
                       <span className="icon icon--right-circ-dark">»</span>
-                    </a>
+                    </Link>
                   </p>
                 </div>
               </div>

@@ -1,17 +1,17 @@
 import express from 'express';
-import passport from 'passport';
-import session from 'express-session';
+// import passport from 'passport';
+// import session from 'express-session';
 import bodyParser from 'body-parser';
 import path from 'path';
-import flash from 'express-flash';
+// import flash from 'express-flash';
 import methodOverride from 'method-override';
 import gzip from 'compression';
 import helmet from 'helmet';
-import unsupportedMessage from '../db/unsupportedMessage';
-import { sessionSecret } from '../../config/secrets';
+// import unsupportedMessage from '../db/unsupportedMessage';
+// import { sessionSecret } from '../../config/secrets';
 import { DB_TYPE, ENV } from '../../config/env';
 import { APP_PORT } from '../../config/app';
-import { session as dbSession } from '../db';
+// import { session as dbSession } from '../db';
 
 export default (app) => {
   app.set('port', (process.env.PORT || APP_PORT || 3333));
@@ -27,6 +27,7 @@ export default (app) => {
   app.use(methodOverride());
 
   app.use(express.static(path.join(process.cwd(), 'public')));
+  // app.use('/images', express.static(path.join(process.cwd(), 'app/images')));
 
   // I am adding this here so that the Heroku deploy will work
   // Indicates the app is behind a front-facing proxy,
@@ -55,45 +56,46 @@ export default (app) => {
   //          cookie: Please note that secure: true is a recommended option.
   //                  However, it requires an https-enabled website, i.e., HTTPS is necessary for secure cookies.
   //                  If secure is set, and you access your site over HTTP, the cookie will not be set.
-  let sessionStore = null;
-  if (!dbSession) {
-    console.warn(unsupportedMessage('session'));
-  } else {
-    sessionStore = dbSession();
-  }
 
-  const sess = {
-    resave: false,
-    saveUninitialized: false,
-    secret: sessionSecret,
-    proxy: true, // The "X-Forwarded-Proto" header will be used.
-    name: 'sessionId',
-    // Add HTTPOnly, Secure attributes on Session Cookie
-    // If secure is set, and you access your site over HTTP, the cookie will not be set
-    cookie: {
-      httpOnly: true,
-      secure: false,
-    },
-    store: sessionStore
-  };
+  // let sessionStore = null;
+  // if (!dbSession) {
+  //   console.warn(unsupportedMessage('session'));
+  // } else {
+  //   sessionStore = dbSession();
+  // }
+
+  // const sess = {
+  //   resave: false,
+  //   saveUninitialized: false,
+  //   secret: sessionSecret,
+  //   proxy: true, // The "X-Forwarded-Proto" header will be used.
+  //   name: 'sessionId',
+  //   // Add HTTPOnly, Secure attributes on Session Cookie
+  //   // If secure is set, and you access your site over HTTP, the cookie will not be set
+  //   cookie: {
+  //     httpOnly: true,
+  //     secure: false,
+  //   },
+  //   store: sessionStore
+  // };
 
   console.log('--------------------------');
   console.log('===> 😊  Starting Server . . .');
   console.log(`===>  Environment: ${ENV}`);
   console.log(`===>  Listening on port: ${app.get('port')}`);
-  console.log(`===>  Using DB TYPE: ${DB_TYPE}`);
+  // console.log(`===>  Using DB TYPE: ${DB_TYPE}`);
   if (ENV === 'production') {
     console.log('===> 🚦  Note: In order for authentication to work in production');
     console.log('===>           you will need a secure HTTPS connection');
-    sess.cookie.secure = true; // Serve secure cookies
+    // sess.cookie.secure = true; // Serve secure cookies
   }
   console.log('--------------------------');
 
 
-  app.use(session(sess));
+  // app.use(session(sess));
 
-  app.use(passport.initialize());
-  app.use(passport.session());
+  // app.use(passport.initialize());
+  // app.use(passport.session());
 
-  app.use(flash());
+  // app.use(flash());
 };

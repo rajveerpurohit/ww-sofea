@@ -5,6 +5,8 @@ import { RouterContext } from 'react-router';
 import Helmet from 'react-helmet';
 import staticAssets from './static-assets';
 
+import {ATG_URL} from '../../config/app';
+
 const createApp = (store, props) => renderToString(
   <Provider store={store}>
     <RouterContext {...props} />
@@ -34,11 +36,11 @@ const buildPage = ({ componentHTML, initialState, headAssets }) => {
   
     <div id="app">${componentHTML}</div>
     <script>window.__INITIAL_STATE__ = ${JSON.stringify(initialState)}</script>
-    ${staticAssets.createAppScript()}
-    <script
-  src="https://code.jquery.com/jquery-3.2.1.min.js"
-  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-  crossorigin="anonymous"></script>
+    ${staticAssets.createAppScript()}    
+  <script>
+    Object.defineProperty(window,'ATG_URL',{
+        'value':'${ATG_URL}'})
+  </script>
   </body>
 </html>`;
 };

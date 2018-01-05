@@ -1,10 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router';
+import {returnCartridge} from '../../../utils/homePageUtils';
 
 const BannerSlot = ({contentData}) => {
-
     return (
-         <div>BannerSlot</div>
-    )
-}
+      <div>{returnCartridge(contentData.bannerContent)}</div>
+    );
+};
 export default BannerSlot;

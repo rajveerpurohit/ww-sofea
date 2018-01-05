@@ -16,14 +16,25 @@ export {default as BannerTemplateTwo} from './banner-template-two';
 export {default as BrandImageBanner} from './brand-image-banner';
 
 export {default as ContentBlock} from './content-block';
+export {default as DepartmentBannerSlot} from './department-banner-slot';
+export {default as DynamicHeader} from './dynamic-header';
+
 export {default as DynamicDoubleSlot} from './dynamic-double-slot';
 export {default as DynamicQuadrupleSlot} from './dynamic-quadruple-slot';
+export {default as DynamicRecordSpotlightProducts} from './dynamic-record-spotlight-products';
+export {default as DynamicBrandSlot} from './dynamic-brand-slot';
+export {default as DynamicRecordSpotlightArticles} from './dynamic-record-spotlight-articles';
+export {default as DynamicPromotions} from './dynamic-promotions';
+export {default as DynamicPromotionsSlot} from './dynamic-promotions-slot';
+
+
+
+
 export {default as DynamicSingleSlot} from './dynamic-single-slot';
 export {default as DynamicTripleSlot} from './dynamic-triple-slot';
 export {default as FreeDeliveryMessageImageBanner} from './free-delivery-message-image-banner';
 export {default as ImageBanner} from './image-banner';
+export {default as OneColumnPage} from './one-column-page';
 
-
-
-
+export {default as RecordSpotlightSlot} from './record-spotlight-slot';
 export {default as RichTextMain} from './rich-text-main';

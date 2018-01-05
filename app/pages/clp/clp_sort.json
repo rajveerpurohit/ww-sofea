@@ -1,0 +1,1126 @@
+{
+    "contents": [
+        {
+            "headerContent": [],
+            "metaKeywords": "camera cameras electronics",
+            "@type": "TwoColumnPage",
+            
+            "secondaryContent": [
+                {
+                    "rangeFilterCrumbs": [],
+                    "isContentBreadCrumb": false,
+                    "searchCrumbs": [],
+                    "currentNavigationState": {
+                        "canonicalLink": "/_/N-ms9f2n?format=json",
+                        "@class": "com.endeca.infront.navigation.url.UrlNavigationState",
+                        "filterState": {
+                            "autoPhraseEnabled": true,
+                            "autoPhraseEnabledFlagSet": true,
+                            "@class": "com.endeca.infront.navigation.model.FilterState",
+                            "empty": false,
+                            "eqlFilter": null,
+                            "featuredRecords": [],
+                            "geoFilter": null,
+                            "languageId": null,
+                            "navigationFilters": [
+                                "1377724559"
+                            ],
+                            "rangeFilters": [],
+                            "recordFilters": [],
+                            "rollupKey": "p_rollupKey",
+                            "searchFilters": [],
+                            "securityFilter": "",
+                            "typeAhead": false,
+                            "typeAheadSet": false
+                        },
+                        "urlFilterState": {
+                            "autoPhraseEnabled": true,
+                            "autoPhraseEnabledFlagSet": true,
+                            "@class": "com.endeca.infront.navigation.model.FilterState",
+                            "empty": false,
+                            "eqlFilter": null,
+                            "featuredRecords": [],
+                            "geoFilter": null,
+                            "languageId": null,
+                            "navigationFilters": [
+                                "1377724559"
+                            ],
+                            "rangeFilters": [],
+                            "recordFilters": [],
+                            "rollupKey": "p_rollupKey",
+                            "searchFilters": [],
+                            "securityFilter": "",
+                            "typeAhead": false,
+                            "typeAheadSet": false
+                        }
+                    },
+                    "geoFilterCrumb": null,
+                    "@type": "Breadcrumbs",
+                    "endeca:auditInfo": {
+                        "ecr:resourcePath": "/content/CategoryPages/Default Category Page",
+                        "ecr:innerPath": "secondaryContent[0]"
+                    },
+                    "name": "Breadcrumbs",
+                    "removeAllAction": {
+                        "@class": "com.endeca.infront.cartridge.model.NavigationAction",
+                        "navigationState": "?format=json",
+                        "siteRootPath": null,
+                        "siteState": {
+                            "@class": "com.endeca.infront.site.model.SiteState",
+                            "contentPath": "/cat/Kids/Boys-2-15YRS-/Jackets-Hoodies/_/N-ms9f2n",
+                            "matchedUrlPattern": null,
+                            "properties": {},
+                            "siteDefinition": {
+                                "@class": "com.endeca.infront.site.model.SiteDefinition",
+                                "displayName": "woolworths",
+                                "filterStateConfiguration": null,
+                                "id": "/300001",
+                                "patterns": [],
+                                "urlPattern": null
+                            },
+                            "siteDisplayName": "woolworths",
+                            "siteId": "/300001",
+                            "validSite": true
+                        },
+                        "label": null,
+                        "contentPath": "/cat"
+                    },
+                    "categoryDimensions": [
+                        {
+                            "removeAction": {
+                                "@class": "com.endeca.infront.cartridge.model.NavigationAction",
+                                "navigationState": "?format=json",
+                                "siteRootPath": null,
+                                "siteState": {
+                                    "@class": "com.endeca.infront.site.model.SiteState",
+                                    "contentPath": "/cat/Kids/Boys-2-15YRS-/Jackets-Hoodies/_/N-ms9f2n",
+                                    "matchedUrlPattern": null,
+                                    "properties": {},
+                                    "siteDefinition": {
+                                        "@class": "com.endeca.infront.site.model.SiteDefinition",
+                                        "displayName": "woolworths",
+                                        "filterStateConfiguration": null,
+                                        "id": "/300001",
+                                        "patterns": [],
+                                        "urlPattern": null
+                                    },
+                                    "siteDisplayName": "woolworths",
+                                    "siteId": "/300001",
+                                    "validSite": true
+                                },
+                                "label": "Jackets & Hoodies_cat714223_6",
+                                "contentPath": "/cat"
+                            },
+                            "@class": "com.endeca.infront.cartridge.model.RefinementBreadcrumb",
+                            "displayName": "Category",
+                            "count": 12,
+                            "label": "Jackets & Hoodies_cat714223_6",
+                            "dimensionName": "Category",
+                            "ancestors": [
+                                {
+                                    "@class": "com.endeca.infront.cartridge.model.Ancestor",
+                                    "navigationState": "/_/N-1z13s2t?format=json",
+                                    "siteRootPath": null,
+                                    "siteState": {
+                                        "@class": "com.endeca.infront.site.model.SiteState",
+                                        "contentPath": "/cat/Kids/Boys-2-15YRS-/Jackets-Hoodies/_/N-ms9f2n",
+                                        "matchedUrlPattern": null,
+                                        "properties": {},
+                                        "siteDefinition": {
+                                            "@class": "com.endeca.infront.site.model.SiteDefinition",
+                                            "displayName": "woolworths",
+                                            "filterStateConfiguration": null,
+                                            "id": "/300001",
+                                            "patterns": [],
+                                            "urlPattern": null
+                                        },
+                                        "siteDisplayName": "woolworths",
+                                        "siteId": "/300001",
+                                        "validSite": true
+                                    },
+                                    "label": "Kids_ncat000005_20",
+                                    "contentPath": "/cat",
+                                    "properties": {
+                                        "category.repositoryId": "ncat000005",
+                                        "category.catalogs.repositoryId": "catalog10002",
+                                        "category.rootCatalogId": "catalog10002",
+                                        "metaKeywords": "kids clothing, kids knitwear, kids swimwear",
+                                        "category.siteId": "300001",
+                                        "DGraph.Spec": "ncat000005",
+                                        "category.ancestorCatalogIds": "catalog10002",
+                                        "pagetitle": "Buy Kids Clothing, Shoes & School Uniforms Online at",
+                                        "navigationType": "standard",
+                                        "metaDescription": "Browse through our wide range of childrens outfits for boys and girls. Shop toys, books and accessories online and have it delivered to your door.",
+                                        "record.id": "atgrep:/ProductCatalog/category/ncat000005?catalog=catalog10002&categoryPath=/ncat000005&locale=en_US&siteId=300001"
+                                    }
+                                },
+                                {
+                                    "@class": "com.endeca.infront.cartridge.model.Ancestor",
+                                    "navigationState": "/_/N-1z13s2t?format=json",
+                                    "siteRootPath": null,
+                                    "siteState": {
+                                        "@class": "com.endeca.infront.site.model.SiteState",
+                                        "contentPath": "/cat/Kids/Boys-2-15YRS-/Jackets-Hoodies/_/N-ms9f2n",
+                                        "matchedUrlPattern": null,
+                                        "properties": {},
+                                        "siteDefinition": {
+                                            "@class": "com.endeca.infront.site.model.SiteDefinition",
+                                            "displayName": "woolworths",
+                                            "filterStateConfiguration": null,
+                                            "id": "/300001",
+                                            "patterns": [],
+                                            "urlPattern": null
+                                        },
+                                        "siteDisplayName": "woolworths",
+                                        "siteId": "/300001",
+                                        "validSite": true
+                                    },
+                                    "label": "Kids_ncat000005_20",
+                                    "contentPath": "/cat",
+                                    "properties": {
+                                        "category.repositoryId": "ncat000005",
+                                        "category.catalogs.repositoryId": "catalog10002",
+                                        "category.rootCatalogId": "catalog10002",
+                                        "metaKeywords": "kids clothing, kids knitwear, kids swimwear",
+                                        "category.siteId": "300001",
+                                        "DGraph.Spec": "ncat000005",
+                                        "category.ancestorCatalogIds": "catalog10002",
+                                        "pagetitle": "Buy Kids Clothing, Shoes & School Uniforms Online at",
+                                        "navigationType": "standard",
+                                        "metaDescription": "Browse through our wide range of childrens outfits for boys and girls. Shop toys, books and accessories online and have it delivered to your door.",
+                                        "record.id": "atgrep:/ProductCatalog/category/ncat000005?catalog=catalog10002&categoryPath=/ncat000005&locale=en_US&siteId=300001"
+                                    }
+                                }
+                            ],
+                            "properties": {
+                                "category.repositoryId": "cat714223",
+                                "category.catalogs.repositoryId": "catalog10002",
+                                "category.rootCatalogId": "catalog10002",
+                                "category.siteId": "300001",
+                                "DGraph.Spec": "ncat000005.ncat000115.cat714223",
+                                "category.ancestorCatalogIds": "catalog10002",
+                                "pagetitle": "Buy Jackets & Hoodies for Boys Online at",
+                                "navigationType": "standard",
+                                "metaDescription": "Shop for jackets and hoodies for boys online. Choose from a selected range including striped jackets, zip up hoodies, woven spliced hoodies, textured fleece hoodies and suit jackets.",
+                                "record.id": "atgrep:/ProductCatalog/category/cat714223?catalog=catalog10002&categoryPath=/ncat000005/ncat000115/cat714223&locale=en_US&siteId=300001"
+                            },
+                            "multiSelect": false
+                        }
+                    ],
+                    "refinementCrumbs": [
+                        {
+                            "removeAction": {
+                                "@class": "com.endeca.infront.cartridge.model.NavigationAction",
+                                "navigationState": "?format=json",
+                                "siteRootPath": null,
+                                "siteState": {
+                                    "@class": "com.endeca.infront.site.model.SiteState",
+                                    "contentPath": "/cat/Kids/Boys-2-15YRS-/Jackets-Hoodies/_/N-ms9f2n",
+                                    "matchedUrlPattern": null,
+                                    "properties": {},
+                                    "siteDefinition": {
+                                        "@class": "com.endeca.infront.site.model.SiteDefinition",
+                                        "displayName": "woolworths",
+                                        "filterStateConfiguration": null,
+                                        "id": "/300001",
+                                        "patterns": [],
+                                        "urlPattern": null
+                                    },
+                                    "siteDisplayName": "woolworths",
+                                    "siteId": "/300001",
+                                    "validSite": true
+                                },
+                                "label": null,
+                                "contentPath": "/cat"
+                            },
+                            "@class": "com.endeca.infront.cartridge.model.RefinementBreadcrumb",
+                            "displayName": "Category",
+                            "count": 12,
+                            "label": "Jackets & Hoodies_cat714223_6",
+                            "dimensionName": "Category",
+                            "ancestors": [
+                                {
+                                    "@class": "com.endeca.infront.cartridge.model.Ancestor",
+                                    "navigationState": "/_/N-1z13s2t?format=json",
+                                    "siteRootPath": null,
+                                    "siteState": {
+                                        "@class": "com.endeca.infront.site.model.SiteState",
+                                        "contentPath": "/cat/Kids/Boys-2-15YRS-/Jackets-Hoodies/_/N-ms9f2n",
+                                        "matchedUrlPattern": null,
+                                        "properties": {},
+                                        "siteDefinition": {
+                                            "@class": "com.endeca.infront.site.model.SiteDefinition",
+                                            "displayName": "woolworths",
+                                            "filterStateConfiguration": null,
+                                            "id": "/300001",
+                                            "patterns": [],
+                                            "urlPattern": null
+                                        },
+                                        "siteDisplayName": "woolworths",
+                                        "siteId": "/300001",
+                                        "validSite": true
+                                    },
+                                    "label": "Kids_ncat000005_20",
+                                    "contentPath": "/cat",
+                                    "properties": {
+                                        "category.repositoryId": "ncat000005",
+                                        "category.catalogs.repositoryId": "catalog10002",
+                                        "category.rootCatalogId": "catalog10002",
+                                        "metaKeywords": "kids clothing, kids knitwear, kids swimwear",
+                                        "category.siteId": "300001",
+                                        "DGraph.Spec": "ncat000005",
+                                        "category.ancestorCatalogIds": "catalog10002",
+                                        "pagetitle": "Buy Kids Clothing, Shoes & School Uniforms Online at",
+                                        "navigationType": "standard",
+                                        "metaDescription": "Browse through our wide range of childrens outfits for boys and girls. Shop toys, books and accessories online and have it delivered to your door.",
+                                        "record.id": "atgrep:/ProductCatalog/category/ncat000005?catalog=catalog10002&categoryPath=/ncat000005&locale=en_US&siteId=300001"
+                                    }
+                                },
+                                {
+                                    "@class": "com.endeca.infront.cartridge.model.Ancestor",
+                                    "navigationState": "/_/N-1z13s2t?format=json",
+                                    "siteRootPath": null,
+                                    "siteState": {
+                                        "@class": "com.endeca.infront.site.model.SiteState",
+                                        "contentPath": "/cat/Kids/Boys-2-15YRS-/Jackets-Hoodies/_/N-ms9f2n",
+                                        "matchedUrlPattern": null,
+                                        "properties": {},
+                                        "siteDefinition": {
+                                            "@class": "com.endeca.infront.site.model.SiteDefinition",
+                                            "displayName": "woolworths",
+                                            "filterStateConfiguration": null,
+                                            "id": "/300001",
+                                            "patterns": [],
+                                            "urlPattern": null
+                                        },
+                                        "siteDisplayName": "woolworths",
+                                        "siteId": "/300001",
+                                        "validSite": true
+                                    },
+                                    "label": "Kids_ncat000005_20",
+                                    "contentPath": "/cat",
+                                    "properties": {
+                                        "category.repositoryId": "ncat000005",
+                                        "category.catalogs.repositoryId": "catalog10002",
+                                        "category.rootCatalogId": "catalog10002",
+                                        "metaKeywords": "kids clothing, kids knitwear, kids swimwear",
+                                        "category.siteId": "300001",
+                                        "DGraph.Spec": "ncat000005",
+                                        "category.ancestorCatalogIds": "catalog10002",
+                                        "pagetitle": "Buy Kids Clothing, Shoes & School Uniforms Online at",
+                                        "navigationType": "standard",
+                                        "metaDescription": "Browse through our wide range of childrens outfits for boys and girls. Shop toys, books and accessories online and have it delivered to your door.",
+                                        "record.id": "atgrep:/ProductCatalog/category/ncat000005?catalog=catalog10002&categoryPath=/ncat000005&locale=en_US&siteId=300001"
+                                    }
+                                },
+                                {
+                                    "@class": "com.endeca.infront.cartridge.model.Ancestor",
+                                    "navigationState": "/_/N-1z13s2f?format=json",
+                                    "siteRootPath": null,
+                                    "siteState": {
+                                        "@class": "com.endeca.infront.site.model.SiteState",
+                                        "contentPath": "/cat/Kids/Boys-2-15YRS-/Jackets-Hoodies/_/N-ms9f2n",
+                                        "matchedUrlPattern": null,
+                                        "properties": {},
+                                        "siteDefinition": {
+                                            "@class": "com.endeca.infront.site.model.SiteDefinition",
+                                            "displayName": "woolworths",
+                                            "filterStateConfiguration": null,
+                                            "id": "/300001",
+                                            "patterns": [],
+                                            "urlPattern": null
+                                        },
+                                        "siteDisplayName": "woolworths",
+                                        "siteId": "/300001",
+                                        "validSite": true
+                                    },
+                                    "label": "Boys (2 - 15YRS)_ncat000115_2",
+                                    "contentPath": "/cat",
+                                    "properties": {
+                                        "category.repositoryId": "ncat000115",
+                                        "category.catalogs.repositoryId": "catalog10002",
+                                        "category.rootCatalogId": "catalog10002",
+                                        "category.siteId": "300001",
+                                        "DGraph.Spec": "ncat000005.ncat000115",
+                                        "category.ancestorCatalogIds": "catalog10002",
+                                        "pagetitle": "Buy Boys Clothes, Shoes & Accessories Online at",
+                                        "navigationType": "standard",
+                                        "metaDescription": "Shop for clothing, shoes and accessories for boys online and have them delivered to you.",
+                                        "record.id": "atgrep:/ProductCatalog/category/ncat000115?catalog=catalog10002&categoryPath=/ncat000005/ncat000115&locale=en_US&siteId=300001"
+                                    }
+                                }
+                            ],
+                            "properties": {
+                                "category.repositoryId": "cat714223",
+                                "category.catalogs.repositoryId": "catalog10002",
+                                "category.rootCatalogId": "catalog10002",
+                                "category.siteId": "300001",
+                                "DGraph.Spec": "ncat000005.ncat000115.cat714223",
+                                "category.ancestorCatalogIds": "catalog10002",
+                                "pagetitle": "Buy Jackets & Hoodies for Boys Online at",
+                                "navigationType": "standard",
+                                "metaDescription": "Shop for jackets and hoodies for boys online. Choose from a selected range including striped jackets, zip up hoodies, woven spliced hoodies, textured fleece hoodies and suit jackets.",
+                                "record.id": "atgrep:/ProductCatalog/category/cat714223?catalog=catalog10002&categoryPath=/ncat000005/ncat000115/cat714223&locale=en_US&siteId=300001"
+                            },
+                            "multiSelect": false
+                        }
+                    ]
+                },
+                {
+                    "ruleLimit": "1",
+                    "templateTypes": [
+                        "SecondaryContent"
+                    ],
+                    "templateIds": [],
+                    "contents": [
+                        {
+                            "navigation": [
+                                {
+                                    "@type": "RefinementMenu",
+                                    "displayName": "Brands",
+                                    "endeca:auditInfo": {
+                                        "ecr:resourcePath": "/content/Guided Navigation/Kids - Boys - Clothing -Jacket & Hoodies",
+                                        "ecr:innerPath": "navigation[2]"
+                                    },
+                                    "name": "Brands",
+                                    "ancestors": [],
+                                    "dimensionName": "Brands",
+                                    "whyPrecedenceRuleFired": null,
+                                    "multiSelect": true,
+                                    "refinements": [
+                                        {
+                                            "@class": "com.endeca.infront.cartridge.model.Refinement",
+                                            "navigationState": "/_/N-ms9f2nZ114tx8d?format=json",
+                                            "siteRootPath": null,
+                                            "siteState": {
+                                                "@class": "com.endeca.infront.site.model.SiteState",
+                                                "contentPath": "/cat/Kids/Boys-2-15YRS-/Jackets-Hoodies/_/N-ms9f2n",
+                                                "matchedUrlPattern": null,
+                                                "properties": {},
+                                                "siteDefinition": {
+                                                    "@class": "com.endeca.infront.site.model.SiteDefinition",
+                                                    "displayName": "woolworths",
+                                                    "filterStateConfiguration": null,
+                                                    "id": "/300001",
+                                                    "patterns": [],
+                                                    "urlPattern": null
+                                                },
+                                                "siteDisplayName": "woolworths",
+                                                "siteId": "/300001",
+                                                "validSite": true
+                                            },
+                                            "count": 4,
+                                            "label": "(&US)",
+                                            "contentPath": "/cat",
+                                            "properties": {
+                                                "DGraph.Spec": "(&US)"
+                                            },
+                                            "multiSelect": true
+                                        },
+                                        {
+                                            "@class": "com.endeca.infront.cartridge.model.Refinement",
+                                            "navigationState": "/_/N-ms9f2nZ1z13t66?format=json",
+                                            "siteRootPath": null,
+                                            "siteState": {
+                                                "@class": "com.endeca.infront.site.model.SiteState",
+                                                "contentPath": "/cat/Kids/Boys-2-15YRS-/Jackets-Hoodies/_/N-ms9f2n",
+                                                "matchedUrlPattern": null,
+                                                "properties": {},
+                                                "siteDefinition": {
+                                                    "@class": "com.endeca.infront.site.model.SiteDefinition",
+                                                    "displayName": "woolworths",
+                                                    "filterStateConfiguration": null,
+                                                    "id": "/300001",
+                                                    "patterns": [],
+                                                    "urlPattern": null
+                                                },
+                                                "siteDisplayName": "woolworths",
+                                                "siteId": "/300001",
+                                                "validSite": true
+                                            },
+                                            "count": 3,
+                                            "label": "Country Road",
+                                            "contentPath": "/cat",
+                                            "properties": {
+                                                "DGraph.Spec": "Country Road"
+                                            },
+                                            "multiSelect": true
+                                        }
+                                    ],
+                                    "refinementCrumbs": null
+                                },
+                                {
+                                    "@type": "RefinementMenu",
+                                    "displayName": "Size",
+                                    "endeca:auditInfo": {
+                                        "ecr:resourcePath": "/content/Guided Navigation/Kids - Boys - Clothing -Jacket & Hoodies",
+                                        "ecr:innerPath": "navigation[3]"
+                                    },
+                                    "name": "Size",
+                                    "ancestors": [],
+                                    "dimensionName": "Size",
+                                    "whyPrecedenceRuleFired": null,
+                                    "multiSelect": false,
+                                    "refinements": [
+                                        {
+                                            "@class": "com.endeca.infront.cartridge.model.Refinement",
+                                            "navigationState": "/_/N-ms9f2nZtopg9l?format=json",
+                                            "siteRootPath": null,
+                                            "siteState": {
+                                                "@class": "com.endeca.infront.site.model.SiteState",
+                                                "contentPath": "/cat/Kids/Boys-2-15YRS-/Jackets-Hoodies/_/N-ms9f2n",
+                                                "matchedUrlPattern": null,
+                                                "properties": {},
+                                                "siteDefinition": {
+                                                    "@class": "com.endeca.infront.site.model.SiteDefinition",
+                                                    "displayName": "woolworths",
+                                                    "filterStateConfiguration": null,
+                                                    "id": "/300001",
+                                                    "patterns": [],
+                                                    "urlPattern": null
+                                                },
+                                                "siteDisplayName": "woolworths",
+                                                "siteId": "/300001",
+                                                "validSite": true
+                                            },
+                                            "count": 2,
+                                            "label": "2",
+                                            "contentPath": "/cat",
+                                            "properties": {
+                                                "DGraph.Spec": "2_320"
+                                            },
+                                            "multiSelect": false
+                                        },
+                                        {
+                                            "@class": "com.endeca.infront.cartridge.model.Refinement",
+                                            "navigationState": "/_/N-ms9f2nZhtrsoe?format=json",
+                                            "siteRootPath": null,
+                                            "siteState": {
+                                                "@class": "com.endeca.infront.site.model.SiteState",
+                                                "contentPath": "/cat/Kids/Boys-2-15YRS-/Jackets-Hoodies/_/N-ms9f2n",
+                                                "matchedUrlPattern": null,
+                                                "properties": {},
+                                                "siteDefinition": {
+                                                    "@class": "com.endeca.infront.site.model.SiteDefinition",
+                                                    "displayName": "woolworths",
+                                                    "filterStateConfiguration": null,
+                                                    "id": "/300001",
+                                                    "patterns": [],
+                                                    "urlPattern": null
+                                                },
+                                                "siteDisplayName": "woolworths",
+                                                "siteId": "/300001",
+                                                "validSite": true
+                                            },
+                                            "count": 2,
+                                            "label": "2-3",
+                                            "contentPath": "/cat",
+                                            "properties": {
+                                                "DGraph.Spec": "2-3_340"
+                                            },
+                                            "multiSelect": false
+                                        },
+                                        {
+                                            "@class": "com.endeca.infront.cartridge.model.Refinement",
+                                            "navigationState": "/_/N-ms9f2nZd3ccot?format=json",
+                                            "siteRootPath": null,
+                                            "siteState": {
+                                                "@class": "com.endeca.infront.site.model.SiteState",
+                                                "contentPath": "/cat/Kids/Boys-2-15YRS-/Jackets-Hoodies/_/N-ms9f2n",
+                                                "matchedUrlPattern": null,
+                                                "properties": {},
+                                                "siteDefinition": {
+                                                    "@class": "com.endeca.infront.site.model.SiteDefinition",
+                                                    "displayName": "woolworths",
+                                                    "filterStateConfiguration": null,
+                                                    "id": "/300001",
+                                                    "patterns": [],
+                                                    "urlPattern": null
+                                                },
+                                                "siteDisplayName": "woolworths",
+                                                "siteId": "/300001",
+                                                "validSite": true
+                                            },
+                                            "count": 6,
+                                            "label": "3",
+                                            "contentPath": "/cat",
+                                            "properties": {
+                                                "DGraph.Spec": "3_380"
+                                            },
+                                            "multiSelect": false
+                                        },
+                                        {
+                                            "@class": "com.endeca.infront.cartridge.model.Refinement",
+                                            "navigationState": "/_/N-ms9f2nZ11o6tkp?format=json",
+                                            "siteRootPath": null,
+                                            "siteState": {
+                                                "@class": "com.endeca.infront.site.model.SiteState",
+                                                "contentPath": "/cat/Kids/Boys-2-15YRS-/Jackets-Hoodies/_/N-ms9f2n",
+                                                "matchedUrlPattern": null,
+                                                "properties": {},
+                                                "siteDefinition": {
+                                                    "@class": "com.endeca.infront.site.model.SiteDefinition",
+                                                    "displayName": "woolworths",
+                                                    "filterStateConfiguration": null,
+                                                    "id": "/300001",
+                                                    "patterns": [],
+                                                    "urlPattern": null
+                                                },
+                                                "siteDisplayName": "woolworths",
+                                                "siteId": "/300001",
+                                                "validSite": true
+                                            },
+                                            "count": 6,
+                                            "label": "4",
+                                            "contentPath": "/cat",
+                                            "properties": {
+                                                "DGraph.Spec": "4_500"
+                                            },
+                                            "multiSelect": false
+                                        },
+                                        {
+                                            "@class": "com.endeca.infront.cartridge.model.Refinement",
+                                            "navigationState": "/_/N-ms9f2nZtk5i4o?format=json",
+                                            "siteRootPath": null,
+                                            "siteState": {
+                                                "@class": "com.endeca.infront.site.model.SiteState",
+                                                "contentPath": "/cat/Kids/Boys-2-15YRS-/Jackets-Hoodies/_/N-ms9f2n",
+                                                "matchedUrlPattern": null,
+                                                "properties": {},
+                                                "siteDefinition": {
+                                                    "@class": "com.endeca.infront.site.model.SiteDefinition",
+                                                    "displayName": "woolworths",
+                                                    "filterStateConfiguration": null,
+                                                    "id": "/300001",
+                                                    "patterns": [],
+                                                    "urlPattern": null
+                                                },
+                                                "siteDisplayName": "woolworths",
+                                                "siteId": "/300001",
+                                                "validSite": true
+                                            },
+                                            "count": 2,
+                                            "label": "4-5",
+                                            "contentPath": "/cat",
+                                            "properties": {
+                                                "DGraph.Spec": "4-5_540"
+                                            },
+                                            "multiSelect": false
+                                        },
+                                        {
+                                            "@class": "com.endeca.infront.cartridge.model.Refinement",
+                                            "navigationState": "/_/N-ms9f2nZ13ub4g8?format=json",
+                                            "siteRootPath": null,
+                                            "siteState": {
+                                                "@class": "com.endeca.infront.site.model.SiteState",
+                                                "contentPath": "/cat/Kids/Boys-2-15YRS-/Jackets-Hoodies/_/N-ms9f2n",
+                                                "matchedUrlPattern": null,
+                                                "properties": {},
+                                                "siteDefinition": {
+                                                    "@class": "com.endeca.infront.site.model.SiteDefinition",
+                                                    "displayName": "woolworths",
+                                                    "filterStateConfiguration": null,
+                                                    "id": "/300001",
+                                                    "patterns": [],
+                                                    "urlPattern": null
+                                                },
+                                                "siteDisplayName": "woolworths",
+                                                "siteId": "/300001",
+                                                "validSite": true
+                                            },
+                                            "count": 6,
+                                            "label": "5",
+                                            "contentPath": "/cat",
+                                            "properties": {
+                                                "DGraph.Spec": "5_600"
+                                            },
+                                            "multiSelect": false
+                                        },
+                                        {
+                                            "@class": "com.endeca.infront.cartridge.model.Refinement",
+                                            "navigationState": "/_/N-ms9f2nZx406qf?format=json",
+                                            "siteRootPath": null,
+                                            "siteState": {
+                                                "@class": "com.endeca.infront.site.model.SiteState",
+                                                "contentPath": "/cat/Kids/Boys-2-15YRS-/Jackets-Hoodies/_/N-ms9f2n",
+                                                "matchedUrlPattern": null,
+                                                "properties": {},
+                                                "siteDefinition": {
+                                                    "@class": "com.endeca.infront.site.model.SiteDefinition",
+                                                    "displayName": "woolworths",
+                                                    "filterStateConfiguration": null,
+                                                    "id": "/300001",
+                                                    "patterns": [],
+                                                    "urlPattern": null
+                                                },
+                                                "siteDisplayName": "woolworths",
+                                                "siteId": "/300001",
+                                                "validSite": true
+                                            },
+                                            "count": 6,
+                                            "label": "6",
+                                            "contentPath": "/cat",
+                                            "properties": {
+                                                "DGraph.Spec": "6_660"
+                                            },
+                                            "multiSelect": false
+                                        },
+                                        {
+                                            "@class": "com.endeca.infront.cartridge.model.Refinement",
+                                            "navigationState": "/_/N-ms9f2nZcjawxn?format=json",
+                                            "siteRootPath": null,
+                                            "siteState": {
+                                                "@class": "com.endeca.infront.site.model.SiteState",
+                                                "contentPath": "/cat/Kids/Boys-2-15YRS-/Jackets-Hoodies/_/N-ms9f2n",
+                                                "matchedUrlPattern": null,
+                                                "properties": {},
+                                                "siteDefinition": {
+                                                    "@class": "com.endeca.infront.site.model.SiteDefinition",
+                                                    "displayName": "woolworths",
+                                                    "filterStateConfiguration": null,
+                                                    "id": "/300001",
+                                                    "patterns": [],
+                                                    "urlPattern": null
+                                                },
+                                                "siteDisplayName": "woolworths",
+                                                "siteId": "/300001",
+                                                "validSite": true
+                                            },
+                                            "count": 2,
+                                            "label": "6-7",
+                                            "contentPath": "/cat",
+                                            "properties": {
+                                                "DGraph.Spec": "6-7_720"
+                                            },
+                                            "multiSelect": false
+                                        },
+                                        {
+                                            "@class": "com.endeca.infront.cartridge.model.Refinement",
+                                            "navigationState": "/_/N-ms9f2nZi3g6o9?format=json",
+                                            "siteRootPath": null,
+                                            "siteState": {
+                                                "@class": "com.endeca.infront.site.model.SiteState",
+                                                "contentPath": "/cat/Kids/Boys-2-15YRS-/Jackets-Hoodies/_/N-ms9f2n",
+                                                "matchedUrlPattern": null,
+                                                "properties": {},
+                                                "siteDefinition": {
+                                                    "@class": "com.endeca.infront.site.model.SiteDefinition",
+                                                    "displayName": "woolworths",
+                                                    "filterStateConfiguration": null,
+                                                    "id": "/300001",
+                                                    "patterns": [],
+                                                    "urlPattern": null
+                                                },
+                                                "siteDisplayName": "woolworths",
+                                                "siteId": "/300001",
+                                                "validSite": true
+                                            },
+                                            "count": 6,
+                                            "label": "7",
+                                            "contentPath": "/cat",
+                                            "properties": {
+                                                "DGraph.Spec": "7_820"
+                                            },
+                                            "multiSelect": false
+                                        },
+                                        {
+                                            "@class": "com.endeca.infront.cartridge.model.Refinement",
+                                            "navigationState": "/_/N-ms9f2nZ1fk5yja?format=json",
+                                            "siteRootPath": null,
+                                            "siteState": {
+                                                "@class": "com.endeca.infront.site.model.SiteState",
+                                                "contentPath": "/cat/Kids/Boys-2-15YRS-/Jackets-Hoodies/_/N-ms9f2n",
+                                                "matchedUrlPattern": null,
+                                                "properties": {},
+                                                "siteDefinition": {
+                                                    "@class": "com.endeca.infront.site.model.SiteDefinition",
+                                                    "displayName": "woolworths",
+                                                    "filterStateConfiguration": null,
+                                                    "id": "/300001",
+                                                    "patterns": [],
+                                                    "urlPattern": null
+                                                },
+                                                "siteDisplayName": "woolworths",
+                                                "siteId": "/300001",
+                                                "validSite": true
+                                            },
+                                            "count": 6,
+                                            "label": "8",
+                                            "contentPath": "/cat",
+                                            "properties": {
+                                                "DGraph.Spec": "8_920"
+                                            },
+                                            "multiSelect": false
+                                        },
+                                        {
+                                            "@class": "com.endeca.infront.cartridge.model.Refinement",
+                                            "navigationState": "/_/N-ms9f2nZ1h1y37?format=json",
+                                            "siteRootPath": null,
+                                            "siteState": {
+                                                "@class": "com.endeca.infront.site.model.SiteState",
+                                                "contentPath": "/cat/Kids/Boys-2-15YRS-/Jackets-Hoodies/_/N-ms9f2n",
+                                                "matchedUrlPattern": null,
+                                                "properties": {},
+                                                "siteDefinition": {
+                                                    "@class": "com.endeca.infront.site.model.SiteDefinition",
+                                                    "displayName": "woolworths",
+                                                    "filterStateConfiguration": null,
+                                                    "id": "/300001",
+                                                    "patterns": [],
+                                                    "urlPattern": null
+                                                },
+                                                "siteDisplayName": "woolworths",
+                                                "siteId": "/300001",
+                                                "validSite": true
+                                            },
+                                            "count": 2,
+                                            "label": "8-9",
+                                            "contentPath": "/cat",
+                                            "properties": {
+                                                "DGraph.Spec": "8-9_980"
+                                            },
+                                            "multiSelect": false
+                                        },
+                                        {
+                                            "@class": "com.endeca.infront.cartridge.model.Refinement",
+                                            "navigationState": "/_/N-ms9f2nZ1jicg3g?format=json",
+                                            "siteRootPath": null,
+                                            "siteState": {
+                                                "@class": "com.endeca.infront.site.model.SiteState",
+                                                "contentPath": "/cat/Kids/Boys-2-15YRS-/Jackets-Hoodies/_/N-ms9f2n",
+                                                "matchedUrlPattern": null,
+                                                "properties": {},
+                                                "siteDefinition": {
+                                                    "@class": "com.endeca.infront.site.model.SiteDefinition",
+                                                    "displayName": "woolworths",
+                                                    "filterStateConfiguration": null,
+                                                    "id": "/300001",
+                                                    "patterns": [],
+                                                    "urlPattern": null
+                                                },
+                                                "siteDisplayName": "woolworths",
+                                                "siteId": "/300001",
+                                                "validSite": true
+                                            },
+                                            "count": 9,
+                                            "label": "9",
+                                            "contentPath": "/cat",
+                                            "properties": {
+                                                "DGraph.Spec": "9_1020"
+                                            },
+                                            "multiSelect": false
+                                        },
+                                        {
+                                            "@class": "com.endeca.infront.cartridge.model.Refinement",
+                                            "navigationState": "/_/N-ms9f2nZbkkz0k?format=json",
+                                            "siteRootPath": null,
+                                            "siteState": {
+                                                "@class": "com.endeca.infront.site.model.SiteState",
+                                                "contentPath": "/cat/Kids/Boys-2-15YRS-/Jackets-Hoodies/_/N-ms9f2n",
+                                                "matchedUrlPattern": null,
+                                                "properties": {},
+                                                "siteDefinition": {
+                                                    "@class": "com.endeca.infront.site.model.SiteDefinition",
+                                                    "displayName": "woolworths",
+                                                    "filterStateConfiguration": null,
+                                                    "id": "/300001",
+                                                    "patterns": [],
+                                                    "urlPattern": null
+                                                },
+                                                "siteDisplayName": "woolworths",
+                                                "siteId": "/300001",
+                                                "validSite": true
+                                            },
+                                            "count": 2,
+                                            "label": "10-11",
+                                            "contentPath": "/cat",
+                                            "properties": {
+                                                "DGraph.Spec": "10-11_1160"
+                                            },
+                                            "multiSelect": false
+                                        },
+                                        {
+                                            "@class": "com.endeca.infront.cartridge.model.Refinement",
+                                            "navigationState": "/_/N-ms9f2nZxicei6?format=json",
+                                            "siteRootPath": null,
+                                            "siteState": {
+                                                "@class": "com.endeca.infront.site.model.SiteState",
+                                                "contentPath": "/cat/Kids/Boys-2-15YRS-/Jackets-Hoodies/_/N-ms9f2n",
+                                                "matchedUrlPattern": null,
+                                                "properties": {},
+                                                "siteDefinition": {
+                                                    "@class": "com.endeca.infront.site.model.SiteDefinition",
+                                                    "displayName": "woolworths",
+                                                    "filterStateConfiguration": null,
+                                                    "id": "/300001",
+                                                    "patterns": [],
+                                                    "urlPattern": null
+                                                },
+                                                "siteDisplayName": "woolworths",
+                                                "siteId": "/300001",
+                                                "validSite": true
+                                            },
+                                            "count": 5,
+                                            "label": "10",
+                                            "contentPath": "/cat",
+                                            "properties": {
+                                                "DGraph.Spec": "10_5420"
+                                            },
+                                            "multiSelect": false
+                                        },
+                                        {
+                                            "@class": "com.endeca.infront.cartridge.model.Refinement",
+                                            "navigationState": "/_/N-ms9f2nZ7n96jn?format=json",
+                                            "siteRootPath": null,
+                                            "siteState": {
+                                                "@class": "com.endeca.infront.site.model.SiteState",
+                                                "contentPath": "/cat/Kids/Boys-2-15YRS-/Jackets-Hoodies/_/N-ms9f2n",
+                                                "matchedUrlPattern": null,
+                                                "properties": {},
+                                                "siteDefinition": {
+                                                    "@class": "com.endeca.infront.site.model.SiteDefinition",
+                                                    "displayName": "woolworths",
+                                                    "filterStateConfiguration": null,
+                                                    "id": "/300001",
+                                                    "patterns": [],
+                                                    "urlPattern": null
+                                                },
+                                                "siteDisplayName": "woolworths",
+                                                "siteId": "/300001",
+                                                "validSite": true
+                                            },
+                                            "count": 4,
+                                            "label": "11",
+                                            "contentPath": "/cat",
+                                            "properties": {
+                                                "DGraph.Spec": "11_5440"
+                                            },
+                                            "multiSelect": false
+                                        },
+                                        {
+                                            "@class": "com.endeca.infront.cartridge.model.Refinement",
+                                            "navigationState": "/_/N-ms9f2nZ722eob?format=json",
+                                            "siteRootPath": null,
+                                            "siteState": {
+                                                "@class": "com.endeca.infront.site.model.SiteState",
+                                                "contentPath": "/cat/Kids/Boys-2-15YRS-/Jackets-Hoodies/_/N-ms9f2n",
+                                                "matchedUrlPattern": null,
+                                                "properties": {},
+                                                "siteDefinition": {
+                                                    "@class": "com.endeca.infront.site.model.SiteDefinition",
+                                                    "displayName": "woolworths",
+                                                    "filterStateConfiguration": null,
+                                                    "id": "/300001",
+                                                    "patterns": [],
+                                                    "urlPattern": null
+                                                },
+                                                "siteDisplayName": "woolworths",
+                                                "siteId": "/300001",
+                                                "validSite": true
+                                            },
+                                            "count": 7,
+                                            "label": "12",
+                                            "contentPath": "/cat",
+                                            "properties": {
+                                                "DGraph.Spec": "12_5480"
+                                            },
+                                            "multiSelect": false
+                                        },
+                                        {
+                                            "@class": "com.endeca.infront.cartridge.model.Refinement",
+                                            "navigationState": "/_/N-ms9f2nZxku83z?format=json",
+                                            "siteRootPath": null,
+                                            "siteState": {
+                                                "@class": "com.endeca.infront.site.model.SiteState",
+                                                "contentPath": "/cat/Kids/Boys-2-15YRS-/Jackets-Hoodies/_/N-ms9f2n",
+                                                "matchedUrlPattern": null,
+                                                "properties": {},
+                                                "siteDefinition": {
+                                                    "@class": "com.endeca.infront.site.model.SiteDefinition",
+                                                    "displayName": "woolworths",
+                                                    "filterStateConfiguration": null,
+                                                    "id": "/300001",
+                                                    "patterns": [],
+                                                    "urlPattern": null
+                                                },
+                                                "siteDisplayName": "woolworths",
+                                                "siteId": "/300001",
+                                                "validSite": true
+                                            },
+                                            "count": 4,
+                                            "label": "13",
+                                            "contentPath": "/cat",
+                                            "properties": {
+                                                "DGraph.Spec": "13_5500"
+                                            },
+                                            "multiSelect": false
+                                        },
+                                        {
+                                            "@class": "com.endeca.infront.cartridge.model.Refinement",
+                                            "navigationState": "/_/N-ms9f2nZ178png3?format=json",
+                                            "siteRootPath": null,
+                                            "siteState": {
+                                                "@class": "com.endeca.infront.site.model.SiteState",
+                                                "contentPath": "/cat/Kids/Boys-2-15YRS-/Jackets-Hoodies/_/N-ms9f2n",
+                                                "matchedUrlPattern": null,
+                                                "properties": {},
+                                                "siteDefinition": {
+                                                    "@class": "com.endeca.infront.site.model.SiteDefinition",
+                                                    "displayName": "woolworths",
+                                                    "filterStateConfiguration": null,
+                                                    "id": "/300001",
+                                                    "patterns": [],
+                                                    "urlPattern": null
+                                                },
+                                                "siteDisplayName": "woolworths",
+                                                "siteId": "/300001",
+                                                "validSite": true
+                                            },
+                                            "count": 4,
+                                            "label": "14",
+                                            "contentPath": "/cat",
+                                            "properties": {
+                                                "DGraph.Spec": "14_5540"
+                                            },
+                                            "multiSelect": false
+                                        },
+                                        {
+                                            "@class": "com.endeca.infront.cartridge.model.Refinement",
+                                            "navigationState": "/_/N-ms9f2nZ4tz5at?format=json",
+                                            "siteRootPath": null,
+                                            "siteState": {
+                                                "@class": "com.endeca.infront.site.model.SiteState",
+                                                "contentPath": "/cat/Kids/Boys-2-15YRS-/Jackets-Hoodies/_/N-ms9f2n",
+                                                "matchedUrlPattern": null,
+                                                "properties": {},
+                                                "siteDefinition": {
+                                                    "@class": "com.endeca.infront.site.model.SiteDefinition",
+                                                    "displayName": "woolworths",
+                                                    "filterStateConfiguration": null,
+                                                    "id": "/300001",
+                                                    "patterns": [],
+                                                    "urlPattern": null
+                                                },
+                                                "siteDisplayName": "woolworths",
+                                                "siteId": "/300001",
+                                                "validSite": true
+                                            },
+                                            "count": 4,
+                                            "label": "15",
+                                            "contentPath": "/cat",
+                                            "properties": {
+                                                "DGraph.Spec": "15_5560"
+                                            },
+                                            "multiSelect": false
+                                        }
+                                    ],
+                                    "refinementCrumbs": null
+                                },
+                                {
+                                    "@type": "RefinementMenu",
+                                    "displayName": "Age",
+                                    "endeca:auditInfo": {
+                                        "ecr:resourcePath": "/content/Guided Navigation/Kids - Boys - Clothing -Jacket & Hoodies",
+                                        "ecr:innerPath": "navigation[5]"
+                                    },
+                                    "name": "Age",
+                                    "ancestors": [],
+                                    "dimensionName": "Age",
+                                    "whyPrecedenceRuleFired": null,
+                                    "multiSelect": true,
+                                    "refinements": [
+                                        {
+                                            "@class": "com.endeca.infront.cartridge.model.Refinement",
+                                            "navigationState": "/_/N-ms9f2nZ1un14bt?format=json",
+                                            "siteRootPath": null,
+                                            "siteState": {
+                                                "@class": "com.endeca.infront.site.model.SiteState",
+                                                "contentPath": "/cat/Kids/Boys-2-15YRS-/Jackets-Hoodies/_/N-ms9f2n",
+                                                "matchedUrlPattern": null,
+                                                "properties": {},
+                                                "siteDefinition": {
+                                                    "@class": "com.endeca.infront.site.model.SiteDefinition",
+                                                    "displayName": "woolworths",
+                                                    "filterStateConfiguration": null,
+                                                    "id": "/300001",
+                                                    "patterns": [],
+                                                    "urlPattern": null
+                                                },
+                                                "siteDisplayName": "woolworths",
+                                                "siteId": "/300001",
+                                                "validSite": true
+                                            },
+                                            "count": 5,
+                                            "label": "Younger Boy",
+                                            "contentPath": "/cat",
+                                            "properties": {
+                                                "DGraph.Spec": "Younger Boy"
+                                            },
+                                            "multiSelect": true
+                                        },
+                                        {
+                                            "@class": "com.endeca.infront.cartridge.model.Refinement",
+                                            "navigationState": "/_/N-ms9f2nZnq37wj?format=json",
+                                            "siteRootPath": null,
+                                            "siteState": {
+                                                "@class": "com.endeca.infront.site.model.SiteState",
+                                                "contentPath": "/cat/Kids/Boys-2-15YRS-/Jackets-Hoodies/_/N-ms9f2n",
+                                                "matchedUrlPattern": null,
+                                                "properties": {},
+                                                "siteDefinition": {
+                                                    "@class": "com.endeca.infront.site.model.SiteDefinition",
+                                                    "displayName": "woolworths",
+                                                    "filterStateConfiguration": null,
+                                                    "id": "/300001",
+                                                    "patterns": [],
+                                                    "urlPattern": null
+                                                },
+                                                "siteDisplayName": "woolworths",
+                                                "siteId": "/300001",
+                                                "validSite": true
+                                            },
+                                            "count": 4,
+                                            "label": "Older Boy",
+                                            "contentPath": "/cat",
+                                            "properties": {
+                                                "DGraph.Spec": "Older Boy"
+                                            },
+                                            "multiSelect": true
+                                        }
+                                    ],
+                                    "refinementCrumbs": null
+                                }
+                            ],
+                            "@type": "GuidedNavigation",
+                            "lookBookNavigation": [],
+                            "endeca:auditInfo": {
+                                "ecr:resourcePath": "/content/Guided Navigation/Kids - Boys - Clothing -Jacket & Hoodies",
+                                "ecr:innerPath": null
+                            },
+                            "name": "Navigation Container",
+                            "recipesNavigation": [],
+                            "articleNavigation": []
+                        }
+                    ],
+                    "@type": "ContentSlotSecondary",
+                    "endeca:auditInfo": {
+                        "ecr:resourcePath": "/content/CategoryPages/Default Category Page",
+                        "ecr:innerPath": "secondaryContent[1]"
+                    },
+                    "name": "Secondary Content Slot",
+                    "contentPaths": [
+                        "/content/Guided Navigation"
+                    ]
+                }
+            ],
+            "endeca:auditInfo": {
+                "ecr:resourcePath": "/content/CategoryPages/Default Category Page",
+                "ecr:innerPath": null
+            },
+            "name": "Two-Column Page",
+            "title": "Discover Electronics",
+            "metaDescription": "Endeca eBusiness reference application."
+        }
+    ],
+    "name": "Category Pages Slot"
+}

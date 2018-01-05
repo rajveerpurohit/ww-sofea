@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
+import { Link } from 'react-router';
 
 export default class WoolSiverCard extends Component {
   constructor(props) {
@@ -20,26 +21,26 @@ export default class WoolSiverCard extends Component {
                   <ul className="list--silent text-small accordion__content--chrome accordion__content" data-js="accordion-content">
                     <li>
                       <strong>
-                        <a href="#" className="nav-list__link--filter"> Features &amp; benefits</a>
+                        <Link to="" className="nav-list__link--filter"> Features &amp; benefits</Link>
                       </strong>
                     </li>
                     <li>
-                      <a href="#" className="nav-list__link--filter"> Pricing</a>
+                      <Link to="" className="nav-list__link--filter"> Pricing</Link>
                     </li>
                     <li>
-                      <a href="#" className="nav-list__link--filter"> Terms &amp; Conditions</a>
+                      <Link to="" className="nav-list__link--filter"> Terms &amp; Conditions</Link>
                     </li>
                     <li>
                       <hr className="hr--light" />
                     </li>
                     <li>
-                      <a href="#" className="nav-list__link--filter"> Help</a>
+                      <Link to="" className="nav-list__link--filter"> Help</Link>
                     </li>
                     <li>
-                      <a href="#" className="nav-list__link--filter"> Contact Financial Services</a>
+                      <Link to="" className="nav-list__link--filter"> Contact Financial Services</Link>
                     </li>
                     <li>
-                      <a href="#" className="nav-list__link--filter"> Log out</a>
+                      <Link to="" className="nav-list__link--filter"> Log out</Link>
                     </li>
                   </ul>
                 </div>
@@ -84,7 +85,7 @@ export default class WoolSiverCard extends Component {
                     <p className="text-small">
                       <span className="icon icon--plane-grey icon-para__icon" />
                       <span className="icon-para__paragraph">Basic travel insurance is automatically included if you are under the age of 75 and purchase an international airline ticket using your card.
-                        <a href="#">Find out more</a>.</span>
+                        <Link to="">Find out more</Link>.</span>
                     </p>
                   </div>
                   <div className="wfs-features__block">
@@ -106,7 +107,7 @@ export default class WoolSiverCard extends Component {
                     <p className="text-small">
                       <span className="icon icon--umbrella-grey icon-para__icon" />
                       <span className="icon-para__paragraph">We offer you Comprehensive Balance Protection on your Woolworths Credit Card.
-                        <a href="#">More info</a>.</span>
+                        <Link to="">More info</Link>.</span>
                     </p>
                   </div>
                 </div>
@@ -116,8 +117,8 @@ export default class WoolSiverCard extends Component {
                     <p className="text-small">
                       <span className="icon icon--rosetta-limegreen icon-para__icon" />
                       <span className="icon-para__paragraph">As a Woolworths Credit Cardholder, you're automatically part of our great
-                        <a href="#">
-                          <strong>W</strong>Rewards programme</a> that offers you exclusive special lower prices and exciting benefits. You'll earn rewards each time you swipe.</span>
+                        <Link to="">
+                          <strong>W</strong>Rewards programme</Link> that offers you exclusive special lower prices and exciting benefits. You'll earn rewards each time you swipe.</span>
                     </p>
                   </div>
                   <div className="wfs-features__block">

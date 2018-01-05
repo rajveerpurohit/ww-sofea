@@ -71,6 +71,7 @@
 @import "page-partials/checkout-header";
 @import "page-partials/checkout-footer";
 @import "page-partials/checkout-page";
+// @import "ww-microsites"; --Needs to be import for Microsits example /studiow ----WIP
 
 // SITE PAGES/SECTIONS
 @import "pages/landing";
@@ -95,3 +96,6 @@
 @import "../images/svgcss/svg.data";
 @import "../images/svgcss-brands/brands-svg.data";
 @import "components/icon-extensions";
+
+// @import "slick-carousel/slick/slick.css";
+// @import "slick-carousel/slick/slick-theme.css";

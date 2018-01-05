@@ -1,17 +1,18 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
+import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
 import axios from 'axios';
 import { Link } from 'react-router';
 import AriaModal from 'react-aria-modal';
+import {postDeliveryArea} from './actions';
 
-
-export default class DeleveryModel extends Component {
+class DeleveryModel extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      provienceData : [],
-      suburbsData : [],
+      // provienceData : this.props.provienceDataClick,
+      // suburbsData : [],
       firstProv : "Select a Province" ,//regions.regions[0].name,
       firstSuburb : "Select a Suburb", //suburbs.suburbs[0].name
       firstProvValue : " ",
@@ -26,47 +27,25 @@ export default class DeleveryModel extends Component {
     this.deactivateModal = this.deactivateModal.bind(this); 
   }
   componentDidMount() {
-    this.fetchDeliveryLocation();
+   
   }
   continueOption(evt) {
+    evt.preventDefault();
+    const deliveryLocation = this.props.deliveryDetails.deliveryLocation;
     const data = {
-      "suburbId": this.state.firstSuburbValue
-      };
-    axios.post('http://172.21.40.151:8180/public/v1/cart/commerceItems/suburb', data) 
-      .then((response)=>{ 
-         this.setState({
-            nonDelieverable : response.data.title
-          });
-      }).catch((error) => {
-      
-        if (error.response) {
-          console.log(error.response); 
-        } 
-        
-    });
-    
+      suburbId: this.state.firstSuburbValue
+    };
+    if (deliveryLocation.suburbId) data.updateOrderSuburb = true;
+    data.addSuburbToOrder = true;
 
-    if (typeof window !== 'undefined' && window){
-      localStorage.setItem( 'SelectedOption', this.state.firstSuburb );
+    if (typeof window !== 'undefined' && window) {
+      localStorage.setItem( 'SelectedOption', this.state.firstSuburb);
     }  
-      this.props.updateProps(this.state.firstSuburb);
-      this.deactivateModal();
-      
+    this.props.updateProps(this.state.firstSuburb);
+    this.props.postDeliveryArea(data);
+    this.deactivateModal();
   }
-  fetchDeliveryLocation(){
-      let url = '';
-      if(this.props.updateVal == "Delivery Area "){
-          url = "http://172.21.40.151:8180/public/v1/location/regions/";
-      } else{
-          url = "http://172.21.40.151:8180/public/v1/location/regions?isChangeDeliveryLocation=true";
-      }
-      axios.get(url) 
-          .then((response)=>{
-          this.setState({
-              provienceData : response.data.regions
-          });
-      });
-  }
+ 
   deactivateModal() {
     this.props.deactivateModal();
   }
@@ -89,7 +68,7 @@ export default class DeleveryModel extends Component {
         firstProvValue : getProVal
       });
       let hasMatch =false;
-      this.state.provienceData.filter((provData)=>{   
+      this.props.provienceData.filter((provData)=>{   
          if(provData.id == getProVal){
           hasMatch = true;       
           this.setState({
@@ -147,7 +126,7 @@ export default class DeleveryModel extends Component {
               <div>
                 <AriaModal titleText="deliveryArea" onExit={this.props.deactivateModal} >
                 <div className="modal__box modal__box--panel modal__box--size-w-large" data-js="modal-box" style={{marginBottom: "184px", top: "184px",width : "100%"}}> 
-                  <a href="#" className="icon icon--close-circ-dark modal__close" onClick={this.props.deactivateModal}>close</a>
+                  <Link to="" className="icon icon--close-circ-dark modal__close" onClick={this.props.deactivateModal} >close</Link>
                   <div className="heading heading--3 font-graphic modal__head" data-js="modal-head">Select your delivery location</div>  
                   <div className="modal__content">
                   <form id="deliverylocform" >
@@ -160,7 +139,7 @@ export default class DeleveryModel extends Component {
                           <span className="enhanced-select">
                               <select id="fldProvince" name="province"  className="customSelect" onChange={(e)=>{this.provienceSelect(e)}}>
                               <option value="">Select a Province</option>
-                              {this.state.provienceData && this.createProvienceOptionsData(this.state.provienceData)}                
+                              {this.props.provienceData && this.createProvienceOptionsData(this.props.provienceData)}                
                               </select>
                               
                               <span className="enhanced-select__label">{this.state.firstProvValue == "" ? "Select a Province" : this.state.firstProv}</span><span className="icon enhanced-select__icon"></span>
@@ -200,3 +179,9 @@ export default class DeleveryModel extends Component {
     )
   }
 }
+
+const matchDispatchToProps = (dispatch) => {
+  return bindActionCreators({ postDeliveryArea }, dispatch);
+};
+
+export default connect(null, matchDispatchToProps)(DeleveryModel);

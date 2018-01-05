@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
+import { Link } from 'react-router';
 
 
 export default class AccountDetails extends Component {
@@ -26,53 +27,53 @@ export default class AccountDetails extends Component {
                   <div className="accordion__segment accordion__segment--chrome" data-js="accordion-segment">
                     <div className="accordion__toggle accordion__toggle--chrome accordion__toggle--line heading heading--4" data-js="accordion-toggle">My Account</div>
                     <ul className="list--silent text-small accordion__content--chrome accordion__content accordion__content--animated" data-js="accordion-content" style={{height: 952}}>
-                      <li className="active"><a href="/store/fragments/dashboard/dashboard-index.jsp" className="nav-list__link--filter">My Account Home</a></li>
+                      <li className="active"><Link to="/store/fragments/dashboard/dashboard-index.jsp" className="nav-list__link--filter">My Account Home</Link></li>
                       <li><hr className="hr--light" /></li>
-                      <li className="active"><a href="/store/fragments/dashboard/dashboard-index.jsp?content=myaccount/user-details#personal" className="nav-list__link--filter">My Details</a>
+                      <li className="active"><Link to="/store/fragments/dashboard/dashboard-index.jsp?content=myaccount/user-details#personal" className="nav-list__link--filter">My Details</Link>
                         <ul className="list--silent text-small accordion__content--chrome accordion__content">
-                          <li><a href="/store/fragments/dashboard/dashboard-index.jsp?content=myaccount/payment-details" className="nav-list__link--filter">Payment Details</a></li>	<li><a href="/store/fragments/dashboard/dashboard-index.jsp?content=myaccount/delivery-details" className="nav-list__link--filter">My Addresses</a></li>
+                          <li><Link to="/store/fragments/dashboard/dashboard-index.jsp?content=myaccount/payment-details" className="nav-list__link--filter">Payment Details</Link></li>	<li><Link to="/store/fragments/dashboard/dashboard-index.jsp?content=myaccount/delivery-details" className="nav-list__link--filter">My Addresses</Link></li>
                         </ul>
                       </li>
                       <li><hr className="hr--light" /></li>
-                      <li><a href="/store/fragments/dashboard/dashboard-index.jsp?content=preferences/consents" className="nav-list__link--filter">My Preferences</a>
+                      <li><Link to="/store/fragments/dashboard/dashboard-index.jsp?content=preferences/consents" className="nav-list__link--filter">My Preferences</Link>
                         <ul className="list--silent text-small accordion__content--chrome accordion__content">
-                          <li><a href="/store/fragments/dashboard/dashboard-index.jsp?content=preferences/consents" className="nav-list__link--filter">View Communication Consents</a></li>	<li><a href="/store/fragments/dashboard/dashboard-index.jsp?content=preferences/interests" className="nav-list__link--filter">View Communication Interests</a></li>	
+                          <li><Link to="/store/fragments/dashboard/dashboard-index.jsp?content=preferences/consents" className="nav-list__link--filter">View Communication Consents</Link></li>	<li><Link to="/store/fragments/dashboard/dashboard-index.jsp?content=preferences/interests" className="nav-list__link--filter">View Communication Interests</Link></li>	
                         </ul>
                       </li>
                       <li><hr className="hr--light" /></li>
-                      <li><a href="/store/fragments/dashboard/dashboard-index.jsp?content=wfs/about-wfs" className="nav-list__link--filter">Financial Services</a>
+                      <li><Link to="/store/fragments/dashboard/dashboard-index.jsp?content=wfs/about-wfs" className="nav-list__link--filter">Financial Services</Link>
                         <ul className="list--silent text-small accordion__content--chrome accordion__content">
-                          <li><a href="/store/fragments/dashboard/dashboard-index.jsp?content=wfs/about-wfs" className="nav-list__link--filter">About Financial Services</a></li>	<li><a href="/store/fragments/dashboard/dashboard-index.jsp?content=wfs/connect-card" className="nav-list__link--filter">Link Account</a></li>	
+                          <li><Link to="/store/fragments/dashboard/dashboard-index.jsp?content=wfs/about-wfs" className="nav-list__link--filter">About Financial Services</Link></li>	<li><Link to="/store/fragments/dashboard/dashboard-index.jsp?content=wfs/connect-card" className="nav-list__link--filter">Link Account</Link></li>	
                         </ul>
                       </li>
                       <li><hr className="hr--light" /></li>
-                      <li><a href="/store/fragments/dashboard/dashboard-index.jsp?content=rewards/about-rewards" className="nav-list__link--filter">WRewards</a>
+                      <li><Link to="/store/fragments/dashboard/dashboard-index.jsp?content=rewards/about-rewards" className="nav-list__link--filter">WRewards</Link>
                         <ul className="list--silent text-small accordion__content--chrome accordion__content">
-                          <li><a href="/store/fragments/dashboard/dashboard-index.jsp?content=rewards/about-littleworld" className="nav-list__link--filter">Littleworld</a></li>	<li><a href="/store/fragments/dashboard/dashboard-index.jsp?content=rewards/about-rewards" className="nav-list__link--filter">WRewards</a></li>	<li><a href="/store/fragments/dashboard/dashboard-index.jsp?content=rewards/about-myschool" className="nav-list__link--filter">MySchool</a></li>	<li><a href="/store/fragments/dashboard/dashboard-index.jsp?content=rewards/connect-card" className="nav-list__link--filter">Link Account</a></li>	
+                          <li><Link to="/store/fragments/dashboard/dashboard-index.jsp?content=rewards/about-littleworld" className="nav-list__link--filter">Littleworld</Link></li>	<li><Link to="/store/fragments/dashboard/dashboard-index.jsp?content=rewards/about-rewards" className="nav-list__link--filter">WRewards</Link></li>	<li><Link to="/store/fragments/dashboard/dashboard-index.jsp?content=rewards/about-myschool" className="nav-list__link--filter">MySchool</Link></li>	<li><Link to="/store/fragments/dashboard/dashboard-index.jsp?content=rewards/connect-card" className="nav-list__link--filter">Link Account</Link></li>	
                         </ul>
                       </li>
                       <li><hr className="hr--light" /></li>
-                      <li><a href="/store/fragments/dashboard/dashboard-index.jsp?content=favourites/favourites-index" className="nav-list__link--filter">My Favourites</a></li>
+                      <li><Link to="/store/fragments/dashboard/dashboard-index.jsp?content=favourites/favourites-index" className="nav-list__link--filter">My Favourites</Link></li>
                       <li><hr className="hr--light" /></li>
-                      <li><a href="/store/fragments/dashboard/dashboard-index.jsp?content=shopping-lists/create-list" className="nav-list__link--filter">Shopping Lists</a>
+                      <li><Link to="/store/fragments/dashboard/dashboard-index.jsp?content=shopping-lists/create-list" className="nav-list__link--filter">Shopping Lists</Link>
                         <ul className="list--silent text-small accordion__content--chrome accordion__content">
-                          <li><a href="/store/fragments/dashboard/dashboard-index.jsp?content=shopping-lists/shopping-lists-index" className="nav-list__link--filter">My Shopping Lists</a></li>
+                          <li><Link to="/store/fragments/dashboard/dashboard-index.jsp?content=shopping-lists/shopping-lists-index" className="nav-list__link--filter">My Shopping Lists</Link></li>
                         </ul>
                       </li>
                       <li><hr className="hr--light" /></li>
-                      <li><a href="/store/fragments/dashboard/dashboard-index.jsp?content=purchases/purchase-history" className="nav-list__link--filter">Online Purchases</a>
+                      <li><Link to="/store/fragments/dashboard/dashboard-index.jsp?content=purchases/purchase-history" className="nav-list__link--filter">Online Purchases</Link>
                         <ul className="list--silent text-small accordion__content--chrome accordion__content">
-                          <li><a href="/store/fragments/dashboard/dashboard-index.jsp?content=purchases/purchase-history" className="nav-list__link--filter">My Online Purchases</a></li>	<li><a href="/store/fragments/dashboard/dashboard-index.jsp?content=rewards/apply-loyalty-card" className="nav-list__link--filter">Apply For Loyalty Card</a></li>
+                          <li><Link to="/store/fragments/dashboard/dashboard-index.jsp?content=purchases/purchase-history" className="nav-list__link--filter">My Online Purchases</Link></li>	<li><Link to="/store/fragments/dashboard/dashboard-index.jsp?content=rewards/apply-loyalty-card" className="nav-list__link--filter">Apply For Loyalty Card</Link></li>
                         </ul>
                       </li>
                       <li><hr className="hr--light" /></li>
-                      <li><a href="/store/fragments/dashboard/dashboard-index.jsp?content=littleworld/details" className="nav-list__link--filter">Littleworld</a>
+                      <li><Link to="/store/fragments/dashboard/dashboard-index.jsp?content=littleworld/details" className="nav-list__link--filter">Littleworld</Link>
                         <ul className="list--silent text-small accordion__content--chrome accordion__content">
-                          <li><a href="/store/fragments/dashboard/dashboard-index.jsp?content=littleworld/details" className="nav-list__link--filter">View Details</a></li>	<li><a href="/store/fragments/dashboard/dashboard-index.jsp?content=littleworld/details&add=true" className="nav-list__link--filter">Add Another Child</a></li>
+                          <li><Link to="/store/fragments/dashboard/dashboard-index.jsp?content=littleworld/details" className="nav-list__link--filter">View Details</Link></li>	<li><Link to="/store/fragments/dashboard/dashboard-index.jsp?content=littleworld/details&add=true" className="nav-list__link--filter">Add Another Child</Link></li>
                         </ul>
                       </li>
                       <li><hr className="hr--light" /></li>
-                      <li><a href="/store/?_DARGS=/store/fragments/navigation/ww/category-list-dashboard.jsp_A&_DAV=&_dynSessConf=-5118320893446871934" className="nav-list__link--filter">Logout</a></li>	</ul> </div>
+                      <li><Link to="/store/?_DARGS=/store/fragments/navigation/ww/category-list-dashboard.jsp_A&_DAV=&_dynSessConf=-5118320893446871934" className="nav-list__link--filter">Logout</Link></li>	</ul> </div>
                 </div>
                
               </nav>
@@ -93,7 +94,7 @@ export default class AccountDetails extends Component {
                       omkar.somji@zensar.com
                     </div>
                     <div className="my-details-section__cell grid text-align-right">
-                      <a className="icon-text text-small link--silent arrow-link--forward" href="#" data-js="content-toggle" data-toggle-target="content-email-form">Update email address</a>
+                      <Link className="icon-text text-small link--silent arrow-link--forward" to="" data-js="content-toggle" data-toggle-target="content-email-form">Update email address</Link>
                     </div>
                     <div className="my-details-section__row grid" id="content-email-form" style={{display: 'none'}}>
                       <div className="grid my-details-section__form">
@@ -119,7 +120,7 @@ export default class AccountDetails extends Component {
                       <strong>Password hint:</strong>
                     </div>
                     <div className="my-details-section__cell grid text-align-right">
-                      <a className="icon-text text-small link--silent arrow-link--forward" href="#" data-js="content-toggle" data-toggle-target="content-password-form">Change my password</a>
+                      <Link className="icon-text text-small link--silent arrow-link--forward" to="" data-js="content-toggle" data-toggle-target="content-password-form">Change my password</Link>
                     </div>
                     <div className="my-details-section__row grid" id="content-password-form" style={{display: 'none'}}>
                       <div className="grid my-details-section__form">
@@ -146,7 +147,7 @@ export default class AccountDetails extends Component {
                             <div style={{display: 'none'}}><input name="_DARGS" type="hidden" defaultValue="/store/fragments/dashboard/myaccount/login-details.jsp.frmNewPasswordForm" /> </div></form>
                         </div> </div> </div> </div>	</section>	</section>
              
-              <a name="personal" />
+              <Link name="personal" />
               <section className="grid grid--space-y">
                 <h2 className="font-graphic text-caps">My Personal Details</h2>
                 <section className="my-details-section">
@@ -228,7 +229,7 @@ export default class AccountDetails extends Component {
                   </div>
                   <div className="my-details-section__row grid">
                     <div className="my-details-section__cell text-align-right">
-                      <a href="#" className="text-small link--silent arrow-link--forward" data-js="content-toggle" data-toggle-target="content-details-form">Update my details</a>
+                      <Link to="" className="text-small link--silent arrow-link--forward" data-js="content-toggle" data-toggle-target="content-details-form">Update my details</Link>
                     </div>
                   </div>
                   <div className="my-details-section__row grid" id="content-details-form" style={{display: 'none'}}>
@@ -333,7 +334,7 @@ export default class AccountDetails extends Component {
                   </div>
                   <div className="my-details-section__row grid">
                     <div className="my-details-section__cell text-align-right">
-                      <a className="text-small link--silent arrow-link--forward" href="#" data-js="content-toggle" data-toggle-target="content-emails-form">Update my email addresses</a>
+                      <Link className="text-small link--silent arrow-link--forward" to="" data-js="content-toggle" data-toggle-target="content-emails-form">Update my email addresses</Link>
                     </div>
                   </div>
                   <div className="my-details-section__row grid" id="content-emails-form" style={{display: 'none'}}>
@@ -384,7 +385,7 @@ export default class AccountDetails extends Component {
                     </div> </div> 
                   <div className="my-details-section__row grid">
                     <div className="my-details-section__cell text-align-right">
-                      <a className="text-small link--silent arrow-link--forward" href="#updateContacts" data-js="content-toggle" data-toggle-target="content-contact-form">Update my contact numbers</a>
+                      <Link className="text-small link--silent arrow-link--forward" to="#updateContacts" data-js="content-toggle" data-toggle-target="content-contact-form">Update my contact numbers</Link>
                     </div>
                   </div>
                   <div className="my-details-section__row" id="content-contact-form" style={{display: 'none'}}>
@@ -415,9 +416,9 @@ export default class AccountDetails extends Component {
                     <h2 className="text-caps font-graphic">Other Actions</h2>
                     <div className="my-details-section__row">
                       <div className="my-details-section__cell">
-                        <a href="#" className="text-small link--silent arrow-link--forward link--silent" data-modal-target="/store/fragments/dashboard/myaccount/delete-profile.jsp" data-js="modal-toggle" data-modal-type="load" data-modal-classes="modal__box--panel modal__box--size-w-large" data-modal-overlay="true" data-modal-head="DELETE MY ONLINE PROFILE">
+                        <Link to="" className="text-small link--silent arrow-link--forward link--silent" data-modal-target="/store/fragments/dashboard/myaccount/delete-profile.jsp" data-js="modal-toggle" data-modal-type="load" data-modal-classes="modal__box--panel modal__box--size-w-large" data-modal-overlay="true" data-modal-head="DELETE MY ONLINE PROFILE">
                           I want to delete my online profile
-                        </a>
+                        </Link>
                       </div>
                     </div>
                   </section>        

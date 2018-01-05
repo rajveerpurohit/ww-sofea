@@ -1,6 +1,7 @@
 import express from 'express';
 import webpack from 'webpack';
-import { isDebug } from '../config/app';
+import axios from 'axios';
+import { isDebug, API_AGGRIGATOR_URL} from '../config/app';
 import { connect } from './db';
 import initPassport from './init/passport';
 import initExpress from './init/express';
@@ -36,14 +37,14 @@ if (isDebug) {
 /*
  * Bootstrap application settings
  */
-initExpress(app);
+// initExpress(app);
 
 /*
  * REMOVE if you do not need any routes
  *
  * Note: Some of these routes have passport and database model dependencies
  */
-initRoutes(app);
+// initRoutes(app);
 
 /* To allow cross origin access from old architecture set up on port 7003 to new architecture
  set up on port 3333 */
@@ -74,6 +75,48 @@ initRoutes(app);
  * renderMiddleware matches the URL with react-router and renders the app into
  * HTML
  */
-app.get('*', renderMiddleware);
 
-app.listen(app.get('port'));
+
+const _headerReducer = {logoReducer: {}, miniCartReducer: {}};
+const _footer = {};
+const _labels = {labels: {}};
+const _deliveryDetails = {};
+
+    Promise.all([
+        axios.get(API_AGGRIGATOR_URL + '/api/headers/megamenu'),
+        axios.get(API_AGGRIGATOR_URL + '/api/headers/headerlogo'),
+        axios.get(API_AGGRIGATOR_URL + '/api/cart/cartdetails'),
+        axios.get(API_AGGRIGATOR_URL + '/api/footers'),
+        axios.get(API_AGGRIGATOR_URL + '/api/static/content/labels'),
+        axios.get(API_AGGRIGATOR_URL + '/api/regions'),
+
+      ]).then((response) => {
+        console.log('::::Promises Resolved For Meganav, Logo, Cartdetails, Footer, Labels and regions::::');
+        _headerReducer.meganavReducer = response[0].data;
+        _headerReducer.logoReducer.logoData = response[1].data;
+        _headerReducer.miniCartReducer.miniCartData = response[2].data;
+        _footer.footerData = response[3].data.footer;
+        _labels.labels = response[4].data.labels;
+        _deliveryDetails.deliveryArea = response[5].data.regions;
+        /*
+        * Bootstrap application settings
+        */
+        initExpress(app);
+
+        /*
+        * REMOVE if you do not need any routes
+        *
+        * Note: Some of these routes have passport and database model dependencies
+        */
+        initRoutes(app);
+        app.listen(app.get('port'));
+         app.get('*', renderMiddleware);
+      })
+      .catch((error) => {
+        console.log(' !!!!******* EA SERVER STARTUP HALTED ******!!!!\nError--', error);
+      });
+     
+    export const headerReducer = _headerReducer;
+    export const footer = _footer;
+    export const labels = _labels;
+    export const deliveryDetails = _deliveryDetails;

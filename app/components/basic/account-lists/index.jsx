@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router';
 import axios from 'axios';
 import { connect } from 'react-redux';
+import DeliveryTo from '../../basic/delivering-to';
+import ServiceUtil from '../../../services/serviceUtil';
 
 class AccountsList extends Component {
     constructor(props){
@@ -35,18 +37,23 @@ class AccountsList extends Component {
     }
     onLogout(e) {
         e.preventDefault();
-        console.log('accountList - ', this.props)
         this.props.logOut();
+        if (typeof window !== 'undefined' && window){
+            const setItem = localStorage.setItem( 'SelectedOption', 'Delivery Area ' );
+             localStorage.setItem("logout", true);
+            <DeliveryTo labels={this.props.labels} />
+            // localStorage.removeItem("logout");
+        }       
     }
     render() {
         const { user } = this.props;
         let liClass = 'fly-out fly-out--toggle-overlay-medium';
         let loginHeader = 
             <div className={ liClass }>
-                <span className="text-xsmall main-header-nav__label">Hello, Sign in</span>
+                <span className="text-xsmall main-header-nav__label"> {ServiceUtil.getLabel(this.props.labels, 'global-header-hello-signin')}</span>
                 <Link data-js="fly-out-toggle" to="/login" className="fly-out__toggle nav-list-x__link link--silent">
                     <span className="icon icon--user-white inline-block-visible--mobi-max"></span>
-                        <strong className="font-graphic text-small main-header-nav__title">Account &amp; Lists&nbsp;&nbsp;<span className="icon icon--down-circ-darkest"></span></strong>           
+                        <strong className="font-graphic text-small main-header-nav__title">{ServiceUtil.getLabel(this.props.labels, 'global-header-account-lists')}&nbsp;&nbsp;<span className="icon icon--down-circ-darkest"></span></strong>           
                 </Link>
             </div>
 
@@ -56,22 +63,22 @@ class AccountsList extends Component {
             loginHeader =                 
                 <div className={ liClass } onMouseEnter={ this.handleMouseEnter } onMouseLeave={ this.handleMouseLeave }>
                     <span className="text-xsmall main-header-nav__label">Hello {user.userName}</span>
-                    <Link to="#" className="fly-out__toggle nav-list-x__link link--silent">
+                    <Link to="" className="fly-out__toggle nav-list-x__link link--silent">
                         <span className="icon icon--user-white inline-block-visible--mobi-max"></span>
-                        <strong className="font-graphic text-small main-header-nav__title">Account &amp; Lists&nbsp;&nbsp;<span className="icon icon--down-circ-darkest"></span></strong>
+                        <strong className="font-graphic text-small main-header-nav__title">{ServiceUtil.getLabel(this.props.labels, 'global-header-account-lists')}&nbsp;&nbsp;<span className="icon icon--down-circ-darkest"></span></strong>
                     </Link>
                     <ul className="nav-list fly-out__content main-header-nav__profile-nav" onMouseEnter={this.handleMouseListEnter} onMouseLeave={this.handleMouseListLeave}>
                         <li className="nav-list__item">
-                            <Link to="#" className="nav-list__link link--silent">Account Details</Link>
+                            <Link to="" className="nav-list__link link--silent">{ServiceUtil.getLabel(this.props.labels, 'global-header-account-details')}</Link>
                         </li>
                         <li className="nav-list__item">
-                            <Link to="#" className="nav-list__link link--silent">My Orders</Link>
+                            <Link to="" className="nav-list__link link--silent">{ServiceUtil.getLabel(this.props.labels, 'global-header-my-orders')}</Link>
                         </li>
                         <li className="nav-list__item">
-                            <Link to="#" className="nav-list__link link--silent">My Lists</Link>
+                            <Link to="" className="nav-list__link link--silent">{ServiceUtil.getLabel(this.props.labels, 'global-header-my-shopping-lists')}</Link>
                         </li>
                         <li className="nav-list__item">
-                            <Link to="#" className="nav-list__link link--silent" onClick={(e)=> this.onLogout(e) }>Logout</Link>
+                            <Link to="" className="nav-list__link link--silent" onClick={(e)=> this.onLogout(e) }>{ServiceUtil.getLabel(this.props.labels, 'global-header-signout')}</Link>
                         </li>
                     </ul>
                 </div>

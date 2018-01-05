@@ -6,7 +6,7 @@ import {
 
 export default function secureReducer(state = {
 }, action) {
-    //console.log("action.data : "+ action.data.secure.SHOPONLINESAFELYWITHWOOLIES);
+  
   switch (action.type) {
     case GET_SAFE_SECURE_JSON_SUCCESS:
       return Object.assign({}, state, {

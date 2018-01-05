@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
+import { Link } from 'react-router';
 
 
 export default class ShoppingList extends Component {
@@ -21,19 +22,19 @@ export default class ShoppingList extends Component {
                   <h4 className="text-caps accordion__toggle--chrome accordion__toggle--line accordion__toggle" data-js="accordion-toggle">Shopping list:</h4>
                   <ul className="list--silent text-small accordion__content--chrome accordion__content" data-js="accordion-content">
                     <li>
-                      <a href="#" className="nav-list__link--filter is-current"> My Shopping List</a>
+                      <Link to="" className="nav-list__link--filter is-current"> My Shopping List</Link>
                     </li>
                     <li>
                       <hr className="hr--light" />
                     </li>
                     <li>
-                      <a href="#" className="nav-list__link--filter"> Help</a>
+                      <Link to="" className="nav-list__link--filter"> Help</Link>
                     </li>
                     <li>
-                      <a href="#" className="nav-list__link--filter"> Contact Us</a>
+                      <Link to="" className="nav-list__link--filter"> Contact Us</Link>
                     </li>
                     <li>
-                      <a href="#" className="nav-list__link--filter"> Log out</a>
+                      <Link to="" className="nav-list__link--filter"> Log out</Link>
                     </li>
                   </ul>
                 </div>
@@ -52,8 +53,8 @@ export default class ShoppingList extends Component {
                 </section>
                 <footer className="panel-card__footer">
                   <strong>
-                    <a className="arrow-link--forward link--silent text-small" href="#">Manage</a>
-                    <a className="arrow-link--forward link--silent text-small" href="#">Delete</a>
+                    <Link className="arrow-link--forward link--silent text-small" to="">Manage</Link>
+                    <Link className="arrow-link--forward link--silent text-small" to="">Delete</Link>
                   </strong>
                 </footer>
               </div>
@@ -66,8 +67,8 @@ export default class ShoppingList extends Component {
                 </section>
                 <footer className="panel-card__footer">
                   <strong>
-                    <a className="arrow-link--forward link--silent text-small" href="#">Manage</a>
-                    <a className="arrow-link--forward link--silent text-small" href="#">Delete</a>
+                    <Link className="arrow-link--forward link--silent text-small" to="">Manage</Link>
+                    <Link className="arrow-link--forward link--silent text-small" to="">Delete</Link>
                   </strong>
                 </footer>
               </div>
@@ -80,13 +81,13 @@ export default class ShoppingList extends Component {
                 </section>
                 <footer className="panel-card__footer">
                   <strong>
-                    <a className="arrow-link--forward link--silent text-small" href="#">Manage</a>
-                    <a className="arrow-link--forward link--silent text-small" href="#">Delete</a>
+                    <Link className="arrow-link--forward link--silent text-small" to="">Manage</Link>
+                    <Link className="arrow-link--forward link--silent text-small" to="">Delete</Link>
                   </strong>
                 </footer>
               </div>
               <div className="grid__three-fourths">
-                <a href="shopping-list-create.html" className="btn btn--primary btn--right">Create a new list</a>
+                <Link to="shopping-list-create.html" className="btn btn--primary btn--right">Create a new list</Link>
               </div>
             </div>
           </div>

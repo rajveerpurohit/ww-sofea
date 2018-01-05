@@ -7,6 +7,8 @@ import createRoutes from './routes';
 import * as types from './types';
 import configureStore from './store/configureStore';
 
+import {ATG_URL} from '../config/app';
+
 import preRenderMiddleware from '../server/render/preRenderMiddleware';
 
 // Grab the state from a global injected into
@@ -20,6 +22,13 @@ const routes = createRoutes(store);
 /**
  * Callback function handling frontend route changes.
  */
+function isMobileScreen() {
+  let flag = false;
+  if (typeof window !== 'undefined' && window.innerWidth <= 1023) {
+    flag = true;
+  }
+  return flag;
+}
 function onUpdate() {
   // Prevent duplicate fetches when first loaded.
   // Explanation: On server-side render, we already have __INITIAL_STATE__
@@ -30,6 +39,15 @@ function onUpdate() {
   if (window.__INITIAL_STATE__ !== null) {
     window.__INITIAL_STATE__ = null;
     return;
+  }
+  if (typeof window !== 'undefined' && !window.ATG_URL) {
+           Object.defineProperty(window, 'ATG_URL', {
+        value: ATG_URL});
+    }
+
+
+  if (isMobileScreen) {
+
   }
 
   store.dispatch({ type: types.CREATE_REQUEST });
@@ -57,4 +75,5 @@ render(
     <Router history={history} onUpdate={onUpdate}>
       {routes}
     </Router>
-  </Provider>, document.getElementById('app'));
+  </Provider>, document.getElementById('app')
+);

@@ -53,7 +53,7 @@
     line-height: 1em;
   }
   .accordion__toggle--line {
-    border-bottom:1px solid $colour-grey;
+    //border-bottom:1px solid $colour-grey;
     &.is-collapsed {
       border-bottom:0;
     }

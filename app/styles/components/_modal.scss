@@ -133,6 +133,9 @@ $modal-margin:10px;
 .modal__image {
   max-height:90vh;
 }
+.icon.icon--close-circ-dark.modal__close {
+  outline : none
+}
 
 @mixin modalPanelMin() {
   padding:1em 0;
