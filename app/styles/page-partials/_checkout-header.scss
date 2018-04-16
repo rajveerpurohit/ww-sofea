@@ -1,22 +1,33 @@
 .checkout-header {
-  background: $colour-font-default;
+  background-color: $colour-font-default;
   display: block;
+  overflow: hidden;
   padding: 15px 2%;
-  .site-header-foot__icon {
-    float: right;
-    background-image:$logo-sprite;
-    width:34px;
-    height:34px;
-    display:block;
-    background-position: 0 0;
+  .logo {
+    a {
+      background: url(/images/breakpoint_lrg/woolworths_logo.png) no-repeat left top #000;
+      display: block;
+      height: 18px;
+      text-indent: -9999em;
+      width: 179px;
+      float: left;
+      margin-top: 9px;
   }
-  .site-header__logo {
-    margin:9px 0 0;
-    float:left;
-    background-size: 100%;
-    width: 266px;
-    height: 22px;
-    background-position: 0 -126px;
+  }
+  .wLogo {
+    float: right;
+    display: block;
+    width: 36px;
+    height: 36px;
+    text-indent: -9999px;
+    a {
+      float: right;
+      position: relative;
+      overflow: hidden;
+      height: 36px;
+      width: 36px;
+      background-image: url(/images/icons/checkout_logo.gif);
+     }
   }
 }
 .checkout-subheader {

@@ -1,8 +1,4 @@
 import React, { Component } from 'react';
-import {connect} from 'react-redux';
-import PropTypes from 'prop-types';
-import axios from 'axios';
-import { Link } from 'react-router';
 
 export default class PrivacyPolicy extends Component {
   constructor(props) {

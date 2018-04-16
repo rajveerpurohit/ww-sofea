@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import {bindActionCreators} from 'redux';
+import { bindActionCreators } from 'redux';
+import _ from 'lodash';
 
 import Logo from '../../basic/logo';
 import TopHeader from '../../basic/top-header';
@@ -8,114 +9,204 @@ import MegaNav from '../../compound/mega-nav';
 import AccountsList from '../../basic/account-lists';
 import CartCheckout from '../../basic/mini-cart-checkout';
 import DeliverySlotTo from '../../basic/delivery-slot';
+import ExtendDeliverySlot from '../../basic/extend-delivery-slot';
 import DeliveryDetails from '../../compound/deliveryDetails';
 
-import { logOut } from '../../compound/signin/actions';
-import { loader, modal } from '../../../actions/common';
+import CommonUtil from '../../../services/commonUtil';
+import { logOut, setUserSession } from '../../compound/signin/actions';
+import { loader, modal, viewportType, setMobileNavHeaderOption } from '../../../actions/common';
+import {
+  DEFAULT_STORE_ID,
+  STORE_ID_COOKIE_NAME,
+  DEFAULT_FOOD_FULFILLER_TYPE,
+  VIEW_PORT_TYPE_MOBILE,
+  VIEW_PORT_TYPE_DESKTOP
+} from '../../../Constants';
 
-import { changeLocation, addNewAddress, getUserAddresses, setCurrentAddress, getDeliverySlots, showAddressForm } from '../../compound/deliveryDetails/actions';
-
+import {
+  changeLocation,
+  addNewAddress,
+  getUserAddresses,
+  setCurrentAddress,
+  getDeliverySlots,
+  showAddressForm,
+  reserveDeliverySlots,
+  confirmDeliveryAddress,
+  extendDeliverySlot,
+  extendDeliverySlotApi,
+  deliverySlotSession,
+  changeDeliveryAddress
+} from '../../compound/deliveryDetails/actions';
 
 class Header extends Component {
-    constructor(props) {
-        super(props);
-        this.updateDimensions = this.updateDimensions.bind(this);
-    }
-    componentWillMount() {
-        if (typeof window !== 'undefined' && window) {
-            window.addEventListener('resize', this.updateDimensions);
-        }
-    }
+  constructor(props) {
+    super(props);
+    this.state = {
+      hideDeliverySlotFlyOut: false
+    };
+    this.updateDimensions = this.updateDimensions.bind(this);
+    this.updateHideDeliverySlotFlyOut = this.updateHideDeliverySlotFlyOut.bind(this);
+  }
 
-    componentDidMount() {
-        if (typeof window !== 'undefined' && window) {
-            this.updateDimensions();
-        }
+  componentWillMount() {
+    if (typeof window !== 'undefined' && window) {
+      this.updateDimensions();
+      window.addEventListener('resize', this.updateDimensions);
     }
-    componentWillUnmount() {
-        if (typeof window !== 'undefined' && window) {
-            window.removeEventListener('resize', this.updateDimensions);
-            window.location.reload();
-        }
+  }
+
+  componentWillReceiveProps(nextProps) {
+    const currentUser = _.get(nextProps, 'clp.currentUser', {});
+    const storeId = _.get(currentUser, `storeIds[${DEFAULT_FOOD_FULFILLER_TYPE}]`, DEFAULT_STORE_ID);
+    const cookieStoreId = CommonUtil.readCookie(STORE_ID_COOKIE_NAME) || '';
+
+    if (cookieStoreId !== storeId) {
+      CommonUtil.createCookie(STORE_ID_COOKIE_NAME, storeId);
     }
-    updateDimensions() {
-        // added to set the classes according to device
-        const root = document.getElementsByTagName('html')[0];
-        if (window.innerWidth < 1023) {
+  }
 
-            root.setAttribute('class', 'svg csscalc touchevents cssanimations csstransforms csstransitions objectfit object-fit flexbox meganav--mobile js-ready');
-            document.getElementsByClassName('main-nav__list hover-ready main-nav__list--primary')[0].style.visibility = 'hidden';
-
-        } else {
-            root.setAttribute('class', 'svg csscalc no-touchevents cssanimations csstransforms csstransitions objectfit object-fit flexbox meganav--desktop js-ready');
-            document.getElementsByClassName('main-nav__list no-hover main-nav__list--primary')[0].style.visibility = 'visible';
-
-        }
+  componentWillUnmount() {
+    if (typeof window !== 'undefined' && window) {
+      window.removeEventListener('resize', this.updateDimensions);
     }
-    render() {
-        const user = this.props.user;
-        const deliveryDetails = this.props.deliveryDetails;
-        const deliverySlot = (user.isLoggedIn && deliveryDetails.deliveryLocation.suburbId) ? <DeliverySlotTo deliveryDetails={deliveryDetails} logoLabel={this.props.labels} {...this.props} /> : null;
+  }
 
-        return (
-          <header className="site-header">
-            <TopHeader />
-            <div className="site-header__main">
-              <div className="content--centered">
-                <Logo redirectUrl={this.props.logoData.redirectUrl} logoLabel={this.props.logoLabel} />
-                <section className="site-header__wrapper site-header__wrapper--account">
-                  <nav className="main-header-nav">
-                    <ul className="nav-list-x">
-                      <AccountsList user={user} logOut={this.props.logOut} labels={this.props.labels} />
-                      <DeliveryDetails labels={this.props.labels} deliveryDetails={deliveryDetails}/>
-                      { deliverySlot }
-                      <CartCheckout labels={this.props.labels} cartLabels={this.props.cartLabels} />
-                    </ul>
-                  </nav>
-                </section>
-                <MegaNav rootCategories={this.props.rootCategories} />
-              </div>
-            </div>
-          </header>
-         );
+  updateDimensions() {
+    if (window.innerWidth < 840) {
+      this.props.viewportType(VIEW_PORT_TYPE_MOBILE);
+    } else {
+      this.props.viewportType(VIEW_PORT_TYPE_DESKTOP);
     }
+  }
+  updateHideDeliverySlotFlyOut(flyOutStatus) {
+    this.setState({ hideDeliverySlotFlyOut: flyOutStatus });
+  }
+
+  render() {
+    const user = this.props.user;
+    const totalOrderItems = (this.props.miniCartData.orderSummary && this.props.miniCartData.orderSummary.totalItemsCount) || 0;
+    const deliveryDetails = this.props.deliveryDetails;
+    const { labels, clp, logoLabel, cartLabels, rootCategories } = this.props;
+    const currentUser = _.get(clp, 'currentUser', {});
+
+    return (
+      <header className="site-header">
+        <TopHeader />
+        <div className="site-header__main">
+          <div className="content--centered">
+            <Logo redirectUrl={this.props.logoData.redirectUrl} logoLabel={logoLabel} />
+            <section className="site-header__wrapper site-header__wrapper--account">
+              <nav className="main-header-nav">
+                <ul className="nav-list-x">
+                  <AccountsList
+                    user={user}
+                    currentUser={currentUser}
+                    logOut={this.props.logOut}
+                    labels={labels}
+                    viewportType={this.props.common.viewportType}
+                    mobileNavHeaderStatus={this.props.common.mobileNavHeaderStatus}
+                    locationChanged={this.props.locationChanged}
+                    setMobileNavHeaderOption={this.props.setMobileNavHeaderOption}
+                  />
+                  <DeliveryDetails
+                    clp={clp}
+                    user={user}
+                    labels={labels}
+                    deliveryDetails={deliveryDetails}
+                  />
+                  {user.isLoggedIn && totalOrderItems > 0 && (
+                    <DeliverySlotTo
+                      deliveryDetails={deliveryDetails}
+                      logoLabel={labels}
+                      {...this.props}
+                      extendDeliverySlot={this.props.extendDeliverySlot}
+                      hideDeliverySlotFlyOut={this.state.hideDeliverySlotFlyOut}
+                      updateHideDeliverySlotFlyOut={this.updateHideDeliverySlotFlyOut}
+                    />
+                  )}
+                  <CartCheckout
+                    labels={labels}
+                    cartLabels={cartLabels}
+                    viewportType={this.props.common.viewportType}
+                    setMobileNavHeaderOption={this.props.setMobileNavHeaderOption}
+                    mobileNavHeaderStatus={this.props.common.mobileNavHeaderStatus}
+                    updateHideDeliverySlotFlyOut={this.updateHideDeliverySlotFlyOut}
+                  />
+                  {deliveryDetails.extendDeliverySlot && (
+                    <ExtendDeliverySlot
+                      deliveryDetails={deliveryDetails}
+                      clp={this.props.clp}
+                      extendDeliverySlotApi={this.props.extendDeliverySlotApi}
+                      deliverySlotSession={this.props.deliverySlotSession}
+                      extendDeliverySlot={this.props.extendDeliverySlot}
+                    />
+                  )}
+                </ul>
+              </nav>
+            </section>
+            <MegaNav
+              rootCategories={rootCategories}
+              viewportType={this.props.common.viewportType}
+              locationChanged={this.props.locationChanged}
+              setMobileNavHeaderOption={this.props.setMobileNavHeaderOption}
+              mobileNavHeaderStatus={this.props.common.mobileNavHeaderStatus}
+            />
+          </div>
+        </div>
+      </header>
+    );
+  }
 }
 
 function mapStateToProps(state) {
-    if (state.labels.labels.header && state.labels.labels.cart) {
-        return {
-            user: state.user,
-            deliveryDetails: state.deliveryDetails,
-            rootCategories: state.headerReducer.meganavReducer.rootCategories,
-            logoData: state.headerReducer.logoReducer.logoData,
-            labels: state.labels.labels.header,
-            cartLabels: state.labels.labels.cart,
-            common: state.common
-        };
-    }
-        return {
-            user: state.user,
-            deliveryDetails: state.deliveryDetails,
-            rootCategories: state.headerReducer.meganavReducer.rootCategories,
-            logoData: state.headerReducer.logoReducer.logoData,
-            cartLabels: state.labels.labels.cart,
-            sessConf: state.sessConf,
-            common: state.common
-        };
+  const res = {
+    user: state.user,
+    deliveryDetails: state.deliveryDetails,
+    rootCategories: _.get(state, 'headerReducer.meganavReducer.rootCategories', {}),
+    // logoData: state.headerReducer.logoReducer.logoData,
+    logoData: _.get(state, 'headerReducer.headerDetailsReducer.headerDetailsData.headerLogo', {}),
+    miniCartData: _.get(state, 'headerReducer.miniCartReducer.miniCartData', {}),
+    common: state.common,
+    clp: state.clp,
+    cartLabels: _.get(state, 'labels.labelsAndErrorMessages.cart', {}),
+    locationChanged: _.get(state, 'headerReducer.meganavReducer.locationChanged', false),
+    labels: _.get(state, 'labels.labelsAndErrorMessages.header', {}),
+  };
+
+  if (_.isEmpty(res.labels)) {
+    return {
+      ...res,
+      sessConf: state.sessConf
+    };
+  }
+
+  return res;
 }
 
 function mapDispatchToProps(dispatch) {
-    return bindActionCreators({
-        logOut,
-        changeLocation,
-        addNewAddress,
-        getUserAddresses,
-        setCurrentAddress,
-        getDeliverySlots,
-        showAddressForm,
-        loader,
-        modal
-    }, dispatch);
+  return bindActionCreators(
+    {
+      logOut,
+      changeLocation,
+      addNewAddress,
+      getUserAddresses,
+      setCurrentAddress,
+      getDeliverySlots,
+      showAddressForm,
+      loader,
+      modal,
+      viewportType,
+      setMobileNavHeaderOption,
+      reserveDeliverySlots,
+      confirmDeliveryAddress,
+      extendDeliverySlot,
+      extendDeliverySlotApi,
+      deliverySlotSession,
+      setUserSession,
+      changeDeliveryAddress
+    },
+    dispatch
+  );
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Header);

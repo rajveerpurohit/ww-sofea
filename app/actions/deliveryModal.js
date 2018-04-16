@@ -23,6 +23,6 @@ export function addProvinceData() {
         .then((data) => {
             dispatch(setProvinceData(data.data.regions));
         })
-        .catch(e => console.log(e));
+        .catch();
     };
 }

@@ -10,7 +10,7 @@ export default function woolOnline(state = {
     case GET_WOOLWORTHONLINE_JSON_SUCCESS:
       return Object.assign({}, state, {
         woolworthsOnline: action.data.data.usingWoolworthsOnline.usingwwonline,
-        contentAside : action.data.data.usingWoolworthsOnline.LeftNav
+        contentAside: action.data.data.usingWoolworthsOnline.LeftNav
       });
     case GET_WOOLWORTHONLINE_FAILURE:
       return Object.assign({}, state, {

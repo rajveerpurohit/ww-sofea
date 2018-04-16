@@ -1,6 +1,6 @@
 import { polyfill } from 'es6-promise';
 import ServiceUtil from '../../services/serviceUtil';
-import {serverUrls} from '../../../server/controllers/apiAggregatorEndPoints';
+import { serverUrls } from '../../../server/controllers/apiAggregatorEndPoints';
 
 polyfill();
 
@@ -53,8 +53,8 @@ export const leftNavFailureAction = () => {
 
 export const getLeftNav = () => {
   return (dispatch) => {
-    return ServiceUtil.triggerServerRequest({url: serverUrls.leftnav}).then((value) => {
-        dispatch(leftNavSuccessAction({data: value.body}));
+    return ServiceUtil.triggerServerRequest({ url: serverUrls.leftnav }).then((value) => {
+      dispatch(leftNavSuccessAction({ data: value.body }));
     },
     (error) => { console.log(error); }
   );
@@ -63,21 +63,34 @@ export const getLeftNav = () => {
 
 export const getFAQ = () => {
   return (dispatch) => {
-    return ServiceUtil.triggerServerRequest({url: serverUrls.faq}).then((value) => {
-        dispatch(faqSuccessAction({data: value.body}));
+    return ServiceUtil.triggerServerRequest({ url: serverUrls.faq }).then((value) => {
+    
+      dispatch(faqSuccessAction({ data: value.body }));
     },
     (error) => { console.log(error); }
-  );
+    );
   };
 };
 
-export const getFaqDetails = (contentId) => {
-  return (dispatch) => {
-    return ServiceUtil.triggerServerRequest({url: serverUrls.faqDetails, params: { contentId: contentId }}).then((value) => {
-        dispatch(faqDetailSuccessAction({data: value.body}));
-    },
-    (error) => { console.log(error); }
-  );
-  };
-}
+export const getFaqDetails = (params, reqUrl) => {
+  const url = reqUrl.indexOf('faqId=') > -1 ? reqUrl.split('=')[1] : reqUrl.split('/');
+  let faqId = '';
+  if (!(reqUrl.indexOf('faqId=') > -1) && url.length > 2) {
+    faqId = url[url.length - 1];
+  }
+  else {
+    faqId = reqUrl.split('=')[1];
+  }
+  if (faqId) {
+   
+    return (dispatch) => {
+      return ServiceUtil.triggerServerRequest({ url: serverUrls.faqDetails, params: { faqId } }).then((value) => {
+      
+        dispatch(faqDetailSuccessAction({ data: value.body }));
+      },
+      (error) => { console.log(error); }
+    );
+    };
+  }
+};
 

@@ -43,7 +43,9 @@
   height: 40px;
   padding: 0 10px;
 }
-
+ .search-bar.fly-out.is-open .search-bar__suggestions.fly-out__content{
+  position: relative;
+ }
 .search-bar .search-bar__submit {
   background-color: transparent;
   border: none;
@@ -52,7 +54,8 @@
   margin-top: -8px;
   position: absolute;
   right: $gutter-width;
-  top: 50%;
+  //top: 50%;
+  top:35px;
   width: 30px;
   -webkit-appearance: none;
   @media (max-width: $breakpoint-tablet-pt){

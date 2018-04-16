@@ -24,7 +24,7 @@ select {
     display:block;
     position:absolute;
     left:0;
-    top:0;
+    top:10px;
     -webkit-appearance:menulist-button;
     &:disabled {
       & + .enhanced-select__label {

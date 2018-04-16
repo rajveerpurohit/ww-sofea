@@ -1,6 +1,7 @@
 import { polyfill } from 'es6-promise';
 import ServiceUtil from '../../services/serviceUtil';
-import {serverUrls} from '../../../server/controllers/apiAggregatorEndPoints';
+import { serverUrls } from '../../../server/controllers/apiAggregatorEndPoints';
+import { loader, setSEOInformation, resetSEOInformation } from '../../actions/common';
 
 polyfill();
 
@@ -28,13 +29,25 @@ export const dlpJSONFailureAction = () => {
   };
 };
 
-export const getDLPPageData = (params, reqUrl, reqHeaders) => {
+export const getDLPPageData = (params, reqUrl) => {
   return (dispatch) => {
-    return ServiceUtil.triggerServerRequest({ headers: reqHeaders, url: serverUrls.landingpages, params: { pageURL: reqUrl }}).then((value) => {
-      return Promise.all([
-        dispatch(dlpJSONSuccessAction({data: value.body}))
-        ]);
-    });
+    return ServiceUtil.triggerServerRequest({
+      method: 'GET',
+      url: serverUrls.searchDepartment,
+      params: { pageURL: reqUrl }
+    })
+      .then(
+        (value) => {
+          dispatch(dlpJSONSuccessAction({ data: value.body }));
+          dispatch(setSEOInformation({
+            dlp: {
+              title: value.body.contents[0].title,
+              metaKeywords: value.body.contents[0].metaKeywords,
+              metaDescription: value.body.contents[0].metaDescription
+            }
+          }));
+        },
+        error => dispatch(dlpJSONFailureAction(error))
+      );
   };
 };
-

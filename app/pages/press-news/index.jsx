@@ -1,12 +1,9 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
-import PropTypes from 'prop-types';
-import axios from 'axios';
-import { Link } from 'react-router';
-import {bindActionCreators} from 'redux';
 import {getPressNews} from './actions';
-import SideBarComponent  from '../../components/basic/SideBarContent';
+import SideBarComponent from '../../components/basic/SideBarContent';
 import Panels from '../../components/basic/panels';
+
 class PressNews extends Component {
   static need = [
     getPressNews

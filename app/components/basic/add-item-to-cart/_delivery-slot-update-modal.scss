@@ -1,0 +1,14 @@
+.delivery-slot-update-modal {
+  &.modal__box.modal__box--panel.modal__box--size-w-medium {
+    height: 520px;
+    width: 480px;
+
+    h2 {
+      font-size: 1.4em;
+    }
+
+    div.intro {
+      margin: 1em 0;
+    }
+  }
+}

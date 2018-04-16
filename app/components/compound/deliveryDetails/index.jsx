@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import DeliveryTo from '../../basic/delivering-to';
-import DeliverySlotTo from '../../basic/delivery-slot';
+// import DeliverySlotTo from '../../basic/delivery-slot';
 
 // class DeliveryDetails extends Component {
 
 //     constructor(props) {
 //         super(props);
 //     }
-    
+
 //     render() {
 //         const user = this.props.user;
 //         const deliveryDetails = this.props.deliveryDetails;
@@ -22,6 +22,6 @@ import DeliverySlotTo from '../../basic/delivery-slot';
 
 // }
 const DeliveryDetails = (props) => {
-    return (<DeliveryTo labels={props.labels} {...props} />);
+  return <DeliveryTo labels={props.labels} deliveryDetails={props.deliveryDetails} />;
 };
 export default DeliveryDetails;

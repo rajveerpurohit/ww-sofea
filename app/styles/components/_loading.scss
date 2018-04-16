@@ -62,6 +62,12 @@
   position: relative;
   .loading {
     bottom: calc(50% - 10px);
-    left: calc(50% - 10px);
+    left: calc(50% + 140px);
   }
+}
+.product-card__image-wrap .ajax-spinner-container .loading{
+  bottom: auto !important;
+  left: auto !important;
+  overflow: hidden;
+  display: inline-block;
 }

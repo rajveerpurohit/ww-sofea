@@ -153,4 +153,9 @@
 	padding-top: 10px;
 	padding-bottom: 10px;
 }
-
+.on-promotion {
+  color: #EC2B21;
+}
+.on-promotion::before {
+  border-color: #EC2B21;
+}

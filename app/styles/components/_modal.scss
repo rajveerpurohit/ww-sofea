@@ -155,4 +155,8 @@ $modal-margin:10px;
   .modal__box--panel.modal__box--size-w-large {
     @include modalPanelMin();
   }
+  div[aria-label^='shoppingListName'] .pdp-page{
+    width : 470px;
+  }
 }
+

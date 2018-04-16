@@ -6,6 +6,9 @@ $product-card-quick-width:120px;
   a, a:visited {
     text-decoration:none;
   }
+  a.product-card__details strong{
+    text-transform: capitalize;
+  }
 }
 
 .product-card__visual {
@@ -107,7 +110,7 @@ $product-card-quick-width:120px;
   position:absolute;
   z-index:11;
   display:none;
-  .no-touchevents .product-card__visual:hover & {
+  .no-touchevents .product-card__visual:hover &, .product-card__visual.is-hovering & {
     display:block;
   }
 }
@@ -143,4 +146,19 @@ $product-card-quick-width:120px;
   left:50%;
   top:50%;
   margin:(-$loading-size-large/2) 0 0 (-$loading-size-large/2);
+}
+
+// SOFEA-762
+.product-list__item article.product-card {
+  .product-card__swatches {
+    position: relative;
+  }
+
+  .productDetails {
+    padding-top: 20px;
+
+    a {
+      margin-top: 0;
+    }
+  }
 }

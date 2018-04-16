@@ -1,31 +1,32 @@
-import React, { Component } from 'react';
-import {connect} from 'react-redux';
+import React from 'react';
+import { connect } from 'react-redux';
+import _ from 'lodash';
+import classnames from 'classnames';
 
 import SignIn from '../../components/compound/signin';
 
-class SignInPage extends Component {
+const SignInPage = (props) => {
+  const { viewportType } = props;
+  const classes = classnames('site-main', 'grid', viewportType);
 
-
-	render() {
-		return (
-  <main className="site-main grid">
-    <div className="grid grid--space-y">
-    <article className="checkout">
-    <SignIn labels={this.props.labels} />
-  </article>
-  </div>
-  </main>
-		);
-	}
-}
+  return (
+    <main className={classes}>
+      <div className="grid grid--space-y">
+        <article className="checkout">
+          <SignIn {...props} />
+        </article>
+      </div>
+    </main>
+  );
+};
 
 const mapStateToProps = (state) => {
-	if (state.labels.labels.myAccount) {
-		return {
-			labels: state.labels.labels.myAccount
-		};
-	}
-  
-};
-export default connect(mapStateToProps)(SignInPage);
+  const labels = _.get(state, 'labels.labelsAndErrorMessages.myAccount', {});
 
+  return ({
+    labels,
+    viewportType: state.common.viewportType
+  });
+};
+
+export default connect(mapStateToProps)(SignInPage);

@@ -3,7 +3,7 @@ import createRoutes from '../../app/routes';
 import configureStore from '../../app/store/configureStore';
 import * as types from '../../app/types';
 import pageRenderer from './pageRenderer';
-import {headerReducer, footer, labels, deliveryDetails} from '../index';
+import { headerReducer, labels, home, common } from '../index';
 
 import preRenderMiddleware from './preRenderMiddleware';
 
@@ -17,14 +17,14 @@ export default function render(req, res) {
   const store = configureStore({
     user: {
       isLoggedIn: false,
-      isWaiting: false,
+      isWaiting: true,
       message: '',
       userName: ''
     },
     headerReducer,
-    footer,
     labels,
-    deliveryDetails
+    home,
+    common
   }, history);
   const routes = createRoutes(store);
 
@@ -49,7 +49,7 @@ export default function render(req, res) {
    * If all three parameters are `undefined`, this means that there was no route found matching the
    * given location.
    */
-  match({routes, location: req.url}, (err, redirect, props) => {
+  match({ routes, location: req.url }, (err, redirect, props) => {
     if (err) {
       res.status(500).json(err);
     } else if (redirect) {
@@ -59,22 +59,22 @@ export default function render(req, res) {
       // promises to resolve before returning to browser
       store.dispatch({ type: types.CREATE_REQUEST });
 
-        preRenderMiddleware(
-          store.dispatch,
-          props.components,
-          props.params,
-          req,
-          res
-        )
+      preRenderMiddleware(
+        store.dispatch,
+        props.components,
+        props.params,
+        req,
+        res
+      )
         .then((data) => {
           try {
             store.dispatch({ type: types.REQUEST_SUCCESS, data });
             const html = pageRenderer(store, props);
             res.status(200).send(html);
           } catch (e) {
-          console.log('Error in Server Side Rendering :::', e);
-          res.status(500).json(e);
-        }
+            console.log('Error in Server Side Rendering :::', e);
+            res.status(500).json(e);
+          }
         })
         .catch((error) => {
           console.log('Error in Server Side Rendering :::', error);

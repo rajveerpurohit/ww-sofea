@@ -5,7 +5,9 @@ import { RouterContext } from 'react-router';
 import Helmet from 'react-helmet';
 import staticAssets from './static-assets';
 
-import {ATG_URL} from '../../config/app';
+import { ATG_URL, EXTERNAL_IMAGE_URL, INTERNAL_IMAGE_URL, USE_CDN } from '../../config/app';
+
+global.INTERNAL_IMAGE_URL = INTERNAL_IMAGE_URL;
 
 const createApp = (store, props) => renderToString(
   <Provider store={store}>
@@ -22,24 +24,34 @@ const buildPage = ({ componentHTML, initialState, headAssets }) => {
     ${headAssets.meta.toString()}
     ${headAssets.link.toString()}
     ${staticAssets.createStylesheets()}
-    ${staticAssets.createTrackingScript()}
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.7/es5-shim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.7/es5-sham.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/json3/3.3.2/json3.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/es6-shim/0.34.2/es6-shim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/es6-shim/0.34.2/es6-sham.min.js"></script>
-    <script src="https://wzrd.in/standalone/es7-shim@latest"></script>
+    ${staticAssets.createGTMScript()}
   </head>
   <body>
-  
-    <div id="app">${componentHTML}</div>
+    ${staticAssets.createGTMNoScript()}
+    <div id="app"><div class="app">${componentHTML}</div></div>
     <script>window.__INITIAL_STATE__ = ${JSON.stringify(initialState)}</script>
-    ${staticAssets.createAppScript()}    
+    ${staticAssets.createAppScript()}
   <script>
-    Object.defineProperty(window,'ATG_URL',{
-        'value':'${ATG_URL}'})
+  if (typeof window !== 'undefined' && !window.ATG_URL) {
+    switch(true) {
+      case !window.ATG_URL:
+        Object.defineProperty(window, 'ATG_URL', {
+          value: '${ATG_URL}'
+        });
+      case !window.EXTERNAL_IMAGE_URL:
+        Object.defineProperty(window, 'EXTERNAL_IMAGE_URL', {
+          value: '${EXTERNAL_IMAGE_URL}'
+        });
+      case !window.INTERNAL_IMAGE_URL:
+        Object.defineProperty(window, 'INTERNAL_IMAGE_URL', {
+          value: '${INTERNAL_IMAGE_URL}'
+        });
+      case !window.USE_CDN:
+        Object.defineProperty(window, 'USE_CDN', {
+          value: ${USE_CDN}
+        });
+    }
+  }
   </script>
   </body>
 </html>`;
@@ -51,4 +63,3 @@ export default (store, props) => {
   const headAssets = Helmet.renderStatic();
   return buildPage({ componentHTML, initialState, headAssets });
 };
-

@@ -1,11 +1,4 @@
 import React, { Component } from 'react';
-import {connect} from 'react-redux';
-import PropTypes from 'prop-types';
-// import axios from 'axios';
-import { Link } from 'react-router';
-// import {bindActionCreators} from 'redux';
-// import {getUsingAboutUs} from './actions';
-// import SideBarComponent from '../../components/basic/SideBarContent';
 
 export default class WaysDetails extends Component {
 //   static need = [

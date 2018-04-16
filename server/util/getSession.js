@@ -51,7 +51,7 @@ const getSession = function (req, res, locales, next) {
         // loggerHandler.debug({req: req}, "getSession.js - getSession - req.url: ", req.url);
         // loggerHandler.debug({req: req}, "getSession.js - getSession - req.headers: ", req.headers);
         // Make sure to resolve the Request with error.
-        res.status(500).send("EA: session/confirmation number api failed, Please check if backend system ATG or AA went down after EA was up!" + error);
+        res.status(500).send('EA: session/confirmation number api failed, Please check if backend system ATG or AA went down after EA was up!' + error);
       });
   } else {
     next();

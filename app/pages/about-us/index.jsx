@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
-import {connect} from 'react-redux';
-import PropTypes from 'prop-types';
-import axios from 'axios';
-import { Link } from 'react-router';
-import {bindActionCreators} from 'redux';
-import {getUsingAboutUs} from './actions';
+import { connect } from 'react-redux';
+
+import { getUsingAboutUs } from './actions';
 import SideBarComponent from '../../components/basic/SideBarContent';
+import Image from '../../components/basic/Image';
 import Panels from '../../components/basic/panels';
 
 class AboutUs extends Component {
@@ -25,7 +23,13 @@ class AboutUs extends Component {
       <div className="grid">
         <header />
         <div className="grid">
-          <img className=" img-fill-responsive" alt={this.props.aboutUsData ? this.props.aboutUsData.heading : ''} src={this.props.aboutUsData ? this.props.aboutUsData.imageUrl : ''} />
+          <Image
+            payload={{
+              className: 'img-fill-responsive',
+              alt: this.props.aboutUsData ? this.props.aboutUsData.heading : '',
+              url: this.props.aboutUsData ? this.props.aboutUsData.imageUrl : ''
+            }}
+          />
         </div>
 
         <p className="text-intro" />
@@ -48,7 +52,7 @@ class AboutUs extends Component {
 
           <div className="grid page-layout">
             <div className="page-layout__aside">
-              { this.props.contentAside && <SideBarComponent leftData={this.props.contentAside} />}
+              {this.props.contentAside && <SideBarComponent leftData={this.props.contentAside} />}
             </div>
             <div className="page-layout__content">
               {this.secondaryComponent()}
@@ -70,7 +74,7 @@ const mapStateToProps = (state) => {
   return {
     aboutUsData: state.aboutUsReducer.aboutUsData,
     contentAside: state.aboutUsReducer.contentAside
-    };
+  };
 };
 
 // const matchDispatchToProps = (dispatch) => {

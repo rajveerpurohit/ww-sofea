@@ -1,0 +1,13 @@
+$default-quick-view-min-height: 432px;
+$default-quick-view-max-height: 600px;
+$default-quick-view-width: 948px;
+
+.pdp-quick-view {
+  &.modal__box.modal__box--panel.modal__box--size-w-large {
+    cursor: pointer;
+    height: auto;
+    max-height: $default-quick-view-max-height;
+    min-height: $default-quick-view-min-height;
+    width: $default-quick-view-width;
+  }
+}

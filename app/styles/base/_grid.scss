@@ -23,7 +23,7 @@
     }
   }
   float:left;
-  margin-right:$gutter-setting;
+  margin-right:calc(#{$gutter-setting} - 1px);
 
   @if ($column-span = 1) {
     &:nth-of-type(#{$total-columns}n+#{$total-columns}) {

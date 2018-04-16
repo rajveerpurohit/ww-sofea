@@ -11,9 +11,11 @@
 const preRenderMiddleware = (dispatch, components, params, req, res) => {
   return Promise.all(
     components.reduce((previous, current) => {
-      return (current.need || []).concat(previous);
-    }, []).map(need => dispatch(need(params, req.url, req.headers, res)))
-  )
+      return ((current && current.need) || []).concat(previous);
+    }, []).map((need) => {
+      return dispatch(need(params, req.url, req.headers, res));
+    })
+  );
 };
 
 export default preRenderMiddleware;

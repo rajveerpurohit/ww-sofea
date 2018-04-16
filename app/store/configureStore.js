@@ -5,6 +5,7 @@ import { createLogger } from 'redux-logger';
 import rootReducer from '../reducers';
 import { isClient, isDebug } from '../../config/app';
 import promiseMiddleware from '../../server/render/promiseMiddleware';
+import pathNameMiddleware from '../../server/render/pathNameMiddleware';
 
 /*
  * @param {Object} initial state to bootstrap our stores with for server-side rendering
@@ -14,7 +15,7 @@ import promiseMiddleware from '../../server/render/promiseMiddleware';
  */
 export default function configureStore(initialState, history) {
   // Installs hooks that always keep react-router and redux store in sync
-  const middleware = [thunk, promiseMiddleware, routerMiddleware(history)];
+  const middleware = [thunk, promiseMiddleware, pathNameMiddleware, routerMiddleware(history)];
   let store;
 
   if (isClient && isDebug) {

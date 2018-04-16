@@ -11,6 +11,8 @@ $tooltip-pointer-size:8px !default;
   opacity:.8;
   z-index:$z-index-modals;
   white-space: nowrap;
+  top: 5px;
+  left: 125.25px;
 }
 
 .tooltip__pointer {
@@ -25,4 +27,7 @@ $tooltip-pointer-size:8px !default;
   top:50%;
   margin:(-$tooltip-pointer-size/2) (-$tooltip-pointer-size/2) 0 0;
   @include transform(rotate(45deg));
+}
+.product-list__item .hoverDetails .tooltip{
+  margin-left:-15px;
 }

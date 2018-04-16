@@ -36,6 +36,14 @@ $product-qty-width:70px;
   margin-left:$product-qty-width + 5px;
 }
 
+// TODO: Discuss Rev-1157 with Omkar
+@media only screen and (max-width: 767px) {
+  .product-card .product-atc {
+    position: relative;
+    margin-left: $product-qty-width + 5px;
+  }
+}
+
 .product-atc__remove {
   position:absolute;
   top:0;

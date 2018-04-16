@@ -21,6 +21,20 @@ const isLoggedIn = (
   }
 };
 
+const showDeliverySlotHeader = (
+  state = false,
+  action
+) => {
+  switch (action.type) {
+    case types.SHOW_DELIVERY_SLOT:
+      return true;
+    case types.HIDE_DELIVERY_SLOT:
+      return false;
+    default:
+      return state;
+  }
+};
+
 const message = (
   state = '',
   action
@@ -42,7 +56,7 @@ const message = (
 };
 
 const isWaiting = (
-  state = false,
+  state = true,
   action
 ) => {
   switch (action.type) {
@@ -61,17 +75,53 @@ const isWaiting = (
       return state;
   }
 };
+const pricelistZoneId = (state = '', action) => {
+  if (state !== action.priceListZoneId && action.type === types.SET_PRICELISTZONEID) return state = action.priceListZoneId;
+  return state;
+};
 
 const userName = (state = '', action) => {
-  if(state !== action.userName && action.type === types.SET_USERNAME) return state = action.userName;
+  if (state !== action.userName && action.type === types.SET_USERNAME) return state = action.userName;
   return state;
-}
+};
 
+const orders = (state = [], action) => {
+  if (action.type === types.SET_USER_ORDERS) {
+    return action.orders;
+  }
+  return state;
+};
+
+const orderDetails = (state = null, action) => {
+  if (action.type === types.SET_ORDER_DETAILS) {
+    return action.orderDetails;
+  }
+  if (action.type === types.RESET_ORDER_DETAILS) {
+    return null;
+  }
+  return state;
+};
+
+const addresses = (state = null, action) => {
+  switch (action.type) {
+    case types.FETCH_CURRENT_USER_ADDRESSES_SUCCESS:
+      return action.data.data;
+    case types.FETCH_CURRENT_USER_ADDRESSES_FAILURE:
+      return null;
+    default:
+      return state;
+  }
+};
 const userReducer = combineReducers({
   isLoggedIn,
   isWaiting,
   message,
-  userName
+  userName,
+  pricelistZoneId,
+  showDeliverySlotHeader,
+  orders,
+  orderDetails,
+  addresses
 });
 
 export default userReducer;

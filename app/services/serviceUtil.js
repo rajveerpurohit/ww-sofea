@@ -2,8 +2,8 @@ import axios from 'axios';
 import cookie from 'cookie';
 import CommonUtil from './commonUtil';
 import localeInfoUtil from './localeInfoUtil';
-import {API_AGGRIGATOR_URL} from '../../config/app';
-import {endpoints} from '../../server/controllers/apiAggregatorEndPoints';
+import { API_AGGRIGATOR_URL } from '../../config/app';
+import { endpoints } from '../../server/controllers/apiAggregatorEndPoints';
 
 /* eslint-disable */
 // import {getBrowserBunyanInstance} from '../../lib/clientLoggerHandler';
@@ -205,6 +205,7 @@ const ServiceUtil = {
     } else {
       options.url = window.location.origin + options.url;
     }
+
     return new Promise((resolve, reject) => {
       const config = {
         method: 'GET',
@@ -216,10 +217,11 @@ const ServiceUtil = {
       if (!options.headers) {
         delete options.headers;
       }
-
       Object.assign(config, options);
+      console.log(options);
       axios(config)
         .then((response) => {
+          //console.log(response);
           // Set the Browser Response cookies if API response is sending any new cookie.
           if (res) {
             ServiceUtil.setResponseCookie(res, response, config);
@@ -244,9 +246,13 @@ const ServiceUtil = {
             return reject({
               body: e.data.error
             });
+          } else if (e.response) {
+            return reject({
+              body: e.response.data.error
+            });
           }
           return reject({
-            body: {}
+            body: { }
           });
         });
     });

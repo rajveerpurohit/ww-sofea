@@ -1,6 +1,8 @@
 import { push } from 'react-router-redux';
 import { authService } from '../services';
-
+import { serverUrls } from '../../server/controllers/apiAggregatorEndPoints';
+import ServiceUtil from '../services/serviceUtil';
+import { getminiCartData } from '../components/sections/Header/actions';
 import * as types from '../types';
 
 function beginLogin() {
@@ -40,7 +42,7 @@ function signUpSuccess(message) {
 }
 
 function beginLogout() {
-  return { type: types.LOGOUT_USER};
+  return { type: types.LOGOUT_USER };
 }
 
 function logoutSuccess() {
@@ -51,9 +53,6 @@ function logoutError() {
   return { type: types.LOGOUT_ERROR_USER };
 }
 
-function setUserName(userName = '') {
-  return { type: types.SET_USERNAME, userName};
-}
 export function toggleLoginMode(isLoggedIn = true) {
   return { type: types.TOGGLE_LOGIN_MODE, isLoggedIn };
 }
@@ -64,12 +63,12 @@ export function manualLogin(data) {
 
     return authService().login(data)
       .then((response) => {
-          dispatch(loginSuccess('You have been successfully logged in'));
-          dispatch(push('/'));
+        dispatch(loginSuccess('You have been successfully logged in'));
+        dispatch(push('/'));
       })
       .catch((err) => {
         let message = 'Something went wrong. Please try again';
-        if(err.response && err.response.data && err.response.data.title) message = err.response.data.title; 
+        if (err.response && err.response.data && err.response.data.title) message = err.response.data.title;
         dispatch(loginError(message));
       });
   };
@@ -81,8 +80,8 @@ export function signUp(data) {
 
     return authService().signUp(data)
       .then((response) => {
-          dispatch(signUpSuccess('You have successfully registered an account!'));
-          dispatch(push('/'));
+        dispatch(signUpSuccess('You have successfully registered an account!'));
+        dispatch(push('/'));
       })
       .catch((err) => {
         dispatch(signUpError('Oops! Something went wrong when signing up'));
@@ -96,12 +95,13 @@ export function logOut() {
 
     return authService().logOut()
       .then((response) => {
-          if (response.status === 200) {
-             dispatch(logoutSuccess()) 
-          } else {
-             throw new Error('something went wrong');
-          }
-          dispatch(push('/'));
+        if (response.status === 200) {
+          dispatch(logoutSuccess());
+        } else {
+          throw new Error('something went wrong');
+        }
+        dispatch(getminiCartData());
+        dispatch(push('/'));
       })
       .catch((err) => {
         dispatch(logoutError());
@@ -109,23 +109,29 @@ export function logOut() {
   };
 }
 
-export function setUserSession() {
-  return (dispatch) => {
-    return authService().isLoggedIn()
-      .then((response) => {
-        if(!(response.status === 200 && response.data.firstName)) return null;
-        let userName = `${response.data.firstName} ${response.data.lastName}`;
-        dispatch(toggleLoginMode(true));
-        dispatch(setUserName(userName))
-      })
-      .catch(err => {
-        // dispatch(toggleLoginMode(true));
-        // dispatch(setUserName('Guest User'));
-      })
-    } 
-}
-
 export function redirect(url = '/') {
   return dispatch => dispatch(push(url));
 }
 
+export const curentUserAddressesSuccessAction = (data) => {
+  return {
+    type: types.FETCH_CURRENT_USER_ADDRESSES_SUCCESS,
+    data
+  };
+};
+
+export const curentUserAddressesFailureAction = (data) => {
+  return {
+    type: types.FETCH_CURRENT_USER_ADDRESSES_FAILURE
+  };
+};
+
+export const getCurentUserAddresses = (params, reqUrl, reqHeaders) => {
+  return (dispatch) => {
+    return ServiceUtil.triggerServerRequest({ url: serverUrls.savedAddress }).then((value) => {
+      dispatch(curentUserAddressesSuccessAction({ data: value.body }));
+    }, (error) => {
+      dispatch(curentUserAddressesFailureAction(error));
+    });
+  };
+};

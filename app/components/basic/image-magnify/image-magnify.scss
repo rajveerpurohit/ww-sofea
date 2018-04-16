@@ -1,0 +1,38 @@
+.image-magnify {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: 1200px;
+
+  &__image-container {
+    height: 388px;
+
+    > div > img {
+      max-height: 385px;
+    }
+
+    figure.zoom {
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+      cursor: auto;
+      height: 100%;
+      margin: auto;
+      overflow: hidden;
+      position: relative;
+      width: 100%;
+
+      & img:hover {
+        opacity: 0;
+      }
+
+      img {
+        display: block;
+        height: 388px;
+        margin: auto;
+        overflow: hidden;
+        transition: opacity .5s;
+        width: 301px;
+      }
+    }
+  }
+}

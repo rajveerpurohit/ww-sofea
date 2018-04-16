@@ -36,6 +36,8 @@
         text-align: center;
         margin-left: 0;
         vertical-align: top;
+        display: inline-block;
+        width:175px;
         &:last-child{
           padding-right: 0;
         }

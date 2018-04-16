@@ -12,10 +12,33 @@
     padding-top: 12px;
   }
 }
-
+.accordion__toggle--normal{
+    margin: 0 !important;
+    padding: 1em 8px;
+    position: relative;
+    font-size: 12px;
+}
 .my-details-section__row {
   border-top: 1px solid #e6e6e6;
   padding: 6px 0 0;
   overflow: auto;
   zoom: 1;
+}
+.addressForm {
+  input, .enhanced-select {
+    width: 87%;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .display-none--mobi-min {
+    display: none;
+ }
+}
+@media only screen and (max-width: 767px) {
+  .display-none--mobi-max {
+    display: none;
+  }
+  .product-atc{
+    margin-left: 0px;
+  }
 }

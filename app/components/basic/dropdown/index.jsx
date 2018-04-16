@@ -1,19 +1,16 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
 class Dropdown extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
-      selectedValue: ''
+      selectedValue: props.selectedValue || props.options[0].value || props.options[0]
     };
+
     this.renderOptions = this.renderOptions.bind(this);
     this.onOptionChange = this.onOptionChange.bind(this);
-  }
-  componentDidMount() {
-    this.setState({
-      selectedValue: this.props.selectedValue || this.props.options[0]
-    });
   }
 
   onOptionChange(e) {
@@ -24,35 +21,41 @@ class Dropdown extends Component {
       this.setState({
         selectedValue: e.target.value
       });
-      })();
+    })();
   }
 
   renderOptions() {
     const { options } = this.props;
 
     return options.map((opt, optIndex) => (
-      <option value={opt} key={optIndex}>
-        {opt}
+      <option value={opt.value || opt} key={optIndex} disabled={opt.disabled} >
+        {opt.label || opt}
       </option>
     ));
   }
 
   render() {
-    const { id, name, classNames } = this.props;
+    const { id, name, classNames, selectedValue, disabled, onOptionClick } = this.props;
+    const props = {
+      id,
+      name,
+      onClick: onOptionClick || (() => {}),
+      onChange: this.onOptionChange,
+      className: classNames,
+      value: selectedValue || this.state.selectedValue
+    };
+
+    if (disabled) {
+      props.disabled = disabled;
+    }
 
     return (
-      <span className={'enhanced-select'}>
-        <select
-          id={id}
-          name={name}
-          onChange={this.onOptionChange}
-          className={classNames}
-          value={this.state.value}
-        >
+      <span className="enhanced-select">
+        <select {...props} >
           {this.renderOptions()}
         </select>
         <span className={'enhanced-select__label'}>
-          {this.state.selectedValue}&nbsp;
+          {selectedValue || this.state.selectedValue}&nbsp;
         </span>
         <span className={'icon enhanced-select__icon'} />
       </span>

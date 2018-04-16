@@ -54,6 +54,11 @@
   display: none;
 }
 .inline-block-hidden{
+  &--mobi-min{
+    @media (max-width: $breakpoint-tablet-pt){
+      display: inline-block;
+    }
+  }
   &--mobi-max{
     @media (min-width: $breakpoint-tablet-pt-max){
       display: inline-block;

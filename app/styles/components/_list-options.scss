@@ -23,7 +23,8 @@
   .enhanced-select {
     padding:0 15px 0 6px;
     height:20px;
-    line-height:18px;
+    line-height: 25px;
+    position: relative;
   }
   .enhanced-select__icon {
     width:25px;
@@ -38,4 +39,13 @@
   .list-options__option {
     width:120px;
   }
+}
+.list-options__option .enhanced-select #show{
+  top: 0px!important;
+}
+.list-options__option .enhanced-select #sort{
+  top: 0px!important;
+}
+.list-options__option .enhanced-select__label{
+  line-height: 21px;
 }

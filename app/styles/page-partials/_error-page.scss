@@ -1,0 +1,289 @@
+h1.errorFoundHeader {
+    font-family: 'wfuturasemibold';
+    font-size: 55.8px;
+    line-height: 50.22px;
+    overflow: hidden;
+}
+
+h1.errorFoundHeader span.mainHeading {
+    font-family: 'wfuturasemibold';
+    font-size: 126.22px;
+    line-height: 126.35px;
+    display: inline-block;
+}
+h1.errorFoundHeader span.subHeading {
+    display: inline-block;
+    text-transform: uppercase;
+}
+p.intro {
+    font-size: 0.875em !important;
+    line-height: 20px !important;
+    margin: 0 0 20px 0;
+}
+@media (min-width: 1250px){
+.dashboardBlock {
+    width: 80.7%;
+}
+}
+.dashboardBlock {
+    width: 100%;
+    float: left;
+    position: relative;
+}
+.fullwidth {
+    width: 100% !important;
+}
+.dashboardBlock .shoppingListBlocks {
+    display: block;
+    overflow: hidden;
+    margin-top: -10px;
+}
+.dashboardBlock h3{
+    font-family: 'wfuturasemibold';
+    font-size: 1em;
+    font-weight: normal;
+    line-height: 1.125em;
+    margin: 0 0 1em;
+}
+.dashboardBlock .shoppingListBlocks .listBlock {
+    position: relative;
+    float: left;
+    margin: 0 1% 1% 0;
+    width: 243px
+}
+
+.dashboardBlock .shoppingListBlocks .listBlock .listBlockContent {
+    border: 5px solid #ebebeb;
+    padding: 10px 10px 0 10px
+}
+
+.dashboardBlock .shoppingListBlocks .listBlock h2 {
+    margin-bottom: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 104%
+}
+
+.dashboardBlock .shoppingListBlocks .listBlock .intro {
+    margin-top: 0
+}
+
+.dashboardBlock .shoppingListBlocks .listBlock .moreLink {
+    margin-right: 10px;
+    text-decoration: none
+}
+ul.arrowList {
+    border: none !important;
+    margin: 7px 0;
+    padding: 0;
+    color: #272727;
+    list-style-type: none;
+    line-height: 1.125em;
+    font-size: 1em;
+}
+.listBlock .arrowList {
+    margin: -10px 0 1em 0 !important;
+}
+ul.arrowList li {
+    margin: 0;
+    color: #272727;
+    text-decoration: none;
+    font-weight: normal;
+    font-size: 0.75em;
+    line-height: 1.5em;
+    background: transparent url(/images/navSub_indicator.png) left 3px no-repeat;
+    padding: 0 0 0 12px;
+}
+.noDecoration a {
+    text-decoration: none !important;
+}
+.contentWrapper a {
+    color: #333;
+    font-weight: normal;
+    text-decoration: underline;
+}
+.contentBlock {
+    position: relative;
+    margin-bottom: 5px;
+    width: 100%
+}
+
+.contentBlock.seperator {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #e6e6e6
+}
+h1.errorUnavailHeader {
+    font-family: 'wfuturasemibold';
+    font-size: 2.34em;
+    line-height: 1.25em;
+    overflow: hidden;
+    margin: 0.5em 0 1em 0 !important;
+    text-transform: uppercase;
+}
+
+h1.errorUnavailHeader span {
+    font-family: 'wfuturasemibold';
+    font-size: 2.375em;
+    line-height: 0.75em;
+    display: block;
+    text-transform: uppercase;
+}
+.errorCol .intro {
+    font-size: 1em
+}
+
+.errorCol .leftCol {
+    width: 27%;
+    padding-right: 5%;
+    margin-right: 5%;
+    border-right: 1px solid #e9e9e9
+}
+
+.errorCol .rightCol {
+    width: 62%
+}
+
+.errorCol .errorSocial {
+    width: 100%;
+    overflow: hidden;
+    list-style-type: none;
+    margin: 0.5em 0;
+    padding: 0
+}
+
+.errorCol .errorSocial li {
+    float: left;
+    position: relative;
+    line-height: 2.5em;
+    width: 100%
+}
+
+.errorCol .errorSocial li a {
+    height: auto;
+    padding: 5px 0 5px 32px
+}
+
+.errorCol .errorSocial li a.shareTwitter {
+    background: transparent url(/images/icons/footerSocial_tw.png) top left no-repeat
+}
+
+.errorCol .errorSocial li a.shareFacebook {
+    background: transparent url(/images/icons/footerSocial_fb.png) top left no-repeat
+}
+
+.errorCol .errorSocial li a.shareYoutube {
+    background: transparent url(/images/icons/footerSocial_yt.png) top left no-repeat
+}
+
+.errorCol .errorSocial li a.sharePinterest {
+    background: transparent url(/images/icons/footerSocial_pin.png) top left no-repeat
+}
+
+.errorCol .errorSocial li a.shareInstagram {
+    background: transparent url(/images/icons/footerSocial_instagram.png) top left no-repeat
+}
+
+.errorCol .leftColSml {
+    float: left;
+    position: relative;
+    width: 48%;
+    margin: -1em 4% 0 0
+}
+
+.errorCol .rightColSml {
+    float: left;
+    position: relative;
+    width: 48%;
+    margin: -1em 0 0 0
+}
+.contentBlock {
+    position: relative;
+    margin-bottom: 5px;
+    width: 100%
+}
+
+.contentBlock.seperator {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #e6e6e6
+}
+
+.contentBlock.voucherButtons {
+    position: static !important
+}
+
+.dashboardBlock .contentBlock {
+    position: relative;
+    width: 100%
+}
+
+.dashboardBlock .contentBlock.seperator {
+    padding-bottom: 17px;
+    margin-bottom: 20px
+}
+
+.dashboardBlock .leftCol {
+    position: relative;
+    float: left;
+    margin-right: 10%;
+    width: 53.65%
+}
+
+.dashboardBlock .rightCol {
+    position: relative;
+    float: left;
+    width: 36.35%
+}
+
+.dashboardBlock .specialsBlock {
+    position: relative;
+    float: left;
+    margin-right: 1.5%;
+    width: 31.8%;
+    background: #e5e5e5
+}
+.errorCol .leftCol {
+    width: 27%;
+    padding-right: 5%;
+    margin-right: 5%;
+    border-right: 1px solid #e9e9e9;
+}
+.leftCol {
+    position: relative;
+    float: left;
+    margin-right: 10%;
+    width: 53.65%;
+}
+p.intro {
+    font-size: 0.875em !important;
+    line-height: 20px !important;
+    margin: 0 0 20px 0;
+}
+.errorCol .errorSocial {
+    width: 100%;
+    overflow: hidden;
+    list-style-type: none;
+    margin: 0.5em 0;
+    padding: 0;
+}
+.errorCol .leftCol {
+    width: 27%;
+    padding-right: 5%;
+    margin-right: 5%;
+    border-right: 1px solid #e9e9e9;
+}
+.errorCol .rightCol {
+    width: 62%;
+}
+.rightCol {
+    position: relative;
+    float: left;
+    width: 36.35%;
+}
+.errorCol .leftColSml {
+    float: left;
+    position: relative;
+    width: 48%;
+    margin: -1em 4% 0 0;
+}
+

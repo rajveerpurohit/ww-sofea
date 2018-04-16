@@ -1,8 +1,4 @@
 import React, { Component } from 'react';
-import {connect} from 'react-redux';
-import PropTypes from 'prop-types';
-import axios from 'axios';
-import { Link } from 'react-router';
 
 
 export default class Filters extends Component {
@@ -17,12 +13,12 @@ render() {
       <div className="product-list__filters">
         {/* CATEGORY LIST */}
         {/* CATEGORY LIST */}
-        <div className="accordion accordion--chrome" data-js="accordion" data-accordion-start="first-open" data-accordion-type="open-single" data-accordion-active="true">
-          <div className="accordion__segment--chrome accordion__segment" data-js="accordion-segment">
-            <h4 className="text-caps accordion__toggle--chrome accordion__toggle--line accordion__toggle" data-js="accordion-toggle">
+        <div className="accordion accordion--chrome">
+          <div className="accordion__segment--chrome accordion__segment">
+            <h4 className="text-caps accordion__toggle--chrome accordion__toggle--line accordion__toggle">
             Shop Milk, Dairy &amp; Eggs
          </h4>
-            <ul className="list--silent text-small accordion__content--chrome accordion__content" data-js="accordion-content">
+            <ul className="list--silent text-small accordion__content--chrome accordion__content">
               <li>
                 <input type="checkbox" className="enhanced-checkbox is-enhanced" name="checkbox-set" id="fldLabelFilter_On_Promotion" onClick="window.location='/store/cat/Food/Fresh-Food/Milk-Dairy-Eggs/_/N-1z13sihZxtznwk'; return true;" />
                 <label htmlFor="fldLabelFilter_On_Promotion" className="on-promotion nav-list__link--filter label-checkbox"><span className="nav-list__qnty">(109)</span>On Promotion</label>
@@ -42,10 +38,10 @@ render() {
         {/* END CATEGORY LIST */}
         {/* FILTERS */}
         {/* CATEGORY FILTER COLOURS LIST */}
-        <div className="accordion accordion--chrome accordion--group" data-js="accordion" data-accordion-start="all-closed" data-accordion-type="open-single" data-accordion-group="filter-results" data-accordion-active="true">
-          <div className="accordion__segment--chrome accordion__segment" data-js="accordion-segment">
-            <h4 className="accordion__toggle--chrome accordion__toggle is-collapsed" data-js="accordion-toggle">Lifestyle and Dietary</h4>
-            <div className="accordion__content--chrome accordion__content is-collapsed" data-js="accordion-content">
+        <div className="accordion accordion--chrome accordion--group" >
+          <div className="accordion__segment--chrome accordion__segment" >
+            <h4 className="accordion__toggle--chrome accordion__toggle is-collapsed" >Lifestyle and Dietary</h4>
+            <div className="accordion__content--chrome accordion__content is-collapsed" >
               <ul className="list--silent text-small">
                 <li className="nav-list__item">
                   <input type="checkbox" className="enhanced-checkbox is-enhanced" name="checkbox-set" id="fldLabelFilter_Woolies_Brand" onClick="window.location='/store/cat/Food/Fresh-Food/Milk-Dairy-Eggs/_/N-1z13sihZ2bhk52'; return true;" />

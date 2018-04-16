@@ -1,15 +1,50 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import _ from 'lodash';
+import { bindActionCreators } from 'redux';
+import { Link } from 'react-router';
+import Image from '../../basic/Image';
+import { getLoginFooter } from '../Header/actions';
+// import { getLoginFooter } from './actions';
 
-const CheckoutFooter  = () => (<footer className="checkout-footer">
-    <ul className="text-caps checkout-footer__nav">
-        <li><a href="/store/fragments/help/help-index.jsp?content=contact" className="link--silent">Need help? Contact us now</a></li>
-        <li><a href="/store/fragments/checkout/checkout-index.jsp" className="link--silent">Basket</a></li>
-        <li><a href="/store/fragments/help/help-index.jsp?faqId=cfaq000069&amp;content=faqs" className="link--silent">Delivery policy and charges</a></li>
-        <li><a href="/store/fragments/help/help-index.jsp?faqId=cfaq000071&amp;content=faqs" className="link--silent">Returns policy</a></li>
-        <li><a href="/store/fragments/corporate/corporate-index.jsp?content=corporate-content&amp;contentId=cmp205289" className="link--silent">Privacy</a></li>
-        <li><a href="/store/fragments/help/help-index.jsp?faqId=cfaq000076&amp;content=faqs" className="link--silent">Terms &amp; Conditions</a></li>
-    </ul>
-</footer>)
+class CheckoutFooter extends Component {
 
-export default CheckoutFooter;
+  componentDidMount() {
+    this.props.getLoginFooter();
+  }
+  createList(loginFooterData, pagesCode) {
+    return loginFooterData.map((item, index) => {
+      let stylespec = '';
+      if (pagesCode === 'finance' && (index === 0 || index === 4 || index === 5)) { stylespec = 'block'; } else { stylespec = 'none'; }
+      if (pagesCode !== 'finance') { stylespec = 'block' }
+      return (
+        <li style={{ display: stylespec }}><Link to={item.targetUrl} className="link--silent">{item.name}</Link></li>
+      );
+    });
+  }
+  render() {
+    
+    const loginFooterData = _.get(this.props, 'loginFooterData.secureFooterLinks.secureFooterLinks', []);
+    // this.props.loginFooterData && this.props.loginFooterData.secureFooterLinks && this.props.loginFooterData.secureFooterLinks.secureFooterLinks ?
+    // this.props.loginFooterData.secureFooterLinks.secureFooterLinks : '';
+    return (
+      <footer className="checkout-footer">
+        <ul className="text-caps checkout-footer__nav">
+          {this.createList(loginFooterData, this.props.pageCode)}
+        </ul>
+      </footer>
+    );
+  }
+}
+
+
+const mapStateToProps = (state) => {
+  return {
+    loginFooterData: state.headerReducer.headerDetailsReducer.headerDetailsData.footer.loginFooterData
+    // loginFooterData: state.footer.loginFooterData
+  };
+};
+const matchDispatchToProps = (dispatch) => {
+  return bindActionCreators({ getLoginFooter }, dispatch);
+};
+export default connect(mapStateToProps, matchDispatchToProps)(CheckoutFooter);

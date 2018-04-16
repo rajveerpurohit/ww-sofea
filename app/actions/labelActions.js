@@ -1,6 +1,6 @@
 import { polyfill } from 'es6-promise';
 import ServiceUtil from '../services/serviceUtil';
-import {serverUrls} from '../../server/controllers/apiAggregatorEndPoints';
+import { serverUrls } from '../../server/controllers/apiAggregatorEndPoints';
 
 polyfill();
 
@@ -30,10 +30,10 @@ export const labelsJSONFailureAction = () => {
 
 export const getLabelsData = (reqHeaders) => {
   return (dispatch) => {
-    return ServiceUtil.triggerServerRequest({ headers: reqHeaders, url: serverUrls.labels}).then((value) => {
+    return ServiceUtil.triggerServerRequest({ headers: reqHeaders, url: serverUrls.labels }).then((value) => {
       return Promise.all([
-        dispatch(labelsJSONSuccessAction({data: value.body}))
-        ]);
+        dispatch(labelsJSONSuccessAction({ data: value.body }))
+      ]);
     });
   };
 };

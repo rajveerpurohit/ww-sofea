@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
-import PropTypes from 'prop-types';
-import axios from 'axios';
 import { Link } from 'react-router';
 import {getUsingSafenSecure} from './actions';
-import {bindActionCreators} from 'redux';
-import SideBarComponent  from '../../components/basic/SideBarContent';
+import SideBarComponent from '../../components/basic/SideBarContent';
+
 class SafeAndSecure extends Component {
   static need = [getUsingSafenSecure];
   constructor(props) {

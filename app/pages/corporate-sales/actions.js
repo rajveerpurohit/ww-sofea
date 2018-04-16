@@ -24,7 +24,7 @@ export const corporateSalesFailureAction = () => {
 export const getCorporateSales = () => {
   return (dispatch) => {
     return ServiceUtil.triggerServerRequest({url: serverUrls.corporateSales}).then((value) => {
-        dispatch(corporateSalesSuccessAction({data: value.body}))
+        dispatch(corporateSalesSuccessAction({data: value.body}));
     });
   };
 };

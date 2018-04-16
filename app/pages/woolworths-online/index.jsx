@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
-import {connect} from 'react-redux';
-import PropTypes from 'prop-types';
-import axios from 'axios';
+import { connect } from 'react-redux';
 
-import {bindActionCreators} from 'redux';
-import { Link } from 'react-router';
-import {getUsingWoolworthsOnline} from './action';
+import { getUsingWoolworthsOnline } from './action';
 import SideBarComponent from '../../components/basic/SideBarContent';
 import Panels from '../../components/basic/panels';
 
@@ -71,7 +67,7 @@ const mapStateToProps = (state) => {
   return {
     woolData: state.woolOnline,
     contentAside: state.woolOnline.contentAside
-    };
+  };
 };
 
 export default connect(mapStateToProps)(WoolworthsOnline);

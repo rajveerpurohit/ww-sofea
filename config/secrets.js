@@ -8,3 +8,5 @@ export const google = {
   callbackURL: process.env.GOOGLE_CALLBACK || '/auth/google/callback'
 };
 
+export const GOOGLE_ANALYTICS_ID = process.env.GOOGLE_ANALYTICS_ID || 'UA-116277597-1';
+export const GOOGLE_TAG_MANAGER_ID = process.env.GOOGLE_TAG_MANAGER_ID || 'GTM-NBZHDRN'; //  QA2 NBZHDRN  DEV MMKRDW7

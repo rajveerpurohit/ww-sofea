@@ -4,6 +4,8 @@ import axios from 'axios';
 // import { getBrowserBunyanInstance } from '../../lib/clientLoggerHandler';
 // const loggerHandler = getBrowserBunyanInstance('commonUtil');
 /* eslint-enable */
+import { API_AGGRIGATOR_URL } from '../../config/app';
+import { serverUrls } from '../../server/controllers/apiAggregatorEndPoints';
 
 const CommonUtil = {
   // [VD] Do a global search for non-whitespace characters in a string
@@ -15,8 +17,8 @@ const CommonUtil = {
    */
   addScripts(scriptContainer, scriptObj) {
     /* istanbul ignore next */
-    const js = document.createElement("script");
-    js.type = "text/javascript";
+    const js = document.createElement('script');
+    js.type = 'text/javascript';
     js.src = scriptObj.src;
     js.id = scriptObj.id;
     scriptContainer.appendChild(js);
@@ -97,7 +99,7 @@ const CommonUtil = {
       if (!element) {
         return;
       }
-      let elementTopPadding = getComputedStyle(element).getPropertyValue("padding-top");
+      let elementTopPadding = getComputedStyle(element).getPropertyValue('padding-top');
       elementTopPadding = parseInt(elementTopPadding, 10);
       let targetPosition = element.getBoundingClientRect().top;
       targetPosition = targetPosition + (window.scrollY || window.pageYOffset) - elementTopPadding;
@@ -175,7 +177,7 @@ const CommonUtil = {
     }
   },
   createCustomEvent(eventName) {
-    const event = document.createEvent("Event");
+    const event = document.createEvent('Event');
     event.initEvent(eventName, false, true);
     // args: string type, boolean bubbles, boolean cancelable
     return event;
@@ -268,7 +270,7 @@ const CommonUtil = {
       value = (doNotDecode) ? querystring[i].split('=')[1] : decodeURIComponent(querystring[i].split('=')[1]);
       // populate object
       if (queryObj[name]) {
-        if (this.typeOf(queryObj[name]) === "array") {
+        if (this.typeOf(queryObj[name]) === 'array') {
           if (queryObj[name].indexOf(value) === -1) {
             queryObj[name].push(value);
           }
@@ -283,7 +285,7 @@ const CommonUtil = {
   },
   /**
    * Returns the current page url
-   * like https://sit1.michaelkors.com/contact-us
+   * like http://www-win-dev.woolworths.co.za/login
    * @return {[type]} [description]
    */
   getCurrentUrl() {
@@ -392,8 +394,8 @@ const CommonUtil = {
   getParameterByName(name, url) {
     let val;
     if (url) {
-      name = name.replace(/[\[\]]/g, "\\$&");
-      const regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)");
+      name = name.replace(/[\[\]]/g, '\\$&');
+      const regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)');
       const results = regex.exec(url);
       if (!results) {
         return null;
@@ -401,14 +403,14 @@ const CommonUtil = {
       if (!results[2]) {
         return '';
       }
-      val = decodeURIComponent(results[2].replace(/\+/g, " "));
+      val = decodeURIComponent(results[2].replace(/\+/g, ' '));
     }
     return val;
   },
   addScriptToHead(scriptUrl) {
     /* istanbul ignore if */
     if (typeof document !== 'undefined') {
-      const script1 = document.createElement("script");
+      const script1 = document.createElement('script');
       script1.src = scriptUrl;
       script1.async = false;
       document.getElementsByTagName('body')[0].appendChild(script1);
@@ -460,7 +462,7 @@ const CommonUtil = {
         }
       }
 
-      url = urlparts[0] + (pars.length > 0 ? '?' + pars.join('&') : "");
+      url = urlparts[0] + (pars.length > 0 ? '?' + pars.join('&') : '');
       return url;
     }
     return url;
@@ -474,12 +476,12 @@ const CommonUtil = {
    * @return {[type]}       [description]
    */
   updateQueryStringParameter(uri, key, value) {
-    const re = new RegExp("([?&])" + key + "=.*?(&|$)", "i");
-    const separator = uri.indexOf('?') !== -1 ? "&" : "?";
+    const re = new RegExp('([?&])' + key + '=.*?(&|$)', 'i');
+    const separator = uri.indexOf('?') !== -1 ? '&' : '?';
     if (uri.match(re)) {
-      return uri.replace(re, '$1' + key + "=" + value + '$2');
+      return uri.replace(re, '$1' + key + '=' + value + '$2');
     }
-    return uri + separator + key + "=" + value;
+    return uri + separator + key + '=' + value;
   },
   getQueryString(field, url) {
     if (typeof window !== 'undefined') {
@@ -535,11 +537,11 @@ const CommonUtil = {
       }
     })
       .then((response) => {
-        const zip = response.data.results[0].address_components.find(x => x.types[0] === "postal_code");
-        const country = response.data.results[0].address_components.find(x => x.types[0] === "country");
+        const zip = response.data.results[0].address_components.find(x => x.types[0] === 'postal_code');
+        const country = response.data.results[0].address_components.find(x => x.types[0] === 'country');
         // loggerHandler.info('got address', zip, country, response);
         if (zip && country) {
-          const url = StoreLocatorConfig.searchString + "/" + country.long_name + "/" + StoreLocatorConfig.defaultDistance + "/" + zip.long_name; // need to see where to put search & 25
+          const url = StoreLocatorConfig.searchString + '/' + country.long_name + '/' + StoreLocatorConfig.defaultDistance + '/' + zip.long_name; // need to see where to put search & 25
           // loggerHandler.info('position found', url);
           callback(true, url);
         } else {
@@ -558,7 +560,7 @@ const CommonUtil = {
     /* istanbul ignore if */
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition((pos) => {
-        const position = "" + pos.coords.latitude + "," + pos.coords.longitude; // to string
+        const position = '' + pos.coords.latitude + ',' + pos.coords.longitude; // to string
         this.getURLfromLatLong(position, callback);
       }, () => {
         callback(false, null);
@@ -657,7 +659,7 @@ const CommonUtil = {
           case 'password':
             elem.value = '';
             break;
-          case "radio":
+          case 'radio':
           case 'checkbox':
             if (elem.checked) {
               elem.checked = false;
@@ -680,7 +682,7 @@ const CommonUtil = {
       target = document ? document.querySelector('#liveAnnounce') : undefined;
     }
     /* istanbul ignore if */
-    if (typeof (text) !== "undefined" && target) {
+    if (typeof (text) !== 'undefined' && target) {
       target.innerHTML = text || '';
       setTimeout(() => {
         target.innerHTML = '';
@@ -702,16 +704,16 @@ const CommonUtil = {
     const targetElm = ev.target;
     /* istanbul ignore if */
     if (targetElm.getAttribute('data-label-id')) {
-      targetElm.setAttribute("aria-labelledby", targetElm.getAttribute('data-label-id') + " " + name);
+      targetElm.setAttribute('aria-labelledby', targetElm.getAttribute('data-label-id') + ' ' + name);
     } else {
-      targetElm.setAttribute("aria-labelledby", name);
+      targetElm.setAttribute('aria-labelledby', name);
     }
-    targetElm.setAttribute("aria-invalid", false);
+    targetElm.setAttribute('aria-invalid', false);
     /* istanbul ignore next */
     setTimeout(() => {
       if (targetElm.parentNode.getElementsByClassName('errorMsg') && targetElm.parentNode.getElementsByClassName('errorMsg')[0]) {
-        targetElm.parentNode.getElementsByClassName('errorMsg')[0].setAttribute("id", name);
-        targetElm.setAttribute("aria-invalid", true);
+        targetElm.parentNode.getElementsByClassName('errorMsg')[0].setAttribute('id', name);
+        targetElm.setAttribute('aria-invalid', true);
       }
     }, delay);
   },
@@ -725,7 +727,7 @@ const CommonUtil = {
    */
   createCookie(name, value, days, path, domain) {
     /* istanbul ignore if */
-    if (typeof document === "undefined" || name.length === 0) {
+    if (typeof document === 'undefined' || name.length === 0) {
       return;
     }
     const cookieArray = [];
@@ -733,15 +735,15 @@ const CommonUtil = {
     if (days) {
       const date = new Date();
       date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-      cookieArray.push("expires=" + date.toGMTString());
+      cookieArray.push('expires=' + date.toGMTString());
     }
 
-    cookieArray.push("path=" + ((typeof path !== "undefined") ? path : "/"));
-    if (typeof domain !== "undefined") {
-      cookieArray.push("domain=" + domain);
+    cookieArray.push('path=' + ((typeof path !== 'undefined') ? path : '/'));
+    if (typeof domain !== 'undefined') {
+      cookieArray.push('domain=' + domain);
     }
 
-    document.cookie = name + "=" + value + "; " + cookieArray.join("; ");
+    document.cookie = name + '=' + value + '; ' + cookieArray.join('; ');
   },
   /**
    * Return locale specific switch flag to turn off/on functionality
@@ -763,13 +765,13 @@ const CommonUtil = {
    */
   readCookie(name) {
     /* istanbul ignore if */
-    if (typeof document === "undefined") {
+    if (typeof document === 'undefined') {
       return null;
     }
     if (name.length === 0) {
       return null;
     }
-    const cName = name + "=";
+    const cName = name + '=';
     const cArray = document.cookie.split(';');
     let cACount = cArray.length;
     /* istanbul ignore next */
@@ -795,9 +797,65 @@ const CommonUtil = {
     if (name.length === 0) {
       return;
     }
-    this.createCookie(name, "", -1, "/", domain);
+    this.createCookie(name, '', -1, '/', domain);
   },
+  setAnonymousUserToken() {
+    // if (typeof window !== 'undefined' && typeof navigator !== 'undefined') {
+    return axios.get(window.location.origin + serverUrls.getConfNumber)
+      .then((response) => {
+        
+      });
+    // }
+  },
+  // Implementation of the Luhn algorithm
+  isValidCardNumber(cardNumber) {
+    let sum = 0;
+    let alt = false;
+    let i = cardNumber.length - 1;
+    let num;
 
+    if (cardNumber.length < 13 || cardNumber.length > 19) {
+      return false;
+    }
+    while (i >= 0) {
+      // get the next digit
+      num = parseInt(cardNumber.charAt(i), 10);
+
+      // if it's not a valid number, abort
+      if (isNaN(num)) {
+        return false;
+      }
+      // if it's an alternate number...
+      if (alt) {
+        num *= 2;
+        if (num > 9) {
+          num = (num % 10) + 1;
+        }
+      }
+
+      // flip the alternate bit
+      alt = !alt;
+
+      // add to the rest of the sum
+      sum += num;
+
+      // go to next digit
+      i--;
+    }
+
+  // determine if it's valid
+    return (sum % 10 == 0);
+  },
+  radioBtnVal(inputElm) {
+    for (let i = 0; i < inputElm.length; i++) {
+      if (inputElm[i].checked === true) {
+        return inputElm[i].value;
+      }
+    }
+    // elem.forEach((inputElm, i) => {     
+    // });
+    return null;
+  },
   getMobileOperatingSystem() {
     /* istanbul ignore if */
     if (typeof window !== 'undefined' && typeof navigator !== 'undefined') {
@@ -842,7 +900,7 @@ const CommonUtil = {
       if (isIE11) {
         return 'IE';
       }
-      if (userAgent.indexOf("Firefox") !== -1) {
+      if (userAgent.indexOf('Firefox') !== -1) {
         return this.FIREFOX;
       }
       return null;
@@ -887,8 +945,8 @@ const CommonUtil = {
     const storage = window.sessionStorage;
     /* istanbul ignore next */
     try {
-      storage.setItem("testkey", "test");
-      storage.removeItem("testkey");
+      storage.setItem('testkey', 'test');
+      storage.removeItem('testkey');
     } catch (e) {
       if (e.code === DOMException.QUOTA_EXCEEDED_ERR && storage.length === 0) {
         return false;
@@ -940,14 +998,14 @@ const CommonUtil = {
     /* istanbul ignore if */
     if (typeof document !== 'undefined') {
       setTimeout(() => {
-        const selectEl = document.getElementsByClassName("Select-control");
+        const selectEl = document.getElementsByClassName('Select-control');
         const selectElCount = selectEl ? selectEl.length : 0;
         for (let i = 0; i < selectElCount; i++) {
           if (!selectEl[i] || !selectEl[i].parentNode || !selectEl[i].parentNode.previousSibling) {
             return;
           }
           const ariaName = 'selectControlLabel' + i;
-          const selectInput = selectEl[i].querySelector(".Select-input");
+          const selectInput = selectEl[i].querySelector('.Select-input');
           const selectLabel = selectEl[i].parentNode.previousSibling;
           selectLabel.setAttribute('id', ariaName);
           selectInput.setAttribute('aria-labelledby', ariaName);
@@ -959,7 +1017,7 @@ const CommonUtil = {
     const focusInterval = 10; // ms, time between function calls
     const focusTotalRepetitions = 3; // number of repetitions
     if (typeof element !== 'undefined' && element !== null) {
-      const previousTabIndex = element.getAttribute("tabindex");
+      const previousTabIndex = element.getAttribute('tabindex');
       if (role) {
         element.setAttribute('role', role);
       } else {
@@ -996,21 +1054,21 @@ const CommonUtil = {
   moveFocusTo(selector, delay, role) {
     role = role || null;
     /* istanbul ignore if */
-    if (typeof (selector) !== "undefined") {
+    if (typeof (selector) !== 'undefined') {
       let str;
       let target;
-      if (typeof (selector) === "string") {
+      if (typeof (selector) === 'string') {
         selector = selector.replace(/ /g, '');
         str = selector.substring(0, 1);
       } else {
-        str = "";
+        str = '';
       }
       switch (str) {
-        case "#":
+        case '#':
           target = document.querySelector(selector);
           break;
-        case ".": {
-          const arr = selector.split(":");
+        case '.': {
+          const arr = selector.split(':');
           const elm = arr[0];
           const index = arr[1];
           if (arr.length > 1) {
@@ -1065,22 +1123,22 @@ const CommonUtil = {
       const windowInnerWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
       switch (true) {
         case (windowInnerWidth < 640):
-          responsiveView = "small";
+          responsiveView = 'small';
           break;
         case (windowInnerWidth < 768):
-          responsiveView = "smedium";
+          responsiveView = 'smedium';
           break;
         case (windowInnerWidth < 1024):
-          responsiveView = "medium";
+          responsiveView = 'medium';
           break;
         case (windowInnerWidth < 1440):
-          responsiveView = "large";
+          responsiveView = 'large';
           break;
         case (windowInnerWidth < 1900):
-          responsiveView = "xlarge";
+          responsiveView = 'xlarge';
           break;
         default:
-          responsiveView = "xxlarge";
+          responsiveView = 'xxlarge';
           break;
       }
     }
@@ -1101,7 +1159,7 @@ const CommonUtil = {
    */
   isTouchDevice() {
     /* istanbul ignore next */
-    return document.querySelector("body").classList.contains("touchDevice");
+    return document.querySelector('body').classList.contains('touchDevice');
   },
   /*
    * This method returns if the device is touch enabled and mobile
@@ -1177,19 +1235,19 @@ const CommonUtil = {
       const windowInnerWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
       switch (true) {
         case (windowInnerWidth < 1025):
-          breakpointView = "smallView";
+          breakpointView = 'smallView';
           break;
         case (windowInnerWidth < 1140):
-          breakpointView = "mediumView";
+          breakpointView = 'mediumView';
           break;
         case (windowInnerWidth < 1440):
-          breakpointView = "largeView";
+          breakpointView = 'largeView';
           break;
         case (windowInnerWidth > 1440):
-          breakpointView = "xlargeView";
+          breakpointView = 'xlargeView';
           break;
         default:
-          breakpointView = "largeView";
+          breakpointView = 'largeView';
           break;
       }
     }
@@ -1210,11 +1268,11 @@ const CommonUtil = {
    * isMobileAutoSearch property for configuring auto search functionality in mobile
    * [true or false to apply auto search functionality for mobile]
    */
-  WINDOWS: "Windows Phone",
-  ANDROID: "Android",
-  IOS: "iOS",
+  WINDOWS: 'Windows Phone',
+  ANDROID: 'Android',
+  IOS: 'iOS',
   isMobileAutoSearch: false,
-  searchURLPath: "_/N-0/Ntt-",
+  searchURLPath: '_/N-0/Ntt-',
   promoLightBoxTimer: 60000
 };
 

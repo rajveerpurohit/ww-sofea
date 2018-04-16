@@ -39,7 +39,7 @@ const ServiceFacade = {
         return reject(response);
       }, (e) => {
         // loggerHandler.error({ req: config, err: e }, "Service-Facade ::: AA Request failed failed ", config.url);
-        return reject(e);
+        return reject(e.response);
       });
   },
 
@@ -50,7 +50,7 @@ const ServiceFacade = {
     }).then((response) => {
       callback(response);
     }, (error) => {
-      ServiceFacade.handlerRequestError(error, opts);
+      // ServiceFacade.handlerRequestError(error, opts);
       callback(error);
     });
   },
@@ -68,15 +68,36 @@ const ServiceFacade = {
       callback(error);
     });
   },
+  triggerPatchRequest(opts, callback) {
+    opts.method = 'PATCH';
+    return new Promise((resolve, reject) => {
+      ServiceFacade.sendRequest(opts, resolve, reject);
+    }).then((response) => {
+      callback(response);
+    }, (error) => {
+      ServiceFacade.handlerRequestError(error, opts);
+      callback(error);
+    });
+  },
+
+  triggerDeleteRequest(opts, callback) {
+    opts.method = 'DELETE';
+    return new Promise((resolve, reject) => {
+      ServiceFacade.sendRequest(opts, resolve, reject);
+    }).then((response) => {
+      callback(response);
+    }, (error) => {
+      ServiceFacade.handlerRequestError(error, opts);
+      callback(error);
+    });
+  },
 
   handlerRequestError(error, opts) {
     // loggerHandler.error({ req: opts, err: error }, 'Service Facade: Error in AA Service call for :', opts.url);
     let errorString = '';
-    if (error && error.data && error.data.error && error.data.error.name && error.data.error.statusMessage) {
-      errorString += error.data.error.name + ' : ' + error.data.error.statusMessage;
+    if (error.response && error.response.data && error.response.data.error && error.response.data.error.name && error.response.data.error.message) {
+      errorString += error.response.data.error.statusCode + error.response.data.error.name + ' : ' + error.response.data.error.message;
     }
-    console.log('Error:', errorString);
-    console.log(opts);
     // loggerHandler.error({ req: opts, err: error }, 'Service Facade::: Error Details from AA server' + errorString);
   }
 };

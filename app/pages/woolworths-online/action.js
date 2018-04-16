@@ -1,6 +1,6 @@
 import { polyfill } from 'es6-promise';
 import ServiceUtil from '../../services/serviceUtil';
-import {serverUrls} from '../../../server/controllers/apiAggregatorEndPoints';
+import { serverUrls } from '../../../server/controllers/apiAggregatorEndPoints';
 
 polyfill();
 
@@ -22,8 +22,8 @@ export const woolWorthOnlineFailureAction = () => {
 
 export const getUsingWoolworthsOnline = () => {
   return (dispatch) => {
-    return ServiceUtil.triggerServerRequest({url: serverUrls.woolWorthOnline}).then((value) => {
-        dispatch(woolWorthOnlineSuccessAction({data: value.body}));
+    return ServiceUtil.triggerServerRequest({ url: serverUrls.woolWorthOnline }).then((value) => {
+      dispatch(woolWorthOnlineSuccessAction({ data: value.body }));
     });
   };
 };

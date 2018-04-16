@@ -1,40 +1,45 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
-import axios from 'axios';
-import { Link } from 'react-router';
-import _ from 'lodash';
 
 import ProductTile from '../../components/compound/product-tile';
-import Image from '../../components/basic/Image';
-import Ribbon from '../../components/basic/Ribbon';
-import Dropdown from '../../components/basic/Dropdown';
-import DropdownFlyOutList from '../../components/basic/dropdown-fly-out-list';
-
 
 export default class ClpContainer extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
+  constructor(props) {
+    super(props);
+    this.createImageData = this.createImageData.bind(this);
+  }
 
-        };
-        this.createImageData = this.createImageData.bind(this);
-    }
+  createImageData(itemContentData, productType, pageTamlateType) {
+    const { user, currentUser, nonDelieverable, cartDetails } = this.props;
 
-    createImageData(itemContentData, productType, pageTamlateType) {
-        return itemContentData.map((itemData) => {
-            return (
-              <ProductTile pageTamlateType={pageTamlateType} productData={itemData} productType={productType} key={itemData.attributes.p_productid} />
-            );
-        });
-    }
+    return itemContentData.map((itemData, index) => {
+      const productId = itemData.attributes.p_productid ? itemData.attributes.p_productid : index;
 
-    render() {
-        const {imageContentProp, productType, pageTamlateType} = this.props;
-        return (
-          <div className="grid grid--space-y">
-            {imageContentProp && imageContentProp.length !== undefined ? this.createImageData(imageContentProp, productType, pageTamlateType) : ''}
-          </div>
-        );
-    }
+      return (
+        <ProductTile
+          showQuickView
+          user={user}
+          key={productId}
+          productData={itemData}
+          productType={productType}
+          currentUser={currentUser}
+          pageTamlateType={pageTamlateType}
+          nonDelieverable={nonDelieverable}
+          cartDetails={cartDetails}
+          tagProductClicks={this.props.tagProductClicks}
+        />
+      );
+    });
+  }
+
+  render() {
+    console.log('asd');
+    const { imageContentProp, productType, pageTamlateType, refinementData } = this.props;
+    return (
+      <div className={refinementData && refinementData.navigation && refinementData.navigation.length !== 0 ? 'grid grid--space-y' : 'grid'}>
+        {imageContentProp && imageContentProp.length !== undefined ?
+          this.createImageData(imageContentProp, productType, pageTamlateType)
+          : ''}
+      </div>
+    );
+  }
 }

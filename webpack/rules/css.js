@@ -48,7 +48,6 @@ module.exports = ({ production = false, browser = false } = {}) => {
   const serverLoaders = createCssLoaders(false);
   const browserLoaders = createBrowserLoaders(production)(createCssLoaders(true));
 
-
   return {
     test: /\.scss$/,
     use: browser ? browserLoaders : serverLoaders,

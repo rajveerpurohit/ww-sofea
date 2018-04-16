@@ -44,6 +44,7 @@ export default class Ribbon extends Component {
   }
 
   render() {
+    const { classNames } = this.props;
     const badges = this.getBadgeList();
 
     if (badges.length === 0) {
@@ -51,7 +52,7 @@ export default class Ribbon extends Component {
     }
 
     return (
-      <div className='product-card__badges'>{badges.map(this.renderBadge)}</div>
+      <div className={classNames} >{badges.map(this.renderBadge)}</div>
     );
   }
 }

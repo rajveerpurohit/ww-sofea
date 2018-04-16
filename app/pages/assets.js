@@ -1,10 +1,8 @@
 /* Based on the template in Web Starter Kit :
 https://github.com/google/web-starter-kit/blob/master/app/index.html
 */
-import chromeFavicon from '../images/chrome-ninja192-precomposed.png';
-import appleFavicon from '../images/apple-ninja152-precomposed.png';
-import msFavicon from '../images/ms-ninja144-precomposed.png';
-import favicon from '../images/favicon.png';
+
+const finalURL = 'https://www.woolworths.co.za';
 
 const metaAssets = () => {
   return [
@@ -30,20 +28,46 @@ const metaAssets = () => {
     // Add to homescreen for Safari on IOS
     { name: 'apple-mobile-web-app-capable', content: 'yes' },
     { name: 'apple-mobile-web-app-status-bar-style', content: 'black' },
-    { name: 'apple-mobile-web-app-title', content: 'reactGo' },
+    { name: 'apple-mobile-web-app-title', content: 'Woolworths' },
     // Tile icon for Win8 (144x144 + tile color)
-    { name: 'msapplication-TileImage', content: msFavicon },
+    // { name: 'msapplication-TileImage', content: favicon },
     { name: 'msapplication-TileColor', content: '#3372DF' }
   ];
 };
 
 const linkAssets = () => {
+  // let EXTERNAL_IMAGE_URL = '/';
+  // let INTERNAL_IMAGE_URL = '/';
+  // let USE_CDN = false;
+  // let finalURL = '';
+
+
+  // if (typeof window !== 'undefined') {
+  //   EXTERNAL_IMAGE_URL = window.EXTERNAL_IMAGE_URL;
+  //   INTERNAL_IMAGE_URL = window.INTERNAL_IMAGE_URL;
+  //   USE_CDN = window.USE_CDN;
+  // } else {
+  //   INTERNAL_IMAGE_URL = global.INTERNAL_IMAGE_URL;
+  // }
+
+  // if (USE_CDN) {
+  //   finalURL = EXTERNAL_IMAGE_URL;
+  // } else {
+  //   finalURL = INTERNAL_IMAGE_URL;
+  // }
+
   const links = [
     // Add to homescreen for Chrome on Android
-    { rel: 'icon', href: favicon },
-    { rel: 'icon', sizes: '192x192', href: chromeFavicon },
+    // { rel: 'icon', href: favicon },
+    { rel: 'apple-touch-icon', sizes: '180x180', href: finalURL + '/images/static/apple-touch-icon.png?v=kPgdonaQxO' },
+    { rel: 'icon', type: 'image/png', href: finalURL + '/images/static/favicon-32x32.png?v=kPgdonaQxO', sizes: '32x32' },
+    { rel: 'icon', type: 'image/png', href: finalURL + '/images/static/favicon-16x16.png?v=kPgdonaQxO', sizes: '16x16' },
+    { rel: 'manifest', href: finalURL + '/images/static/manifest.json?v=kPgdonaQxO' },
+    { rel: 'mask-icon', href: finalURL + '/images/static/safari-pinned-tab.svg?v=kPgdonaQxO ', color: '#000000' },
+    { rel: 'shortcut icon', href: finalURL + '/images/static/favicon.ico?v=kPgdonaQxO' },
+    // { rel: 'icon', sizes: '192x192', href: chromeFavicon },
     // Add to homescreen for Safari on IOS
-    { rel: 'apple-touch-icon', sizes: '152x152', href: appleFavicon }
+    // { rel: 'apple-touch-icon', sizes: '152x152', href: appleFavicon }
     // SEO: If your mobile URL is different from the desktop URL,
     // add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones
     // { 'rel': 'canonical', 'href': 'http://www.example.com/' }
@@ -52,6 +76,19 @@ const linkAssets = () => {
   return links;
 };
 
-export const title = 'reactGo - just ship it';
+export const customMetaAssets = (metaKeywords, metaDescription) => {
+  return [
+    { charset: 'utf-8' },
+    { name: 'description', content: metaDescription },
+    { name: 'keywords', content: metaKeywords },
+    { 'http-equiv': 'X-UA-Compatible', content: 'IE=edge' },
+    { name: 'viewport', content: 'width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no' },
+    { name: 'msapplication-config', content: finalURL + '/images/static/browserconfig.xml?v=kPgdonaQxO' },
+    { name: 'theme-color', content: '#ffffff' }
+  ];
+};
+
+export const title = 'Woolworths';
 export const meta = metaAssets();
 export const link = linkAssets();
+

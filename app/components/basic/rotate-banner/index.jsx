@@ -20,7 +20,7 @@ class RotateBanner extends Component {
     const labelActive = document.querySelectorAll('.rotate-banner__nav .rotate-banner__nav-item')[0];
     addClass(labelActive, this.state.activeSlideLabel);
 
-    let radios = document.querySelectorAll('input[type="radio"]');
+    let radios = document.querySelectorAll('.rotate-banner input[type="radio"]');
     radios[0].click();
     this.startSetInterval();
     radios.forEach((element) => {
@@ -30,15 +30,20 @@ class RotateBanner extends Component {
       });
     });
   }
+  componentWillUnmount() {
+    this.stopTimer();
+  }
   nextBanner() {
     let _ind = this.state.currIndex;
     _ind += 1;
-    const radios = document.querySelectorAll('input[type="radio"]');
+    const radios = document.querySelectorAll('.rotate-banner input[type="radio"]');
 
     if (_ind >= radios.length) this.setState({ currIndex: 0 });
     else this.setState({ currIndex: _ind });
 
-    radios[this.state.currIndex].click();
+    if (radios[this.state.currIndex]) {
+      radios[this.state.currIndex].click();
+    }
   }
 
   startSetInterval() {
@@ -50,7 +55,7 @@ class RotateBanner extends Component {
   }
   generateChildNav(children, activeSlideLabel) {
     const childsNav = [];
-    children.map(child => child.type === 'input' ? childsNav.push(<label className={'rotate-banner__nav-item'} htmlFor={child.props.id}>{child.props.id}</label>) : null);
+    children.map((child, index) => { child.type === 'input' ? childsNav.push(<label key={index} className={'rotate-banner__nav-item'} htmlFor={child.props.id}>{child.props.id}</label>) : null; });
     return childsNav;
   }
 

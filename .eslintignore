@@ -2,3 +2,4 @@
 /public/**
 /webpack/**
 /api/promiseMiddleware.js
+/node_modules/**

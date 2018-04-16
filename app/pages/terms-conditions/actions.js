@@ -1,6 +1,6 @@
 import { polyfill } from 'es6-promise';
 import ServiceUtil from '../../services/serviceUtil';
-import {serverUrls} from '../../../server/controllers/apiAggregatorEndPoints';
+import { serverUrls } from '../../../server/controllers/apiAggregatorEndPoints';
 
 polyfill();
 
@@ -22,8 +22,8 @@ export const termsnConditionsFailureAction = () => {
 
 export const getTermsNCondtions = () => {
   return (dispatch) => {
-    return ServiceUtil.triggerServerRequest({url: serverUrls.footerterms}).then((value) => {
-        dispatch(termsnConditionsSuccessAction({data: value.body}))
+    return ServiceUtil.triggerServerRequest({ url: serverUrls.footerterms }).then((value) => {
+      dispatch(termsnConditionsSuccessAction({ data: value.body }));
     });
   };
 };

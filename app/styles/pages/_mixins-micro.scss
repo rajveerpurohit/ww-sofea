@@ -1,0 +1,130 @@
+@mixin micro-top-header {
+	background-color: #000000;
+    padding: 15px 0;
+}
+
+@mixin micro-contentcontainer-header {
+	background-color: #FFF;
+    overflow: hidden;
+}
+
+@mixin common-font {
+	font-family: 'wfuturamedium';
+    font-size: 1em;
+    font-weight: normal;
+}
+
+@mixin common-nav-footer {
+	clear: both;
+    overflow: hidden;
+    padding: 8px 2%;
+    position: relative; 
+    bottom: 0px;
+    width: 97%;
+}
+
+@mixin nav-font {
+	color: #000000;
+    
+    @include common-font;
+}
+
+@mixin footer-font {
+	color: #B5B5B5;
+   
+	@include common-font;
+}
+	    
+@mixin micro-footer {
+    background: none repeat scroll 0 0 #000000;
+    text-align: justify;
+   
+	@include common-nav-footer;
+	@include footer-font;
+    
+    ul {
+        line-height: 2.5em;
+	    list-style-type: none;
+	    margin: 0;
+	    padding: 0;
+	
+		li {
+			display: inline-block;
+		    text-align: center;
+		    vertical-align: top !important;
+		    padding: 0 15px;
+		    
+		    @include footer-font;
+		    
+		    a {
+			    text-decoration: none;
+			    text-transform: uppercase;
+			    
+			    @include footer-font;
+			}
+	    }
+	}
+}
+
+/** MIMCO **/
+@mixin mimco-logo {
+	background: url("/images/mimco/mimco_logo.gif") no-repeat scroll center top #000000;
+	display: block;
+	height: 50px;
+	width: 163px;
+	text-indent: -9999em;
+}
+
+/** WITCHERY **/
+@mixin witchery-logo {
+	background: url("/images/witchery/logo.gif") no-repeat scroll left top #000000;
+	display: block;
+	height: 40px;
+	width: 300px;
+	text-indent: -9999em;
+}
+
+/** COUNTRY ROAD **/
+@mixin country-road-logo {
+	background: url("/images/country_road/logo-country-road-ww.gif") no-repeat scroll left top #FFFFFF;
+	display: block;
+	height: 29px;
+	width: 229px;
+	text-indent: -9999em;
+}
+
+/** TRENERY **/
+@mixin trenery-logo {
+	background: url("/images/trenery/logo-trenery-ww.gif") no-repeat scroll left top #FFFFFF;
+	display: block;
+	height: 22px;
+	width: 220px;
+	text-indent: -9999em;
+}
+
+/** STUDIO-W **/
+@mixin studiow-logo {
+	background: url("/images/studiow/studio_w_logo.png") no-repeat scroll left top #565656;
+	display: block;
+	height: 50px;
+	width: 186px;
+	text-indent: -9999em;
+}
+
+/** RE **/
+@mixin re-logo {
+	background: url("/images/re/re_logo.png") no-repeat scroll left top #000000;
+	display: block;
+	height: 70px;
+	width: 89px;
+	text-indent: -9999em;
+}
+
+/** JT-ONE **/
+@mixin jtone-logo {
+	background: url("/images/jtone/jtone_logo.png") no-repeat scroll left top #f37ab0;
+	display: block;
+	height: 70px;
+	width: 141px;
+	text-indent: -9999em;
+}
